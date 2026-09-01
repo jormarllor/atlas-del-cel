@@ -18,7 +18,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </Link>
           <nav className="main-nav" aria-label="Navegació principal">
             <Link href="/com-llegir-el-cel">Com llegir el cel</Link>
-            <Link href="/constellacions/orio">Constel·lacions</Link>
+            <Link href="/constellacions">Constel·lacions</Link>
           </nav>
         </header>
         {children}

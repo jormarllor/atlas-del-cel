@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const seasons = [
-  { name: "Hivern", hint: "Orió, Taure, Bessons", className: "winter", availableHref: "/constellacions/taure" },
+  { name: "Hivern", hint: "Orió, Taure, Bessons", className: "winter", availableHref: "/constellacions" },
   { name: "Primavera", hint: "Lleó, Verge, Bover", className: "spring" },
   { name: "Estiu", hint: "Cigne, Lira, Àguila", className: "summer" },
   { name: "Tardor", hint: "Pegàs, Andròmeda, Perseu", className: "autumn" },
@@ -21,8 +21,9 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Link className="button primary" href="/com-llegir-el-cel">1. Com llegir el cel</Link>
-            <Link className="button ghost" href="/constellacions/orio">Explora Orió</Link>
+            <Link className="button ghost" href="/constellacions">Explora constel·lacions</Link>
           </div>
+          <p className="hero-available-links"><span>Disponibles ara</span><Link href="/constellacions/orio">Orió</Link><i>·</i><Link href="/constellacions/taure">Taure</Link></p>
         </div>
       </section>
 
@@ -54,28 +55,25 @@ export default function Home() {
               <h3>{season.name}</h3>
               <p>{season.hint}</p>
               {season.availableHref
-                ? <Link className="coming season-link" href={season.availableHref}>Taure ja disponible →</Link>
+                ? <Link className="coming season-link" href={season.availableHref}>2 fitxes disponibles →</Link>
                 : <span className="coming">Properament</span>}
             </article>
           ))}
         </div>
       </section>
 
-      <section className="wrap section feature-callout">
-        <div>
-          <p className="section-kicker">PRIMERA CONSTEL·LACIÓ</p>
-          <h2>Orió: el gran punt de partida del cel d’hivern</h2>
-          <p>
-            Tres estrelles alineades et porten al cinturó. Des d’allà pots trobar Sirius, Aldebaran i les Plèiades amb una ruta interactiva.
-          </p>
-          <Link className="text-link" href="/constellacions/orio">Obre la fitxa interactiva d’Orió →</Link>
-          <Link className="text-link secondary-home-link" href="/constellacions/taure">Continua després amb Taure →</Link>
+      <section className="wrap section winter-available">
+        <div className="section-heading winter-available-heading">
+          <div><p className="section-kicker">JA POTS COMENÇAR</p><h2>Dues portes d’entrada al cel d’hivern</h2></div>
+          <Link className="text-link" href="/constellacions">Índex de constel·lacions →</Link>
         </div>
-        <div className="mini-orion" aria-hidden="true">
-          <span className="s s1" /><span className="s s2" /><span className="s s3" />
-          <span className="s s4" /><span className="s s5" /><span className="s s6" />
-          <span className="s s7" />
-          <i className="l l1" /><i className="l l2" /><i className="l l3" /><i className="l l4" /><i className="l l5" />
+        <div className="winter-available-list">
+          <Link href="/constellacions/orio" className="winter-available-entry">
+            <span>01</span><div><h3>Orió</h3><p>Tres estrelles alineades et porten al cinturó.</p></div><b>Explora Orió →</b>
+          </Link>
+          <Link href="/constellacions/taure" className="winter-available-entry">
+            <span>02</span><div><h3>Taure</h3><p>Una V d’estrelles amb Aldebaran com a ull taronja.</p></div><b>Explora Taure →</b>
+          </Link>
         </div>
       </section>
     </main>

@@ -11,7 +11,7 @@ type TaurusPoint = {
   kind?: "warm" | "cluster";
 };
 
-// ICRS/J2000 positions from SIMBAD and the Messier catalogue.
+// ICRS/J2000 positions from SIMBAD and NASA's Messier catalogue.
 const stars: TaurusPoint[] = [
   { id: "aldebaran", name: "Aldebaran", raHours: 4 + 35 / 60 + 55.24 / 3600, decDeg: 16 + 30 / 60 + 33.5 / 3600, magnitude: 0.87, kind: "warm" },
   { id: "gamma", name: "γ Tauri", raHours: 4 + 19 / 60 + 47.604 / 3600, decDeg: 15 + 37 / 60 + 39.51 / 3600, magnitude: 3.65 },
@@ -61,28 +61,50 @@ export default function TaurusMap() {
   const [showMyth, setShowMyth] = useState(false);
   const projected = useMemo(() => [...stars, ...pleiades].map(point => ({ ...point, ...project(point) })), []);
   const byId = useMemo(() => Object.fromEntries(projected.map(point => [point.id, point])), [projected]);
-  const m1 = project({ raHours: 5 + 34 / 60 + 31.8 / 3600, decDeg: 22 + 1 / 60 + 3 / 3600 });
+  const m1 = project({ raHours: 5 + 34 / 60 + 31.94 / 3600, decDeg: 22 + 52.2 / 3600 });
+  const headCentre = {
+    x: (byId.gamma.x + byId.theta.x + byId.epsilon.x) / 3,
+    y: (byId.gamma.y + byId.theta.y + byId.epsilon.y) / 3,
+  };
 
   return (
     <div className="map-shell">
       <div className="map-toolbar" aria-label="Controls del mapa">
-        <button className={showStars ? "active" : ""} onClick={() => setShowStars(!showStars)}>Estrelles</button>
-        <button className={showLines ? "active" : ""} onClick={() => setShowLines(!showLines)}>Línies</button>
-        <button className={showNames ? "active" : ""} onClick={() => setShowNames(!showNames)}>Noms</button>
-        <button className={showMyth ? "active" : ""} onClick={() => setShowMyth(!showMyth)}>Figura mitològica</button>
+        <button className={showStars ? "active" : ""} aria-pressed={showStars} onClick={() => setShowStars(!showStars)}>Estrelles</button>
+        <button className={showLines ? "active" : ""} aria-pressed={showLines} onClick={() => setShowLines(!showLines)}>Línies</button>
+        <button className={showNames ? "active" : ""} aria-pressed={showNames} onClick={() => setShowNames(!showNames)}>Noms</button>
+        <button className={showMyth ? "active" : ""} aria-pressed={showMyth} onClick={() => setShowMyth(!showMyth)}>Figura mitològica</button>
         <span className="map-coordinate-badge">ICRS · J2000</span>
       </div>
       <div className="star-map accurate-map taurus-map" role="img" aria-label="Mapa de Taure projectat a partir de coordenades equatorials ICRS J2000">
         <div className="star-dust" aria-hidden="true" />
         <div className="sky-orientation" aria-hidden="true"><span>E</span><b>mirant cap al sud</b><span>O</span></div>
         {showMyth && (
-          <svg className="myth-overlay detailed taurus-myth" viewBox="0 0 100 100" aria-hidden="true">
-            <path d="M42 71 C39 57,42 42,52 35 C61 29,68 31,71 40 C73 48,68 57,59 62 C51 67,46 72,42 71 Z" />
-            <path d="M60 36 C70 24,80 15,88 8" /><path d="M48 38 C43 27,33 18,25 12" />
+          <svg className="myth-overlay detailed taurus-myth" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path
+              className="taurus-myth-head"
+              d={`M ${byId.epsilon.x} ${byId.epsilon.y}
+                Q ${byId.delta.x} ${byId.delta.y} ${byId.gamma.x} ${byId.gamma.y}
+                Q ${byId.theta.x} ${byId.theta.y} ${byId.aldebaran.x} ${byId.aldebaran.y}
+                Q ${headCentre.x + 1} ${headCentre.y + 8} ${byId.epsilon.x} ${byId.epsilon.y}`}
+            />
+            <path
+              className="taurus-myth-horn"
+              d={`M ${byId.epsilon.x} ${byId.epsilon.y}
+                Q ${(byId.epsilon.x + byId.elnath.x) / 2 - 4} ${(byId.epsilon.y + byId.elnath.y) / 2 + 2}
+                ${byId.elnath.x} ${byId.elnath.y}`}
+            />
+            <path
+              className="taurus-myth-horn"
+              d={`M ${byId.gamma.x} ${byId.gamma.y}
+                Q ${(byId.gamma.x + byId.zeta.x) / 2 - 2} ${(byId.gamma.y + byId.zeta.y) / 2 - 7}
+                ${byId.zeta.x} ${byId.zeta.y}`}
+            />
+            <circle className="taurus-myth-eye" cx={byId.aldebaran.x} cy={byId.aldebaran.y} r="2.15" />
           </svg>
         )}
         {showLines && (
-          <svg className="constellation-lines" viewBox="0 0 100 100" aria-hidden="true">
+          <svg className="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             {lines.map(([a, b]) => <line key={`${a}-${b}`} x1={byId[a].x} y1={byId[a].y} x2={byId[b].x} y2={byId[b].y} />)}
           </svg>
         )}

@@ -35,7 +35,7 @@ export default function TaurusPage() {
     <main>
       <section className="page-hero wrap constellation-hero taurus-hero">
         <div>
-          <Link href="/" className="back-link">← Constel·lacions</Link>
+          <Link href="/constellacions" className="back-link">← Constel·lacions</Link>
           <p className="eyebrow">TARDOR I HIVERN · NIVELL FÀCIL</p>
           <h1>Taure</h1>
           <p className="lead">Una V d’estrelles, un ull taronja i un dels cúmuls més famosos del cel.</p>
@@ -73,7 +73,7 @@ export default function TaurusPage() {
         <div>
           <div className="section-heading compact-heading"><div><p className="section-kicker">MAPA DE RECONEIXEMENT</p><h2>Del cap del toro fins a les banyes i les Plèiades</h2></div></div>
           <TaurusMap />
-          <p className="map-note stronger-note">Les estrelles, els cúmuls i M1 es projecten a partir de <strong>coordenades equatorials ICRS/J2000</strong>. La figura mitològica és una capa interpretativa separada i no altera la geometria astronòmica.</p>
+          <p className="map-note stronger-note">Les estrelles, els cúmuls i M1 es projecten a partir de <strong>coordenades equatorials ICRS/J2000</strong>. Les línies són una ajuda visual i poden variar entre atles: la IAU defineix les constel·lacions com a regions del cel, no com aquests dibuixos. La figura mitològica és una capa interpretativa separada.</p>
         </div>
         <aside className="find-card">
           <p className="section-kicker">COM TROBAR-LA</p>
@@ -98,6 +98,15 @@ export default function TaurusPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="wrap section artistic-panel taurus-artistic-panel">
+        <div className="section-heading compact-heading">
+          <div><p className="section-kicker">TAURE IMAGINAT</p><h2>El toro entre les estrelles</h2></div>
+        </div>
+        <figure className="art-card">
+          <img src="/images/taure-mitologic.png" alt="Interpretació artística del toro de Taure emergint de la foscor" />
+        </figure>
       </section>
 
       <section className="myth-section taurus-myth-section">
@@ -132,6 +141,10 @@ export default function TaurusPage() {
         <p className="muted route-intro">Comença amb la ruta visible a ull nu i, quan vulguis un repte més exigent, continua cap a M1.</p>
         <TaurusRouteExplorer />
       </section>
+
+      <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">
+        <Link href="/constellacions/orio"><strong>← Orió</strong><span>Constel·lació anterior</span></Link>
+      </nav>
     </main>
   );
 }

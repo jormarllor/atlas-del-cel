@@ -35,11 +35,11 @@ export default function OrionPage() {
     <main>
       <section className="page-hero wrap constellation-hero">
         <div>
-          <Link href="/" className="back-link">← Constel·lacions</Link>
+          <Link href="/constellacions" className="back-link">← Constel·lacions</Link>
           <p className="eyebrow">HIVERN · NIVELL FÀCIL</p>
           <h1>Orió</h1>
           <p className="lead">
-            El gran caçador és una de les millors portes d’entrada al cel d’hivern: molt recognoscible,
+            El gran caçador és una de les millors portes d’entrada al cel d’hivern: molt reconeixible,
             ric en objectes interessants i ideal per començar a saltar cap a altres estrelles.
           </p>
         </div>
@@ -89,7 +89,7 @@ export default function OrionPage() {
           <OrionMap />
           <p className="map-note stronger-note">
             Les estrelles principals es projecten a partir de les seves <strong>coordenades equatorials ICRS/J2000</strong>; per tant, la forma i les proporcions del patró no es dibuixen a ull.
-            La figura mitològica és només una capa interpretativa i no modifica la geometria astronòmica.
+            Les línies són una ajuda visual i poden variar entre atles: la IAU defineix les constel·lacions com a regions del cel, no com aquests dibuixos. La figura mitològica és una capa interpretativa separada.
           </p>
         </div>
         <aside className="find-card">
@@ -105,18 +105,6 @@ export default function OrionPage() {
         </aside>
       </section>
 
-      <section className="wrap section artistic-panel">
-        <div className="section-heading compact-heading">
-          <div>
-            <p className="section-kicker">ORIÓ IMAGINAT</p>
-            <h2>Orió imaginat · El caçador entre les estrelles</h2>
-          </div>
-        </div>
-        <figure className="art-card">
-          <img src="/images/orio-mitologic.png" alt="Orió imaginat com un caçador entre les estrelles" />
-        </figure>
-      </section>
-
       <section className="wrap section">
         <div className="section-heading"><div><p className="section-kicker">QUÈ ESTÀS VEIENT?</p><h2>Quatre coses que val la pena observar</h2></div></div>
         <div className="object-grid">
@@ -128,6 +116,18 @@ export default function OrionPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="wrap section artistic-panel">
+        <div className="section-heading compact-heading">
+          <div>
+            <p className="section-kicker">ORIÓ IMAGINAT</p>
+            <h2>Orió imaginat · El caçador entre les estrelles</h2>
+          </div>
+        </div>
+        <figure className="art-card">
+          <img src="/images/orio-mitologic.png" alt="Orió imaginat com un caçador entre les estrelles" />
+        </figure>
       </section>
 
       <section className="myth-section">
@@ -175,6 +175,10 @@ export default function OrionPage() {
         </p>
         <OrionRouteExplorer />
       </section>
+
+      <nav className="wrap constellation-pagination" aria-label="Navegació entre constel·lacions">
+        <Link href="/constellacions/taure"><span>Següent constel·lació</span><strong>Taure →</strong></Link>
+      </nav>
     </main>
   );
 }

@@ -72,9 +72,9 @@ export default function OrionMap() {
   return (
     <div className="map-shell">
       <div className="map-toolbar" aria-label="Controls del mapa">
-        <button className={showLines ? "active" : ""} onClick={() => setShowLines(!showLines)}>Línies</button>
-        <button className={showNames ? "active" : ""} onClick={() => setShowNames(!showNames)}>Noms</button>
-        <button className={showMyth ? "active" : ""} onClick={() => setShowMyth(!showMyth)}>Figura mitològica</button>
+        <button className={showLines ? "active" : ""} aria-pressed={showLines} onClick={() => setShowLines(!showLines)}>Línies</button>
+        <button className={showNames ? "active" : ""} aria-pressed={showNames} onClick={() => setShowNames(!showNames)}>Noms</button>
+        <button className={showMyth ? "active" : ""} aria-pressed={showMyth} onClick={() => setShowMyth(!showMyth)}>Figura mitològica</button>
         <span className="map-coordinate-badge">ICRS · J2000</span>
       </div>
 
@@ -83,7 +83,7 @@ export default function OrionMap() {
         <div className="sky-orientation" aria-hidden="true"><span>E</span><b>mirant cap al sud</b><span>O</span></div>
 
         {showMyth && (
-          <svg className="myth-overlay detailed" viewBox="0 0 100 100" aria-hidden="true">
+          <svg className="myth-overlay detailed" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <path d="M51 10 C47 13,46 18,50 21 C55 19,55 13,51 10 Z" />
             <path d="M50 21 C42 29,40 39,44 50 C47 60,44 71,38 91" />
             <path d="M52 21 C60 29,64 39,60 50 C59 61,65 73,75 89" />
@@ -93,7 +93,7 @@ export default function OrionMap() {
         )}
 
         {showLines && (
-          <svg className="constellation-lines" viewBox="0 0 100 100" aria-hidden="true">
+          <svg className="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             {lines.map(([a, b]) => (
               <line key={`${a}-${b}`} x1={starById[a].x} y1={starById[a].y} x2={starById[b].x} y2={starById[b].y} />
             ))}

@@ -9,7 +9,6 @@ import {
   solarAltitude,
 } from "./astronomy";
 
-const BARCELONA = { latitude: 41.3874, longitude: 2.1686, name: "Barcelona" };
 const SAVED_LOCATION_KEY = "atlas-del-cel-observation-location";
 const DARK_SKY_SUN_ALTITUDE = -12;
 
@@ -54,6 +53,10 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
   const [time, setTime] = useState<Date | null>(null);
   const [editing, setEditing] = useState(false);
   const [locating, setLocating] = useState(false);
+  const [manualOpen, setManualOpen] = useState(false);
+  const [manualLatitude, setManualLatitude] = useState("");
+  const [manualLongitude, setManualLongitude] = useState("");
+  const [locationError, setLocationError] = useState("");
 
   useEffect(() => {
     setTime(defaultObservationTime());
@@ -61,6 +64,10 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
       const saved = window.localStorage.getItem(SAVED_LOCATION_KEY);
       if (saved) {
         const location = JSON.parse(saved) as { latitude: number; longitude: number; name: string };
+        if (location.name === "Exemple: Barcelona") {
+          window.localStorage.removeItem(SAVED_LOCATION_KEY);
+          return;
+        }
         if (Number.isFinite(location.latitude) && Number.isFinite(location.longitude)) {
           setLatitude(location.latitude);
           setLongitude(location.longitude);
@@ -94,15 +101,57 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
     window.localStorage.setItem(SAVED_LOCATION_KEY, JSON.stringify({ latitude: newLatitude, longitude: newLongitude, name }));
   };
 
+  const openManualLocation = () => {
+    setManualLatitude(latitude === null ? "" : String(latitude));
+    setManualLongitude(longitude === null ? "" : String(longitude));
+    setLocationError("");
+    setManualOpen(true);
+  };
+
+  const saveManualLocation = () => {
+    const newLatitude = Number(manualLatitude);
+    const newLongitude = Number(manualLongitude);
+    if (
+      manualLatitude.trim() === "" || manualLongitude.trim() === "" ||
+      !Number.isFinite(newLatitude) || !Number.isFinite(newLongitude) ||
+      newLatitude < -90 || newLatitude > 90 || newLongitude < -180 || newLongitude > 180
+    ) {
+      setLocationError("Introdueix una latitud entre −90 i 90 i una longitud entre −180 i 180.");
+      return;
+    }
+    saveLocation(newLatitude, newLongitude, "Coordenades introduïdes");
+    setLocationError("");
+    setManualOpen(false);
+  };
+
+  const clearSavedLocation = () => {
+    window.localStorage.removeItem(SAVED_LOCATION_KEY);
+    setLatitude(null);
+    setLongitude(null);
+    setPlace("");
+    setEditing(false);
+    setManualOpen(false);
+    setLocationError("");
+  };
+
   const useMyLocation = () => {
-    if (!navigator.geolocation) return;
+    if (!navigator.geolocation) {
+      setLocationError("Aquest navegador no ofereix geolocalització. Pots introduir les coordenades manualment.");
+      return;
+    }
+    setLocationError("");
     setLocating(true);
     navigator.geolocation.getCurrentPosition(
       (result) => {
         saveLocation(result.coords.latitude, result.coords.longitude, "La teva ubicació");
         setLocating(false);
+        setEditing(false);
+        setManualOpen(false);
       },
-      () => setLocating(false),
+      () => {
+        setLocating(false);
+        setLocationError("No hem pogut accedir a la ubicació. Pots introduir les coordenades manualment.");
+      },
       { enableHighAccuracy: false, timeout: 8000 },
     );
   };
@@ -115,8 +164,19 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
         <p className="tonight-place">Necessitem la ubicació per calcular què veuràs i quan el cel serà prou fosc.</p>
         <div className="tonight-actions">
           <button className="small-button" onClick={useMyLocation}>{locating ? "Localitzant…" : "Utilitza la meva ubicació"}</button>
-          <button className="small-button ghost-small" onClick={() => saveLocation(BARCELONA.latitude, BARCELONA.longitude, "Exemple: Barcelona")}>Exemple: Barcelona</button>
+          <button className="small-button ghost-small" onClick={openManualLocation}>Introdueix coordenades</button>
         </div>
+        {manualOpen && (
+          <div className="manual-location-panel">
+            <div className="manual-coordinate-fields">
+              <label><span>Latitud</span><input aria-label="Latitud" type="number" min="-90" max="90" step="0.0001" value={manualLatitude} onChange={(event) => setManualLatitude(event.target.value)} /></label>
+              <label><span>Longitud</span><input aria-label="Longitud" type="number" min="-180" max="180" step="0.0001" value={manualLongitude} onChange={(event) => setManualLongitude(event.target.value)} /></label>
+              <button className="editor-reset" onClick={saveManualLocation}>Desa les coordenades</button>
+            </div>
+            {locationError && <p className="location-error" role="alert">{locationError}</p>}
+          </div>
+        )}
+        {!manualOpen && locationError && <p className="location-error" role="alert">{locationError}</p>}
       </section>
     );
   }
@@ -139,7 +199,7 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
         <div>
           <p className="section-kicker">AQUESTA NIT · CÀLCUL ASTRONÒMIC</p>
           <h2>{status.label}</h2>
-          <p className="tonight-place">{place} · {formatObservationDate(time)}</p>
+          <p className="tonight-place">{place} · {latitude.toFixed(4)}, {longitude.toFixed(4)} · {formatObservationDate(time)}</p>
         </div>
         <span className={`visibility-chip ${status.className}`}><i />{status.label}</span>
       </div>
@@ -151,8 +211,14 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
       </div>
 
       <div className="tonight-actions">
-        <button className="small-button" onClick={() => setEditing(!editing)}>{editing ? "Tanca" : "Canvia hora o ubicació"}</button>
+        <button className="small-button" onClick={() => {
+          const nextEditing = !editing;
+          setEditing(nextEditing);
+          if (nextEditing) openManualLocation();
+          else setManualOpen(false);
+        }}>{editing ? "Tanca" : "Canvia hora o ubicació"}</button>
         <button className="small-button ghost-small" onClick={useMyLocation}>{locating ? "Localitzant…" : "Utilitza la meva ubicació"}</button>
+        <button className="location-clear" onClick={clearSavedLocation}>Esborra la ubicació guardada</button>
       </div>
 
       {editing && (
@@ -165,17 +231,13 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
               onChange={(event) => event.target.value && setTime(new Date(event.target.value))}
             />
           </label>
-          <label>
-            <span>Latitud</span>
-            <input type="number" step="0.0001" value={latitude} onChange={(event) => setLatitude(Number(event.target.value))} />
-          </label>
-          <label>
-            <span>Longitud</span>
-            <input type="number" step="0.0001" value={longitude} onChange={(event) => setLongitude(Number(event.target.value))} />
-          </label>
-          <button className="editor-reset" onClick={() => saveLocation(BARCELONA.latitude, BARCELONA.longitude, "Exemple: Barcelona")}>Exemple: Barcelona</button>
+          <label><span>Latitud</span><input aria-label="Latitud" type="number" min="-90" max="90" step="0.0001" value={manualLatitude} onChange={(event) => setManualLatitude(event.target.value)} /></label>
+          <label><span>Longitud</span><input aria-label="Longitud" type="number" min="-180" max="180" step="0.0001" value={manualLongitude} onChange={(event) => setManualLongitude(event.target.value)} /></label>
+          <button className="editor-reset" onClick={saveManualLocation}>Desa la ubicació</button>
         </div>
       )}
+
+      {locationError && <p className="location-error" role="alert">{locationError}</p>}
 
       <p className="calculation-note">{referenceDescription ?? `La posició es calcula prenent ${referenceName} com a referència de ${name}.`}</p>
     </section>
