@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const seasons = [
-  { name: "Hivern", hint: "Orió, Taure, Bessons", className: "winter" },
+  { name: "Hivern", hint: "Orió, Taure, Bessons", className: "winter", availableHref: "/constellacions/taure" },
   { name: "Primavera", hint: "Lleó, Verge, Bover", className: "spring" },
   { name: "Estiu", hint: "Cigne, Lira, Àguila", className: "summer" },
   { name: "Tardor", hint: "Pegàs, Andròmeda, Perseu", className: "autumn" },
@@ -53,7 +53,9 @@ export default function Home() {
               <div className="season-sky" aria-hidden="true">✦ · · ✧ · ✦ · · ✧</div>
               <h3>{season.name}</h3>
               <p>{season.hint}</p>
-              <span className="coming">Properament</span>
+              {season.availableHref
+                ? <Link className="coming season-link" href={season.availableHref}>Taure ja disponible →</Link>
+                : <span className="coming">Properament</span>}
             </article>
           ))}
         </div>
@@ -67,6 +69,7 @@ export default function Home() {
             Tres estrelles alineades et porten al cinturó. Des d’allà pots trobar Sirius, Aldebaran i les Plèiades amb una ruta interactiva.
           </p>
           <Link className="text-link" href="/constellacions/orio">Obre la fitxa interactiva d’Orió →</Link>
+          <Link className="text-link secondary-home-link" href="/constellacions/taure">Continua després amb Taure →</Link>
         </div>
         <div className="mini-orion" aria-hidden="true">
           <span className="s s1" /><span className="s s2" /><span className="s s3" />

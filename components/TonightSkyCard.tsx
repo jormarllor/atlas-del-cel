@@ -10,9 +10,16 @@ import {
 } from "./astronomy";
 
 const BARCELONA = { latitude: 41.3874, longitude: 2.1686, name: "Barcelona" };
-const ALNILAM = { raHours: 5 + 36 / 60 + 12.81335 / 3600, decDeg: -(1 + 12 / 60 + 6.9089 / 3600) };
 const SAVED_LOCATION_KEY = "atlas-del-cel-observation-location";
 const DARK_SKY_SUN_ALTITUDE = -12;
+
+type TonightSkyCardProps = {
+  name: string;
+  referenceName: string;
+  coordinate: { raHours: number; decDeg: number };
+  referenceDescription?: string;
+  objectArticle?: "el" | "la";
+};
 
 function toDatetimeLocal(date: Date) {
   const pad = (n: number) => String(n).padStart(2, "0");
@@ -40,7 +47,7 @@ function formatObservationDate(date: Date) {
   }).format(date);
 }
 
-export default function TonightSkyCard() {
+export default function TonightSkyCard({ name, referenceName, coordinate, referenceDescription, objectArticle = "la" }: TonightSkyCardProps) {
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
   const [place, setPlace] = useState("");
@@ -66,18 +73,18 @@ export default function TonightSkyCard() {
   }, []);
 
   const position = useMemo(
-    () => time && latitude !== null && longitude !== null ? equatorialToHorizontal(ALNILAM, time, latitude, longitude) : null,
-    [time, latitude, longitude],
+    () => time && latitude !== null && longitude !== null ? equatorialToHorizontal(coordinate, time, latitude, longitude) : null,
+    [coordinate, time, latitude, longitude],
   );
   const next = useMemo(
     () => time && latitude !== null && longitude !== null
-      ? nextObservableTime(ALNILAM, time, latitude, longitude, 12, DARK_SKY_SUN_ALTITUDE)
+      ? nextObservableTime(coordinate, time, latitude, longitude, 12, DARK_SKY_SUN_ALTITUDE)
       : null,
-    [time, latitude, longitude],
+    [coordinate, time, latitude, longitude],
   );
 
   if (!time) {
-    return <section className="tonight-card tonight-loading"><p className="section-kicker">AQUESTA NIT · CÀLCUL ASTRONÒMIC</p><p>Calculant la posició d’Orió…</p></section>;
+    return <section className="tonight-card tonight-loading"><p className="section-kicker">AQUESTA NIT · CÀLCUL ASTRONÒMIC</p><p>Calculant la posició de {name}…</p></section>;
   }
 
   const saveLocation = (newLatitude: number, newLongitude: number, name: string) => {
@@ -115,18 +122,19 @@ export default function TonightSkyCard() {
   }
 
   const sunIsLowEnough = solarAltitude(time, latitude, longitude) <= DARK_SKY_SUN_ALTITUDE;
-  const nextOpportunity = next ? `Propera bona oportunitat d’observació: ${formatObservationDate(next)}.` : "No hi ha cap bona oportunitat d’observació durant les properes 36 hores.";
+  const nextOpportunity = next ? `Propera bona oportunitat d’observació: ${formatObservationDate(next)}.` : "No hi ha cap bona oportunitat d’observació durant els propers mesos.";
+  const searchPrompt = objectArticle === "el" ? "Busca’l" : "Busca-la";
 
   const status = position.altitude >= 12 && sunIsLowEnough
-    ? { label: "Orió és observable", className: "visible", detail: `Busca’l cap a ${compassDirection(position.azimuth)}, a uns ${formatDegrees(position.altitude)} sobre l’horitzó.` }
+    ? { label: `${name} és observable`, className: "visible", detail: `${searchPrompt} cap a ${compassDirection(position.azimuth)}, a uns ${formatDegrees(position.altitude)} sobre l’horitzó.` }
     : !sunIsLowEnough
       ? { label: "El cel encara no és prou fosc", className: "low", detail: nextOpportunity }
     : position.altitude > 0
-      ? { label: "Orió és molt baix", className: "low", detail: nextOpportunity }
-      : { label: "Orió és sota l’horitzó", className: "hidden", detail: nextOpportunity };
+      ? { label: `${name} és molt baix`, className: "low", detail: nextOpportunity }
+      : { label: `${name} és sota l’horitzó`, className: "hidden", detail: nextOpportunity };
 
   return (
-    <section className="tonight-card" aria-label="Posició d'Orió per data, hora i ubicació">
+    <section className="tonight-card" aria-label={`Posició de ${name} per data, hora i ubicació`}>
       <div className="tonight-main">
         <div>
           <p className="section-kicker">AQUESTA NIT · CÀLCUL ASTRONÒMIC</p>
@@ -169,7 +177,7 @@ export default function TonightSkyCard() {
         </div>
       )}
 
-      <p className="calculation-note">La posició es calcula prenent Alnilam, al centre del cinturó, com a referència d’Orió.</p>
+      <p className="calculation-note">{referenceDescription ?? `La posició es calcula prenent ${referenceName} com a referència de ${name}.`}</p>
     </section>
   );
 }

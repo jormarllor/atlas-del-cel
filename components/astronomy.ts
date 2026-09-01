@@ -107,8 +107,10 @@ export function nextObservableTime(
   minimumAltitude = 12,
   maximumSolarAltitude = -12,
 ) {
-  const stepMs = 15 * 60 * 1000;
-  const horizon = 36 * 60 * 60 * 1000;
+  // Thirty-minute samples across half a year are precise enough for a guide
+  // while keeping the calculation to only 8,640 lightweight iterations.
+  const stepMs = 30 * 60 * 1000;
+  const horizon = 180 * 24 * 60 * 60 * 1000;
   for (let delta = stepMs; delta <= horizon; delta += stepMs) {
     const candidate = new Date(from.getTime() + delta);
     const position = equatorialToHorizontal(coordinate, candidate, latitudeDeg, longitudeDeg);

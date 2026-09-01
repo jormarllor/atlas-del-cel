@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 type Waypoint = {
@@ -119,6 +120,9 @@ export default function OrionRouteExplorer() {
         </div>
         <p><strong>Com anar-hi:</strong> {active.route}</p>
         <p><strong>Què és:</strong> {active.description}</p>
+        {(active.id === "aldebaran" || active.id === "pleiades") && (
+          <Link className="text-link route-continuation" href="/constellacions/taure">Continua explorant Taure →</Link>
+        )}
         <p className="route-coordinate-note">La posició dels quatre punts del mapa prové de coordenades celestes, no d’una composició gràfica manual.</p>
       </div>
     </div>

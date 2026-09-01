@@ -53,7 +53,13 @@ export default function OrionPage() {
       </section>
 
       <div className="wrap tonight-wrap">
-        <TonightSkyCard />
+        <TonightSkyCard
+          name="Orió"
+          referenceName="Alnilam"
+          coordinate={{ raHours: 5 + 36 / 60 + 12.81335 / 3600, decDeg: -(1 + 12 / 60 + 6.9089 / 3600) }}
+          objectArticle="el"
+          referenceDescription="La posició es calcula prenent Alnilam, al centre del cinturó, com a referència d’Orió."
+        />
       </div>
 
       <section className="wrap section orientation-strip">

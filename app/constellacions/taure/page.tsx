@@ -1,0 +1,137 @@
+import Link from "next/link";
+import TaurusMap from "../../../components/TaurusMap";
+import TaurusRouteExplorer from "../../../components/TaurusRouteExplorer";
+import TonightSkyCard from "../../../components/TonightSkyCard";
+
+const objects = [
+  {
+    name: "Aldebaran",
+    kind: "Gegant taronja",
+    visibility: "Ull nu",
+    text: "Marca visualment l’ull del toro. Apareix dins de la V de les Híades, però és una estrella independent i molt més propera a nosaltres que el cúmul.",
+  },
+  {
+    name: "Híades",
+    kind: "Cúmul obert",
+    visibility: "Ull nu · prismàtics",
+    text: "És un dels cúmuls oberts més propers i les seves estrelles més brillants dibuixen la V que reconeixem com el cap de Taure.",
+  },
+  {
+    name: "Plèiades · M45",
+    kind: "Cúmul obert",
+    visibility: "Ull nu · prismàtics",
+    text: "Una agrupació compacta i espectacular a ull nu. Amb prismàtics apareixen moltes més estrelles i el cúmul guanya profunditat.",
+  },
+  {
+    name: "Nebulosa del Cranc · M1",
+    kind: "Romanent de supernova",
+    visibility: "Telescopi",
+    text: "És el romanent de l’explosió estel·lar observada l’any 1054. Es troba prop de Zeta Tauri, però és molt menys evident que les estrelles de la figura.",
+  },
+];
+
+export default function TaurusPage() {
+  return (
+    <main>
+      <section className="page-hero wrap constellation-hero taurus-hero">
+        <div>
+          <Link href="/" className="back-link">← Constel·lacions</Link>
+          <p className="eyebrow">TARDOR I HIVERN · NIVELL FÀCIL</p>
+          <h1>Taure</h1>
+          <p className="lead">Una V d’estrelles, un ull taronja i un dels cúmuls més famosos del cel.</p>
+        </div>
+        <dl className="facts">
+          <div><dt>Millor època</dt><dd>Tardor i hivern</dd></div>
+          <div><dt>Patró</dt><dd>V de les Híades</dd></div>
+          <div><dt>Estrella de referència</dt><dd>Aldebaran</dd></div>
+          <div><dt>Observació</dt><dd>Ull nu · prismàtics · telescopi</dd></div>
+          <div><dt>Nom oficial IAU</dt><dd>Taurus</dd></div>
+        </dl>
+      </section>
+
+      <div className="wrap tonight-wrap">
+        <TonightSkyCard
+          name="Taure"
+          referenceName="Aldebaran"
+          coordinate={{ raHours: 4 + 35 / 60 + 55.24 / 3600, decDeg: 16 + 30 / 60 + 33.5 / 3600 }}
+          objectArticle="el"
+          referenceDescription="La posició es calcula prenent Aldebaran, l’ull del Taure, com a referència de la constel·lació."
+        />
+      </div>
+
+      <section className="wrap section taurus-recognition">
+        <div className="taurus-v-mark" aria-hidden="true"><span>V</span></div>
+        <div>
+          <p className="section-kicker">EL PATRÓ QUE HAS DE TROBAR</p>
+          <h2>La V de les Híades dibuixa el cap del toro.</h2>
+          <p>Busca una V ampla d’estrelles i fixa’t en el punt taronja que sembla formar-ne un dels braços: és Aldebaran, l’ull de Taure.</p>
+          <p className="science-separation"><strong>Una coincidència de perspectiva:</strong> Aldebaran no forma part físicament de les Híades. Es troba en la mateixa línia de visió, però és molt més propera a la Terra que les estrelles del cúmul.</p>
+        </div>
+      </section>
+
+      <section className="wrap constellation-layout dual-visual-layout">
+        <div>
+          <div className="section-heading compact-heading"><div><p className="section-kicker">MAPA DE RECONEIXEMENT</p><h2>Del cap del toro fins a les banyes i les Plèiades</h2></div></div>
+          <TaurusMap />
+          <p className="map-note stronger-note">Les estrelles, els cúmuls i M1 es projecten a partir de <strong>coordenades equatorials ICRS/J2000</strong>. La figura mitològica és una capa interpretativa separada i no altera la geometria astronòmica.</p>
+        </div>
+        <aside className="find-card">
+          <p className="section-kicker">COM TROBAR-LA</p>
+          <h2>Comença per Aldebaran</h2>
+          <ol>
+            <li>Localitza el <strong>cinturó d’Orió</strong> i prolonga’n la línia en la direcció oposada a Sirius.</li>
+            <li>Atura’t a la primera estrella molt brillant i taronja: <strong>Aldebaran</strong>.</li>
+            <li>Observa les estrelles que l’envolten i reconstrueix la <strong>V de les Híades</strong>.</li>
+            <li>Segueix cap a l’oest del mapa fins al grup compacte de les <strong>Plèiades</strong>.</li>
+            <li>Per a un repte amb telescopi, busca <strong>Zeta Tauri</strong> i, molt a prop, <strong>M1</strong>.</li>
+          </ol>
+        </aside>
+      </section>
+
+      <section className="wrap section">
+        <div className="section-heading"><div><p className="section-kicker">QUÈ ESTÀS VEIENT?</p><h2>Quatre objectes, quatre profunditats diferents</h2></div></div>
+        <div className="object-grid">
+          {objects.map(object => (
+            <article className="object-card" key={object.name}>
+              <div className="object-meta"><span>{object.kind}</span><span>{object.visibility}</span></div>
+              <h3>{object.name}</h3><p>{object.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="myth-section taurus-myth-section">
+        <div className="wrap taurus-myth-layout">
+          <div className="myth-figure" aria-hidden="true"><span>♉</span><p>TAURE</p></div>
+          <div>
+            <p className="section-kicker">LA HISTÒRIA DEL TORO</p>
+            <h2>Zeus, Europa i una figura més antiga que un sol relat</h2>
+            <p>En una de les tradicions gregues més conegudes, Zeus adopta la forma d’un toro blanc, bell i mansuet per acostar-se a <strong>Europa</strong>, princesa fenícia. Quan ella s’hi enfila, el toro entra al mar i la porta fins a <strong>Creta</strong>. Allà, Europa esdevé mare de Minos i dona nom, segons la tradició posterior, al continent.</p>
+            <p>Aquesta identificació explica Taure com el toro de Zeus, però no és universal. La figura celeste del toro és antiquíssima i altres cultures del Pròxim Orient i de la Mediterrània hi van veure els seus propis animals sagrats, divinitats o símbols de força i fertilitat. L’Atlas presenta la versió de Zeus i Europa com una tradició important, no com l’única lectura possible.</p>
+
+            <div className="myth-stories-grid">
+              <article>
+                <p className="section-kicker">LES PLÈIADES</p>
+                <h3>Les set germanes</h3>
+                <p>En la tradició grega són filles d’<strong>Atlas</strong> i <strong>Pleione</strong>. El seu relat té vida pròpia i sovint queda lligat a la persecució d’Orió: les germanes són transformades en estrelles i el caçador continua seguint-les pel cel.</p>
+              </article>
+              <article>
+                <p className="section-kicker">LES HÍADES</p>
+                <h3>Germanes de la pluja</h3>
+                <p>Les Híades també tenen genealogies i variants pròpies. Sovint són presentades com germanes vinculades a la pluja i al dol per la mort del seu germà Hias. No són el mateix grup mític que les Plèiades, encara que totes dues agrupacions apareguin dins de Taure.</p>
+              </article>
+            </div>
+            <p className="myth-conclusion">El cel real connecta visualment el toro, les Híades i les Plèiades. Els seus mites, però, no formen un únic conte: són relats diferents que coincideixen en una mateixa regió del firmament.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="wrap section route-card interactive-route-card">
+        <p className="section-kicker">STAR HOPPING</p>
+        <h2>D’Orió a les Plèiades, i de la V fins a la Nebulosa del Cranc.</h2>
+        <p className="muted route-intro">Comença amb la ruta visible a ull nu i, quan vulguis un repte més exigent, continua cap a M1.</p>
+        <TaurusRouteExplorer />
+      </section>
+    </main>
+  );
+}
