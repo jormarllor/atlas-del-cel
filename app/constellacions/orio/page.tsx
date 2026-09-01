@@ -48,6 +48,7 @@ export default function OrionPage() {
           <div><dt>On mirar</dt><dd>Sud-est al vespre · sud més tard</dd></div>
           <div><dt>Referència</dt><dd>3 estrelles en línia</dd></div>
           <div><dt>Observació</dt><dd>Ull nu · prismàtics</dd></div>
+          <div><dt>Nom oficial IAU</dt><dd>Orion</dd></div>
         </dl>
       </section>
 
@@ -101,31 +102,13 @@ export default function OrionPage() {
       <section className="wrap section artistic-panel">
         <div className="section-heading compact-heading">
           <div>
-            <p className="section-kicker">DUES MANERES DE VEURE ORIÓ</p>
-            <h2>El cel real i la interpretació visual</h2>
-          </div>
-          <p className="muted">El mapa és per orientar-te. La imatge artística és per donar cos al mite.</p>
-        </div>
-        <div className="art-grid">
-          <figure className="art-card">
-            <img src="/images/orio-mitologic.png" alt="Interpretació artística d’Orió com un caçador transparent dibuixat entre les estrelles" />
-            <figcaption>
-              <strong>Imatge artística:</strong> una visualització de qualitat creada per reforçar la lectura mitològica. No substitueix el mapa de reconeixement.
-            </figcaption>
-          </figure>
-          <div className="art-text-card">
-            <h3>Com ho farem a la resta de l’atles</h3>
-            <p>
-              Cada constel·lació tindrà <strong>dues imatges complementàries</strong>: un mapa per reconèixer-la i una imatge
-              artística que tradueixi la història en una escena visual potent.
-            </p>
-            <ul>
-              <li><strong>Mapa:</strong> perquè quan miris amunt puguis identificar les estrelles correctes.</li>
-              <li><strong>Imatge artística:</strong> perquè entenguis quina figura hi imaginaven els antics.</li>
-              <li><strong>Text observacional:</strong> per explicar on mirar, què veus i com saltar a altres objectes.</li>
-            </ul>
+            <p className="section-kicker">ORIÓ IMAGINAT</p>
+            <h2>Orió imaginat · El caçador entre les estrelles</h2>
           </div>
         </div>
+        <figure className="art-card">
+          <img src="/images/orio-mitologic.png" alt="Orió imaginat com un caçador entre les estrelles" />
+        </figure>
       </section>
 
       <section className="wrap section">
@@ -143,7 +126,7 @@ export default function OrionPage() {
 
       <section className="myth-section">
         <div className="wrap myth-grid detailed-myth-grid">
-          <div className="myth-figure" aria-hidden="true"><span>Ω</span><p>ORION</p></div>
+          <div className="myth-figure" aria-hidden="true"><span>Ω</span><p>ORIÓ</p></div>
           <div>
             <p className="section-kicker">LA HISTÒRIA DEL CEL</p>
             <h2>Un gegant, un caçador i diverses morts possibles</h2>
@@ -174,14 +157,13 @@ export default function OrionPage() {
               observacional del cel d’hivern: des del cinturó d’Orió pots saltar cap a <strong>Aldebaran</strong> i després cap a les <strong>Plèiades</strong>, de manera que la narració
               mítica i el recorregut visual del cel queden units.
             </p>
-            <div className="myth-note"><strong>Idea editorial clau:</strong> a la web presentarem la mitologia amb detall i amb variants, indicant clarament quan hi ha versions diferents d’un mateix relat.</div>
           </div>
         </div>
       </section>
 
       <section className="wrap section route-card interactive-route-card">
         <p className="section-kicker">STAR HOPPING</p>
-        <h2>Des del cinturó d’Orió pots anar a Sirius, Aldebaran i les Plèiades. Ara sí: clicables.</h2>
+        <h2>Des del cinturó d’Orió pots anar a Sirius, Aldebaran i les Plèiades.</h2>
         <p className="muted route-intro">
           Prem sobre cada objecte. T’explicarem <strong>com arribar-hi</strong> i <strong>què és</strong>. Això converteix la fitxa en una petita ruta d’observació.
         </p>

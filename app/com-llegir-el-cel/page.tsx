@@ -87,9 +87,10 @@ export default function ReadSkyPage() {
       </section>
 
       <section className="wrap section next-chapter">
-        <p className="section-kicker">ARA SÍ</p>
-        <h2>Ja podem trobar la primera gran figura del cel.</h2>
-        <Link className="button primary" href="/constellacions/orio">2. Troba Orió</Link>
+        <p className="section-kicker">SEGÜENT PAS</p>
+        <h2>Tria una constel·lació adequada per a aquesta nit.</h2>
+        <p>La millor constel·lació per començar depèn de l’època de l’any, l’hora i la ubicació. Orió n’és un gran exemple durant les nits d’hivern.</p>
+        <Link className="button primary" href="/constellacions/orio">Orió com a exemple</Link>
       </section>
     </main>
   );

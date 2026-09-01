@@ -69,19 +69,53 @@ export function formatDegrees(value: number) {
   return `${Math.round(value)}°`;
 }
 
+// Low-precision solar coordinates are ample for deciding whether twilight has ended.
+export function solarEquatorialCoordinate(date: Date): EquatorialCoordinate {
+  const daysSinceJ2000 = julianDate(date) - 2451545.0;
+  const meanLongitude = normalizeDegrees(280.46 + 0.9856474 * daysSinceJ2000);
+  const meanAnomaly = normalizeDegrees(357.528 + 0.9856003 * daysSinceJ2000) * RAD;
+  const eclipticLongitude = normalizeDegrees(
+    meanLongitude + 1.915 * Math.sin(meanAnomaly) + 0.02 * Math.sin(2 * meanAnomaly),
+  ) * RAD;
+  const obliquity = (23.439 - 0.0000004 * daysSinceJ2000) * RAD;
+  const rightAscension = Math.atan2(
+    Math.cos(obliquity) * Math.sin(eclipticLongitude),
+    Math.cos(eclipticLongitude),
+  );
+  const declination = Math.asin(Math.sin(obliquity) * Math.sin(eclipticLongitude));
+
+  return {
+    raHours: normalizeDegrees(rightAscension * DEG) / 15,
+    decDeg: declination * DEG,
+  };
+}
+
+export function solarAltitude(date: Date, latitudeDeg: number, longitudeDeg: number) {
+  return equatorialToHorizontal(
+    solarEquatorialCoordinate(date),
+    date,
+    latitudeDeg,
+    longitudeDeg,
+  ).altitude;
+}
+
 export function nextObservableTime(
   coordinate: EquatorialCoordinate,
   from: Date,
   latitudeDeg: number,
   longitudeDeg: number,
   minimumAltitude = 12,
+  maximumSolarAltitude = -12,
 ) {
   const stepMs = 15 * 60 * 1000;
   const horizon = 36 * 60 * 60 * 1000;
   for (let delta = stepMs; delta <= horizon; delta += stepMs) {
     const candidate = new Date(from.getTime() + delta);
     const position = equatorialToHorizontal(coordinate, candidate, latitudeDeg, longitudeDeg);
-    if (position.altitude >= minimumAltitude) return candidate;
+    if (
+      position.altitude >= minimumAltitude &&
+      solarAltitude(candidate, latitudeDeg, longitudeDeg) <= maximumSolarAltitude
+    ) return candidate;
   }
   return null;
 }

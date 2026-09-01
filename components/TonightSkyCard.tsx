@@ -6,10 +6,13 @@ import {
   equatorialToHorizontal,
   formatDegrees,
   nextObservableTime,
+  solarAltitude,
 } from "./astronomy";
 
 const BARCELONA = { latitude: 41.3874, longitude: 2.1686, name: "Barcelona" };
 const ALNILAM = { raHours: 5 + 36 / 60 + 12.81335 / 3600, decDeg: -(1 + 12 / 60 + 6.9089 / 3600) };
+const SAVED_LOCATION_KEY = "atlas-del-cel-observation-location";
+const DARK_SKY_SUN_ALTITUDE = -12;
 
 function toDatetimeLocal(date: Date) {
   const pad = (n: number) => String(n).padStart(2, "0");
@@ -38,57 +41,89 @@ function formatObservationDate(date: Date) {
 }
 
 export default function TonightSkyCard() {
-  const [latitude, setLatitude] = useState(BARCELONA.latitude);
-  const [longitude, setLongitude] = useState(BARCELONA.longitude);
-  const [place, setPlace] = useState(BARCELONA.name);
+  const [latitude, setLatitude] = useState<number | null>(null);
+  const [longitude, setLongitude] = useState<number | null>(null);
+  const [place, setPlace] = useState("");
   const [time, setTime] = useState<Date | null>(null);
   const [editing, setEditing] = useState(false);
   const [locating, setLocating] = useState(false);
 
   useEffect(() => {
     setTime(defaultObservationTime());
+    try {
+      const saved = window.localStorage.getItem(SAVED_LOCATION_KEY);
+      if (saved) {
+        const location = JSON.parse(saved) as { latitude: number; longitude: number; name: string };
+        if (Number.isFinite(location.latitude) && Number.isFinite(location.longitude)) {
+          setLatitude(location.latitude);
+          setLongitude(location.longitude);
+          setPlace(location.name || "Ubicació desada");
+        }
+      }
+    } catch {
+      // A missing or invalid saved location simply returns the card to its initial prompt.
+    }
   }, []);
 
   const position = useMemo(
-    () => time ? equatorialToHorizontal(ALNILAM, time, latitude, longitude) : null,
+    () => time && latitude !== null && longitude !== null ? equatorialToHorizontal(ALNILAM, time, latitude, longitude) : null,
     [time, latitude, longitude],
   );
   const next = useMemo(
-    () => time ? nextObservableTime(ALNILAM, time, latitude, longitude, 12) : null,
+    () => time && latitude !== null && longitude !== null
+      ? nextObservableTime(ALNILAM, time, latitude, longitude, 12, DARK_SKY_SUN_ALTITUDE)
+      : null,
     [time, latitude, longitude],
   );
 
-  useEffect(() => {
-    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
-      setLatitude(BARCELONA.latitude);
-      setLongitude(BARCELONA.longitude);
-    }
-  }, [latitude, longitude]);
-
-  if (!time || !position) {
+  if (!time) {
     return <section className="tonight-card tonight-loading"><p className="section-kicker">AQUESTA NIT · CÀLCUL ASTRONÒMIC</p><p>Calculant la posició d’Orió…</p></section>;
   }
 
-  const status = position.altitude >= 12
-    ? { label: "Orió és observable", className: "visible", detail: `Busca’l cap a ${compassDirection(position.azimuth)}, a uns ${formatDegrees(position.altitude)} sobre l’horitzó.` }
-    : position.altitude > 0
-      ? { label: "Orió és molt baix", className: "low", detail: `És cap a ${compassDirection(position.azimuth)}, només a ${formatDegrees(position.altitude)} d’altura.` }
-      : { label: "Orió és sota l’horitzó", className: "hidden", detail: next ? `Tornarà a superar uns 12° d’altura ${formatObservationDate(next)}.` : "No arriba a una altura còmoda durant les properes hores." };
+  const saveLocation = (newLatitude: number, newLongitude: number, name: string) => {
+    setLatitude(newLatitude);
+    setLongitude(newLongitude);
+    setPlace(name);
+    window.localStorage.setItem(SAVED_LOCATION_KEY, JSON.stringify({ latitude: newLatitude, longitude: newLongitude, name }));
+  };
 
   const useMyLocation = () => {
     if (!navigator.geolocation) return;
     setLocating(true);
     navigator.geolocation.getCurrentPosition(
       (result) => {
-        setLatitude(result.coords.latitude);
-        setLongitude(result.coords.longitude);
-        setPlace("La teva ubicació");
+        saveLocation(result.coords.latitude, result.coords.longitude, "La teva ubicació");
         setLocating(false);
       },
       () => setLocating(false),
       { enableHighAccuracy: false, timeout: 8000 },
     );
   };
+
+  if (latitude === null || longitude === null || !position) {
+    return (
+      <section className="tonight-card" aria-label="Tria la ubicació d’observació">
+        <p className="section-kicker">AQUESTA NIT · CÀLCUL ASTRONÒMIC</p>
+        <h2>Des d’on observaràs?</h2>
+        <p className="tonight-place">Necessitem la ubicació per calcular què veuràs i quan el cel serà prou fosc.</p>
+        <div className="tonight-actions">
+          <button className="small-button" onClick={useMyLocation}>{locating ? "Localitzant…" : "Utilitza la meva ubicació"}</button>
+          <button className="small-button ghost-small" onClick={() => saveLocation(BARCELONA.latitude, BARCELONA.longitude, "Exemple: Barcelona")}>Exemple: Barcelona</button>
+        </div>
+      </section>
+    );
+  }
+
+  const sunIsLowEnough = solarAltitude(time, latitude, longitude) <= DARK_SKY_SUN_ALTITUDE;
+  const nextOpportunity = next ? `Propera bona oportunitat d’observació: ${formatObservationDate(next)}.` : "No hi ha cap bona oportunitat d’observació durant les properes 36 hores.";
+
+  const status = position.altitude >= 12 && sunIsLowEnough
+    ? { label: "Orió és observable", className: "visible", detail: `Busca’l cap a ${compassDirection(position.azimuth)}, a uns ${formatDegrees(position.altitude)} sobre l’horitzó.` }
+    : !sunIsLowEnough
+      ? { label: "El cel encara no és prou fosc", className: "low", detail: nextOpportunity }
+    : position.altitude > 0
+      ? { label: "Orió és molt baix", className: "low", detail: nextOpportunity }
+      : { label: "Orió és sota l’horitzó", className: "hidden", detail: nextOpportunity };
 
   return (
     <section className="tonight-card" aria-label="Posició d'Orió per data, hora i ubicació">
@@ -130,7 +165,7 @@ export default function TonightSkyCard() {
             <span>Longitud</span>
             <input type="number" step="0.0001" value={longitude} onChange={(event) => setLongitude(Number(event.target.value))} />
           </label>
-          <button className="editor-reset" onClick={() => { setLatitude(BARCELONA.latitude); setLongitude(BARCELONA.longitude); setPlace(BARCELONA.name); }}>Barcelona</button>
+          <button className="editor-reset" onClick={() => saveLocation(BARCELONA.latitude, BARCELONA.longitude, "Exemple: Barcelona")}>Exemple: Barcelona</button>
         </div>
       )}
 
