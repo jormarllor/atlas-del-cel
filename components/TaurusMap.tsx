@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-type TaurusPoint = {
+export type TaurusPoint = {
   id: string;
   name: string;
   raHours: number;
@@ -12,7 +12,7 @@ type TaurusPoint = {
 };
 
 // ICRS/J2000 positions from SIMBAD and NASA's Messier catalogue.
-const stars: TaurusPoint[] = [
+export const TAURUS_STARS: TaurusPoint[] = [
   { id: "aldebaran", name: "Aldebaran", raHours: 4 + 35 / 60 + 55.24 / 3600, decDeg: 16 + 30 / 60 + 33.5 / 3600, magnitude: 0.87, kind: "warm" },
   { id: "gamma", name: "γ Tauri", raHours: 4 + 19 / 60 + 47.604 / 3600, decDeg: 15 + 37 / 60 + 39.51 / 3600, magnitude: 3.65 },
   { id: "delta", name: "δ¹ Tauri", raHours: 4 + 22 / 60 + 56.1 / 3600, decDeg: 17 + 32 / 60 + 33 / 3600, magnitude: 3.77 },
@@ -22,7 +22,7 @@ const stars: TaurusPoint[] = [
   { id: "zeta", name: "Zeta Tauri", raHours: 5 + 37 / 60 + 38.68 / 3600, decDeg: 21 + 8 / 60 + 33 / 3600, magnitude: 3.01 },
 ];
 
-const pleiades: TaurusPoint[] = [
+export const TAURUS_PLEIADES: TaurusPoint[] = [
   { id: "alcyone", name: "Plèiades · M45", raHours: 3 + 47 / 60 + 29.08 / 3600, decDeg: 24 + 6 / 60 + 18.5 / 3600, magnitude: 2.87, kind: "cluster" },
   { id: "atlas", name: "", raHours: 3 + 49 / 60 + 9.7 / 3600, decDeg: 24 + 3 / 60 + 12 / 3600, magnitude: 3.63, kind: "cluster" },
   { id: "electra", name: "", raHours: 3 + 44 / 60 + 52.5 / 3600, decDeg: 24 + 6 / 60 + 48 / 3600, magnitude: 3.7, kind: "cluster" },
@@ -31,7 +31,7 @@ const pleiades: TaurusPoint[] = [
   { id: "taygeta", name: "", raHours: 3 + 45 / 60 + 12.5 / 3600, decDeg: 24 + 28 / 60 + 2 / 3600, magnitude: 4.3, kind: "cluster" },
 ];
 
-const lines = [
+export const TAURUS_LINES = [
   ["gamma", "theta"], ["theta", "aldebaran"],
   ["gamma", "delta"], ["delta", "epsilon"],
   ["epsilon", "elnath"], ["gamma", "zeta"],
@@ -42,7 +42,7 @@ const CENTER_DEC_DEG = 21;
 const SPAN_X_DEG = 32;
 const SPAN_Y_DEG = 20;
 
-function project(point: Pick<TaurusPoint, "raHours" | "decDeg">) {
+export function projectTaurus(point: Pick<TaurusPoint, "raHours" | "decDeg">) {
   const deltaRa = (point.raHours * 15 - CENTER_RA_DEG) * Math.cos(CENTER_DEC_DEG * Math.PI / 180);
   return {
     x: 50 - deltaRa / SPAN_X_DEG * 100,
@@ -59,9 +59,9 @@ export default function TaurusMap() {
   const [showLines, setShowLines] = useState(true);
   const [showNames, setShowNames] = useState(true);
   const [showMyth, setShowMyth] = useState(false);
-  const projected = useMemo(() => [...stars, ...pleiades].map(point => ({ ...point, ...project(point) })), []);
+  const projected = useMemo(() => [...TAURUS_STARS, ...TAURUS_PLEIADES].map(point => ({ ...point, ...projectTaurus(point) })), []);
   const byId = useMemo(() => Object.fromEntries(projected.map(point => [point.id, point])), [projected]);
-  const m1 = project({ raHours: 5 + 34 / 60 + 31.94 / 3600, decDeg: 22 + 52.2 / 3600 });
+  const m1 = projectTaurus({ raHours: 5 + 34 / 60 + 31.94 / 3600, decDeg: 22 + 52.2 / 3600 });
   const headCentre = {
     x: (byId.gamma.x + byId.theta.x + byId.epsilon.x) / 3,
     y: (byId.gamma.y + byId.theta.y + byId.epsilon.y) / 3,
@@ -105,7 +105,7 @@ export default function TaurusMap() {
         )}
         {showLines && (
           <svg className="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            {lines.map(([a, b]) => <line key={`${a}-${b}`} x1={byId[a].x} y1={byId[a].y} x2={byId[b].x} y2={byId[b].y} />)}
+            {TAURUS_LINES.map(([a, b]) => <line key={`${a}-${b}`} x1={byId[a].x} y1={byId[a].y} x2={byId[b].x} y2={byId[b].y} />)}
           </svg>
         )}
         {showStars && projected.map(point => {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TaurusArt from "../../../components/TaurusArt";
 import TaurusMap from "../../../components/TaurusMap";
 import TaurusRouteExplorer from "../../../components/TaurusRouteExplorer";
 import TonightSkyCard from "../../../components/TonightSkyCard";
@@ -104,9 +105,7 @@ export default function TaurusPage() {
         <div className="section-heading compact-heading">
           <div><p className="section-kicker">TAURE IMAGINAT</p><h2>El toro entre les estrelles</h2></div>
         </div>
-        <figure className="art-card">
-          <img src="/images/taure-mitologic.png" alt="Interpretació artística del toro de Taure emergint de la foscor" />
-        </figure>
+        <TaurusArt />
       </section>
 
       <section className="myth-section taurus-myth-section">
@@ -115,19 +114,23 @@ export default function TaurusPage() {
           <div>
             <p className="section-kicker">LA HISTÒRIA DEL TORO</p>
             <h2>Zeus, Europa i una figura més antiga que un sol relat</h2>
-            <p>En una de les tradicions gregues més conegudes, Zeus adopta la forma d’un toro blanc, bell i mansuet per acostar-se a <strong>Europa</strong>, princesa fenícia. Quan ella s’hi enfila, el toro entra al mar i la porta fins a <strong>Creta</strong>. Allà, Europa esdevé mare de Minos i dona nom, segons la tradició posterior, al continent.</p>
-            <p>Aquesta identificació explica Taure com el toro de Zeus, però no és universal. La figura celeste del toro és antiquíssima i altres cultures del Pròxim Orient i de la Mediterrània hi van veure els seus propis animals sagrats, divinitats o símbols de força i fertilitat. L’Atlas presenta la versió de Zeus i Europa com una tradició important, no com l’única lectura possible.</p>
+            <p>En una de les tradicions gregues més conegudes, <strong>Europa</strong> és una princesa fenícia —les fonts discrepen sobre si el seu pare és Agenor o Fènix— que recull flors prop del mar amb altres joves. Zeus adopta la forma d’un toro blanc, bell i aparentment mansuet; Europa s’hi acosta, l’acarona i acaba pujant-li al llom. Aleshores el toro entra a l’aigua i la transporta fins a <strong>Creta</strong>.</p>
+            <p>A l’illa, Europa queda vinculada a la genealogia dels reis cretencs. <strong>Minos</strong> és presentat de manera consistent com a fill seu i de Zeus; altres tradicions hi afegeixen <strong>Radamant</strong> i <strong>Sarpèdon</strong>. Europa es casa després amb el rei Asterió, que acull els fills. La història va tenir moltes versions, i convé no convertir-ne cap en un relat únic i tancat.</p>
+            <p>Higí recull la identificació de la constel·lació amb el toro que va portar Europa fins a Creta, però també n’esmenta una altra: Taure podria recordar <strong>Io</strong>, transformada en vedella. El mateix autor explica per què sovint només s’imagina la part anterior de l’animal: el toro queda ben definit al davant i es difumina al darrere; les <strong>Híades</strong> en dibuixen el rostre.</p>
+            <p>Per tant, relacionar Taure amb Zeus i Europa és una tradició clàssica important, no una equivalència universal. La imatge del toro al cel és més antiga i més àmplia que aquest episodi grec, i altres cultures van llegir aquesta regió amb marcs simbòlics propis. Compartir una figura bovina no significa compartir necessàriament el mateix mite.</p>
 
             <div className="myth-stories-grid">
               <article>
                 <p className="section-kicker">LES PLÈIADES</p>
                 <h3>Les set germanes</h3>
-                <p>En la tradició grega són filles d’<strong>Atlas</strong> i <strong>Pleione</strong>. El seu relat té vida pròpia i sovint queda lligat a la persecució d’Orió: les germanes són transformades en estrelles i el caçador continua seguint-les pel cel.</p>
+                <p>En la genealogia més estesa són set filles d’<strong>Atlas</strong> i <strong>Pleione</strong>: Maia, Electra, Taígete, Alcíone, Celeno, Estèrope i Mèrope. Una tradició explica que <strong>Orió</strong> persegueix Pleione i les filles durant anys fins que Zeus les converteix en estrelles. El moviment aparent del cel manté la imatge: Orió sembla seguir el cúmul cap a l’oest.</p>
+                <p>Altres relats expliquen la seva elevació al cel pel dolor davant el destí d’Atlas o de les Híades. Fins i tot la «setena estrella» poc visible rep explicacions diferents: segons la versió, és Mèrope o Electra qui s’apaga per vergonya o per dol.</p>
               </article>
               <article>
                 <p className="section-kicker">LES HÍADES</p>
                 <h3>Germanes de la pluja</h3>
-                <p>Les Híades també tenen genealogies i variants pròpies. Sovint són presentades com germanes vinculades a la pluja i al dol per la mort del seu germà Hias. No són el mateix grup mític que les Plèiades, encara que totes dues agrupacions apareguin dins de Taure.</p>
+                <p>Les Híades també tenen genealogies, noms i nombres variables. En una versió són filles d’Atlas i germanes d’<strong>Hias</strong>: després de la mort d’Hias en una cacera, el seu plor persistent les porta al cel. Aquesta associació amb les llàgrimes encaixa amb el seu nom tradicional de «plujoses» i amb l’arribada de les pluges estacionals.</p>
+                <p>Una altra tradició les converteix en nimfes que van tenir cura de <strong>Dionís</strong> i que són recompensades amb un lloc entre les estrelles. No són el mateix grup mític que les Plèiades, encara que els dos cúmuls comparteixin la regió celeste de Taure.</p>
               </article>
             </div>
             <p className="myth-conclusion">El cel real connecta visualment el toro, les Híades i les Plèiades. Els seus mites, però, no formen un únic conte: són relats diferents que coincideixen en una mateixa regió del firmament.</p>
