@@ -27,6 +27,11 @@ const astronomySources = [
     detail: "Context físic i observacional de la Nebulosa del Cranc.",
   },
   {
+    name: "NASA Science · Sirius",
+    href: "https://science.nasa.gov/asset/hubble/the-dog-star-sirius-and-its-tiny-companion/",
+    detail: "Naturalesa binària de Sirius i identificació de Sirius B com a nana blanca.",
+  },
+  {
     name: "U.S. Naval Observatory · ICRS",
     href: "https://aa.usno.navy.mil/faq/ICRS_doc",
     detail: "Definició del sistema ICRS i relació amb l’equador i l’equinocci de J2000.0.",
@@ -47,6 +52,13 @@ const classicalSources = [
       { name: "Higí · Astronomica, 2.21", href: "https://topostext.org/work/207" },
       { name: "Biblioteca atribuïda a Apol·lodor, 3.1", href: "https://topostext.org/work/150" },
       { name: "Ovidi · Metamorfosis, 2.833–875", href: "https://topostext.org/work/141" },
+    ],
+  },
+  {
+    constellation: "Ca Major",
+    sources: [
+      { name: "Arat · Fenòmens, 319–352", href: "https://topostext.org/work/551" },
+      { name: "Higí · Astronomica, 2.35", href: "https://topostext.org/work/207" },
     ],
   },
 ];
@@ -86,7 +98,7 @@ export default function SourcesAndMethodologyPage() {
             <p className="section-kicker">TRES CAPES, TRES FUNCIONS</p>
             <h2>Regió oficial, traç pedagògic i figura imaginada</h2>
             <p>
-              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió» o «a Taure» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
+              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure» o «a Ca Major» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
             </p>
             <p>
               Les línies que uneixen estrelles als mapes són una <strong>ajuda visual</strong>. No hi ha una figura de línies oficial de la IAU i el traç pot variar entre atles. Les il·lustracions «imaginades» constitueixen encara una tercera capa: són interpretacions artístiques i mitològiques, separades del mapa científic.
@@ -105,6 +117,7 @@ export default function SourcesAndMethodologyPage() {
             <div className="methodology-pair">
               <p><strong>Orió</strong><span>Alnilam, al centre del cinturó</span></p>
               <p><strong>Taure</strong><span>Aldebaran, l’ull visual del toro</span></p>
+              <p><strong>Ca Major</strong><span>Sirius, l’estrella més brillant del cel nocturn</span></p>
             </div>
             <p>
               Per proposar una bona oportunitat, l’Atlas demana que la referència superi aproximadament els <strong>12° d’altura</strong> i que el Sol sigui a <strong>−12° o menys</strong>, el límit aproximat del final del crepuscle nàutic. La cerca avança en passos de trenta minuts i pot arribar fins a uns 180 dies, de manera que també cobreix constel·lacions fora de temporada.

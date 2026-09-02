@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const seasons = [
-  { name: "Hivern", hint: "Orió, Taure, Bessons", className: "winter", availableHref: "/constellacions" },
+  { name: "Hivern", hint: "Orió, Taure, Ca Major", className: "winter", availableHref: "/constellacions" },
   { name: "Primavera", hint: "Lleó, Verge, Bover", className: "spring" },
   { name: "Estiu", hint: "Cigne, Lira, Àguila", className: "summer" },
   { name: "Tardor", hint: "Pegàs, Andròmeda, Perseu", className: "autumn" },
@@ -23,7 +23,7 @@ export default function Home() {
             <Link className="button primary" href="/com-llegir-el-cel">1. Com llegir el cel</Link>
             <Link className="button ghost" href="/constellacions">Explora constel·lacions</Link>
           </div>
-          <p className="hero-available-links"><span>Disponibles ara</span><Link href="/constellacions/orio">Orió</Link><i>·</i><Link href="/constellacions/taure">Taure</Link></p>
+          <p className="hero-available-links"><span>Disponibles ara</span><Link href="/constellacions/orio">Orió</Link><i>·</i><Link href="/constellacions/taure">Taure</Link><i>·</i><Link href="/constellacions/ca-major">Ca Major</Link></p>
         </div>
       </section>
 
@@ -55,7 +55,7 @@ export default function Home() {
               <h3>{season.name}</h3>
               <p>{season.hint}</p>
               {season.availableHref
-                ? <Link className="coming season-link" href={season.availableHref}>2 fitxes disponibles →</Link>
+                ? <Link className="coming season-link" href={season.availableHref}>3 fitxes disponibles →</Link>
                 : <span className="coming">Properament</span>}
             </article>
           ))}
@@ -64,7 +64,7 @@ export default function Home() {
 
       <section className="wrap section winter-available">
         <div className="section-heading winter-available-heading">
-          <div><p className="section-kicker">JA POTS COMENÇAR</p><h2>Dues portes d’entrada al cel d’hivern</h2></div>
+          <div><p className="section-kicker">JA POTS COMENÇAR</p><h2>Tres portes d’entrada al cel d’hivern</h2></div>
           <Link className="text-link" href="/constellacions">Índex de constel·lacions →</Link>
         </div>
         <div className="winter-available-list">
@@ -73,6 +73,9 @@ export default function Home() {
           </Link>
           <Link href="/constellacions/taure" className="winter-available-entry">
             <span>02</span><div><h3>Taure</h3><p>Una V d’estrelles amb Aldebaran com a ull taronja.</p></div><b>Explora Taure →</b>
+          </Link>
+          <Link href="/constellacions/ca-major" className="winter-available-entry">
+            <span>03</span><div><h3>Ca Major</h3><p>Sirius obre el camí cap al traç del gran gos.</p></div><b>Explora Ca Major →</b>
           </Link>
         </div>
       </section>

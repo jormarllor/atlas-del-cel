@@ -338,7 +338,7 @@ h3 { font-size: 1.25rem; }
 .methodology-entry h2 { font-size:clamp(2rem,3.8vw,3.25rem); margin-bottom:24px; }
 .methodology-entry p { color:#c4ced9; }
 .methodology-entry p:last-child { margin-bottom:0; }
-.methodology-pair { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:26px 0; }
+.methodology-pair { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:26px 0; }
 .methodology-pair p { border:1px solid var(--line); border-radius:18px; padding:18px 20px; margin:0; background:rgba(255,255,255,.025); }
 .methodology-pair strong,.methodology-pair span { display:block; }
 .methodology-pair strong { color:var(--text); font-family:Georgia,serif; font-size:1.4rem; font-weight:500; }
@@ -353,7 +353,7 @@ h3 { font-size: 1.25rem; }
 .methodology-source-list a { display:grid; grid-template-columns:minmax(240px,.8fr) 1.2fr; gap:22px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.08); }
 .methodology-source-list a:hover strong,.classical-source-columns a:hover { color:var(--gold); }
 .methodology-source-list span { color:var(--muted); }
-.classical-source-columns { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.classical-source-columns { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 .classical-source-columns > div { border:1px solid var(--line); border-radius:20px; padding:24px; background:rgba(255,255,255,.025); }
 .classical-source-columns h4 { margin:0 0 12px; font-family:Georgia,serif; font-size:1.55rem; font-weight:500; }
 .classical-source-columns ul { margin:0; padding-left:18px; color:var(--muted); }
@@ -374,10 +374,43 @@ h3 { font-size: 1.25rem; }
 .winter-available-entry p { color:var(--muted); margin-bottom:0; }
 .winter-available-entry b { color:var(--gold); font-size:.88rem; }
 
+/* Canis Major page: Sirius as the editorial entry point */
+.canis-major-recognition { display:grid; grid-template-columns:.46fr 1.54fr; gap:58px; align-items:center; border-bottom:1px solid var(--line); }
+.sirius-beacon { min-height:300px; position:relative; display:grid; place-items:center; border:1px solid var(--line); border-radius:26px; overflow:hidden; background:radial-gradient(circle, rgba(188,222,255,.18), transparent 46%), #050d17; }
+.sirius-beacon:before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,.7) 0 1px,transparent 1.2px); background-size:49px 49px; opacity:.12; transform:rotate(-8deg) scale(1.15); }
+.sirius-beacon span { position:relative; width:22px; height:22px; border-radius:50%; background:#f8fbff; box-shadow:0 0 15px 5px rgba(207,231,255,.65),0 0 48px 18px rgba(119,178,234,.22); }
+.sirius-beacon i { position:absolute; width:120px; height:1px; background:linear-gradient(90deg,transparent,rgba(220,239,255,.45),transparent); transform:rotate(-22deg); }
+.sirius-beacon i:after { content:""; position:absolute; left:50%; top:-60px; width:1px; height:120px; background:linear-gradient(transparent,rgba(220,239,255,.38),transparent); }
+.sirius-beacon b { position:absolute; bottom:24px; color:rgba(228,198,124,.68); font-size:.68rem; letter-spacing:.32em; }
+.canis-major-map .map-star.sirius { background:#f8fbff; box-shadow:0 0 18px 5px rgba(215,236,255,.72),0 0 34px 10px rgba(124,183,239,.22); }
+.label-sirius { color:#f5e6b7; left:auto; right:12px; text-align:right; }
+.label-mirzam { left:auto; right:10px; text-align:right; }
+.label-wezen { top:auto; bottom:13px; }
+.label-adhara { top:auto; bottom:14px; left:auto; right:10px; text-align:right; }
+.label-aludra { top:auto; bottom:14px; }
+.label-furud { top:auto; bottom:14px; left:auto; right:10px; text-align:right; }
+.m41-marker { color:#c9ddf4; }
+.m41-marker span { text-shadow:0 0 11px rgba(184,216,250,.68); }
+.canis-major-myth { z-index:2; pointer-events:none; }
+.canis-major-myth path { stroke:rgba(228,198,124,.39); stroke-width:.72; stroke-dasharray:3 2; }
+.canis-major-myth-eye { fill:none; stroke:rgba(228,198,124,.58); stroke-width:.68; }
+.canis-major-myth-layout { display:grid; grid-template-columns:.58fr 1.42fr; gap:72px; align-items:start; }
+.canis-major-myth-figure { border-radius:42% 42% 34% 34%; }
+.canis-major-myth-figure span { font-size:7rem; text-shadow:0 0 35px rgba(228,198,124,.14); }
+.canis-major-art-card { position:relative; }
+.canis-major-art-overlay { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.canis-major-art-overlay line { stroke:rgba(213,235,255,.22); stroke-width:.58px; vector-effect:non-scaling-stroke; }
+.canis-major-art-points { position:absolute; inset:0; pointer-events:none; }
+.canis-major-art-star { position:absolute; width:3px; height:3px; display:block; border-radius:50%; transform:translate(-50%,-50%); background:rgba(239,248,255,.72); box-shadow:0 0 5px rgba(179,218,255,.45); }
+.canis-major-art-star.sirius { width:7px; height:7px; background:#fff8dd; box-shadow:0 0 7px rgba(222,240,255,.85),0 0 17px rgba(130,194,255,.45); }
+.route-target-static.sirius span { width:18px; height:18px; background:#f8fbff; box-shadow:0 0 20px rgba(199,229,255,.75); }
+
 @media (max-width: 900px) {
-  .taurus-recognition,.taurus-myth-layout { grid-template-columns:1fr; }
+  .taurus-recognition,.taurus-myth-layout,.canis-major-recognition,.canis-major-myth-layout { grid-template-columns:1fr; }
   .taurus-v-mark { min-height:220px; }
+  .sirius-beacon { min-height:220px; }
   .methodology-source-group { grid-template-columns:1fr; gap:10px; }
+  .classical-source-columns { grid-template-columns:repeat(2,1fr); }
 }
 
 @media (max-width: 600px) {

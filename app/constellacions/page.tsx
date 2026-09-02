@@ -13,6 +13,12 @@ const available = [
     href: "/constellacions/taure",
     number: "02",
   },
+  {
+    name: "Ca Major",
+    pattern: "Sirius i el traç principal del gos",
+    href: "/constellacions/ca-major",
+    number: "03",
+  },
 ];
 
 export default function ConstellationsPage() {
@@ -27,7 +33,7 @@ export default function ConstellationsPage() {
       <section className="wrap section constellation-season">
         <div className="constellation-season-heading">
           <div><p className="section-kicker">ESTACIÓ 01</p><h2>Hivern</h2></div>
-          <p>Dos patrons fàcils per començar i una mateixa ruta celeste que els connecta.</p>
+          <p>Tres patrons fàcils per començar i unes rutes celestes que els connecten.</p>
         </div>
 
         <div className="constellation-index-list">
@@ -43,7 +49,7 @@ export default function ConstellationsPage() {
 
         <div className="constellations-coming" aria-label="Properes constel·lacions d’hivern">
           <span>Properament</span>
-          <p>Ca Major · Bessons · Auriga</p>
+          <p>Bessons · Auriga</p>
         </div>
       </section>
 

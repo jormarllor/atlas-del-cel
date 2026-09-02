@@ -123,6 +123,9 @@ export default function OrionRouteExplorer() {
         {(active.id === "aldebaran" || active.id === "pleiades") && (
           <Link className="text-link route-continuation" href="/constellacions/taure">Continua explorant Taure →</Link>
         )}
+        {active.id === "sirius" && (
+          <Link className="text-link route-continuation" href="/constellacions/ca-major">Continua explorant Ca Major →</Link>
+        )}
         <p className="route-coordinate-note">La posició dels quatre punts del mapa prové de coordenades celestes, no d’una composició gràfica manual.</p>
       </div>
     </div>
