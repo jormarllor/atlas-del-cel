@@ -80,19 +80,23 @@ export default function GeminiMap() {
         <div className="sky-orientation" aria-hidden="true"><span>E</span><b>mirant cap al sud</b><span>O</span></div>
         {showMyth && (
           <svg className="myth-overlay detailed gemini-myth" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <circle cx={byId.pollux.x} cy={byId.pollux.y} r="3.15" />
-            <circle cx={byId.castor.x} cy={byId.castor.y} r="3.15" />
-            <path d={`M ${byId.pollux.x} ${byId.pollux.y + 3.2} Q ${byId.wasat.x - 2} ${byId.wasat.y - 6} ${byId.wasat.x} ${byId.wasat.y} Q ${byId.mekbuda.x - 2} ${byId.mekbuda.y - 2} ${byId.mekbuda.x} ${byId.mekbuda.y}`} />
-            <path d={`M ${byId.pollux.x - 1.4} ${byId.pollux.y + 3.2} Q ${byId.wasat.x - 7} ${byId.wasat.y - 1} ${byId.wasat.x - 5} ${byId.wasat.y + 7}`} />
-            <path d={`M ${byId.wasat.x} ${byId.wasat.y} Q ${byId.wasat.x + 7} ${byId.wasat.y + 1} ${byId.mekbuda.x} ${byId.mekbuda.y}`} />
-            <path d={`M ${byId.mekbuda.x} ${byId.mekbuda.y} Q ${byId.alhena.x - 2} ${byId.alhena.y - 4} ${byId.alhena.x} ${byId.alhena.y}`} />
-            <path d={`M ${byId.mekbuda.x} ${byId.mekbuda.y} Q ${byId.mekbuda.x - 8} ${byId.mekbuda.y + 10} ${byId.mekbuda.x - 7} ${byId.mekbuda.y + 17}`} />
+            <g className="gemini-figure gemini-figure-pollux">
+              <path d={`M ${byId.pollux.x - 2.3} ${byId.pollux.y + 1.1} Q ${byId.pollux.x - 3} ${byId.pollux.y - 1.5} ${byId.pollux.x - .8} ${byId.pollux.y - 2.7} Q ${byId.pollux.x + 1.8} ${byId.pollux.y - 3} ${byId.pollux.x + 2.5} ${byId.pollux.y - .6} Q ${byId.pollux.x + 2.4} ${byId.pollux.y + 1.2} ${byId.pollux.x + 1} ${byId.pollux.y + 2.2}`} />
+              <path d={`M ${byId.pollux.x - .7} ${byId.pollux.y + 2.2} Q ${byId.pollux.x + 1.6} ${byId.pollux.y + 4.1} ${byId.pollux.x + 5.2} ${byId.pollux.y + 5.7} Q ${byId.wasat.x - 4.5} ${byId.wasat.y - 7.5} ${byId.wasat.x - 2.1} ${byId.wasat.y - 1}`} />
+              <path d={`M ${byId.pollux.x + 1} ${byId.pollux.y + 2.2} Q ${byId.wasat.x + 1.8} ${byId.wasat.y - 8} ${byId.wasat.x + 1.5} ${byId.wasat.y} Q ${byId.mekbuda.x - 1.2} ${byId.mekbuda.y - 2.4} ${byId.mekbuda.x} ${byId.mekbuda.y}`} />
+              <path d={`M ${byId.pollux.x + 4.8} ${byId.pollux.y + 5.8} Q ${byId.wasat.x - 1} ${byId.wasat.y - 2.5} ${byId.wasat.x - 5.2} ${byId.wasat.y + 5.8}`} />
+              <path d={`M ${byId.mekbuda.x} ${byId.mekbuda.y} Q ${byId.alhena.x - 2} ${byId.alhena.y - 4} ${byId.alhena.x} ${byId.alhena.y}`} />
+              <path d={`M ${byId.mekbuda.x} ${byId.mekbuda.y} Q ${byId.mekbuda.x - 6.4} ${byId.mekbuda.y + 9} ${byId.mekbuda.x - 5.3} ${byId.mekbuda.y + 15}`} />
+            </g>
 
-            <path d={`M ${byId.castor.x} ${byId.castor.y + 3.2} Q ${byId.mebsuta.x - 4} ${byId.mebsuta.y - 5} ${byId.mebsuta.x} ${byId.mebsuta.y} Q ${byId.tejat.x - 4} ${byId.tejat.y - 1} ${byId.tejat.x} ${byId.tejat.y}`} />
-            <path d={`M ${byId.castor.x + 1.3} ${byId.castor.y + 3.2} Q ${byId.mebsuta.x + 5} ${byId.mebsuta.y - 4} ${byId.mebsuta.x + 8} ${byId.mebsuta.y + 4}`} />
-            <path d={`M ${byId.mebsuta.x} ${byId.mebsuta.y} Q ${byId.mebsuta.x - 8} ${byId.mebsuta.y + 8} ${byId.tejat.x} ${byId.tejat.y}`} />
-            <path d={`M ${byId.tejat.x} ${byId.tejat.y} Q ${byId.propus.x - 1} ${byId.propus.y + 6} ${byId.propus.x} ${byId.propus.y}`} />
-            <path d={`M ${byId.tejat.x} ${byId.tejat.y} Q ${byId.tejat.x - 7} ${byId.tejat.y + 11} ${byId.tejat.x - 4} ${byId.tejat.y + 17}`} />
+            <g className="gemini-figure gemini-figure-castor">
+              <path d={`M ${byId.castor.x - 2.3} ${byId.castor.y + 1.1} Q ${byId.castor.x - 3} ${byId.castor.y - 1.5} ${byId.castor.x - .8} ${byId.castor.y - 2.7} Q ${byId.castor.x + 1.8} ${byId.castor.y - 3} ${byId.castor.x + 2.5} ${byId.castor.y - .6} Q ${byId.castor.x + 2.4} ${byId.castor.y + 1.2} ${byId.castor.x + 1} ${byId.castor.y + 2.2}`} />
+              <path d={`M ${byId.castor.x - .7} ${byId.castor.y + 2.2} Q ${byId.castor.x + 2.4} ${byId.castor.y + 4.5} ${byId.castor.x + 6.2} ${byId.castor.y + 5.8} Q ${byId.mebsuta.x - 4} ${byId.mebsuta.y - 6.2} ${byId.mebsuta.x - 1.8} ${byId.mebsuta.y - .8}`} />
+              <path d={`M ${byId.castor.x + 1} ${byId.castor.y + 2.2} Q ${byId.mebsuta.x + 1.8} ${byId.mebsuta.y - 7.5} ${byId.mebsuta.x + 1.5} ${byId.mebsuta.y} Q ${byId.tejat.x - 1} ${byId.tejat.y - 2.2} ${byId.tejat.x} ${byId.tejat.y}`} />
+              <path d={`M ${byId.castor.x + 6} ${byId.castor.y + 5.8} Q ${byId.mebsuta.x - 1.5} ${byId.mebsuta.y - 2} ${byId.mebsuta.x + 5.8} ${byId.mebsuta.y + 4.5}`} />
+              <path d={`M ${byId.tejat.x} ${byId.tejat.y} Q ${byId.propus.x - 1} ${byId.propus.y + 2.2} ${byId.propus.x} ${byId.propus.y}`} />
+              <path d={`M ${byId.tejat.x} ${byId.tejat.y} Q ${byId.tejat.x - 5.8} ${byId.tejat.y + 9} ${byId.tejat.x - 3.8} ${byId.tejat.y + 15}`} />
+            </g>
           </svg>
         )}
         {showLines && (
