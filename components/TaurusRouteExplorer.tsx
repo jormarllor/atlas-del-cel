@@ -51,7 +51,7 @@ export default function TaurusRouteExplorer() {
       </div>
       <div className="route-visual accurate-route" role="img" aria-label={route.title}>
         <div className="route-grid" aria-hidden="true" />
-        <div className="route-axis" aria-hidden="true"><span>E</span><b>mapa celeste · ICRS/J2000</b><span>O</span></div>
+        <div className="route-axis" aria-hidden="true"><span>E</span><b>mapa celeste · ICRS · època J2000.0</b><span>O</span></div>
         <svg className="route-line route-polyline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
           <polyline points={route.keys.map(key => `${projected[key].x},${projected[key].y}`).join(" ")} />
         </svg>
@@ -67,7 +67,7 @@ export default function TaurusRouteExplorer() {
           <div className="route-pill-group"><span>{route.visibility}</span></div>
         </div>
         <p>{route.text}</p>
-        <p className="route-coordinate-note">La geometria de la ruta prové de coordenades celestes ICRS/J2000.</p>
+        <p className="route-coordinate-note">La geometria de la ruta prové de coordenades celestes en el sistema ICRS, referides a l’època J2000.0.</p>
       </div>
     </div>
   );

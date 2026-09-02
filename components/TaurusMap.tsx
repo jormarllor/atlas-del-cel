@@ -74,9 +74,9 @@ export default function TaurusMap() {
         <button className={showLines ? "active" : ""} aria-pressed={showLines} onClick={() => setShowLines(!showLines)}>Línies</button>
         <button className={showNames ? "active" : ""} aria-pressed={showNames} onClick={() => setShowNames(!showNames)}>Noms</button>
         <button className={showMyth ? "active" : ""} aria-pressed={showMyth} onClick={() => setShowMyth(!showMyth)}>Figura mitològica</button>
-        <span className="map-coordinate-badge">ICRS · J2000</span>
+        <span className="map-coordinate-badge">ICRS · època J2000.0</span>
       </div>
-      <div className="star-map accurate-map taurus-map" role="img" aria-label="Mapa de Taure projectat a partir de coordenades equatorials ICRS J2000">
+      <div className="star-map accurate-map taurus-map" role="img" aria-label="Mapa de Taure projectat a partir de coordenades equatorials ICRS referides a l’època J2000.0">
         <div className="star-dust" aria-hidden="true" />
         <div className="sky-orientation" aria-hidden="true"><span>E</span><b>mirant cap al sud</b><span>O</span></div>
         {showMyth && (

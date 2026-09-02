@@ -23,7 +23,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
         {children}
         <footer className="site-footer">
-          <p>Atlas del Cel · astronomia, observació i mites sota una mateixa nit.</p>
+          <div className="wrap site-footer-inner">
+            <p>Atlas del Cel · astronomia, observació i mites sota una mateixa nit.</p>
+            <Link href="/fonts-i-metodologia">Fonts i metodologia</Link>
+          </div>
         </footer>
       </body>
     </html>

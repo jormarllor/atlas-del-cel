@@ -2,6 +2,7 @@ import Link from "next/link";
 import TaurusArt from "../../../components/TaurusArt";
 import TaurusMap from "../../../components/TaurusMap";
 import TaurusRouteExplorer from "../../../components/TaurusRouteExplorer";
+import SourceNotes, { type SourceReference } from "../../../components/SourceNotes";
 import TonightSkyCard from "../../../components/TonightSkyCard";
 
 const objects = [
@@ -28,6 +29,45 @@ const objects = [
     kind: "Romanent de supernova",
     visibility: "Telescopi",
     text: "És el romanent de l’explosió estel·lar observada l’any 1054. Es troba prop de Zeta Tauri, però és molt menys evident que les estrelles de la figura.",
+  },
+];
+
+const sources: SourceReference[] = [
+  {
+    title: "IAU · The Constellations",
+    detail: "Definició i límits oficials de Taure",
+    href: "https://iauarchive.eso.org/public/themes/constellations/",
+    consultationDate: "2026-09-02",
+  },
+  {
+    title: "SIMBAD · CDS",
+    detail: "Coordenades d’Aldebaran, les Híades, les banyes i les Plèiades",
+    href: "https://simbad.cds.unistra.fr/simbad/",
+    consultationDate: "2026-09-02",
+  },
+  {
+    title: "NASA Science · Messier 1",
+    detail: "Naturalesa i observació de la Nebulosa del Cranc",
+    href: "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-1/",
+    consultationDate: "2026-09-02",
+  },
+  {
+    title: "Higí · Astronomica, 2.21",
+    detail: "El toro d’Europa, les Híades i les Plèiades",
+    href: "https://topostext.org/work/207",
+    consultationDate: "2026-09-02",
+  },
+  {
+    title: "Biblioteca atribuïda a Apol·lodor, 3.1",
+    detail: "Europa, Zeus, Creta i la genealogia cretenca",
+    href: "https://topostext.org/work/150",
+    consultationDate: "2026-09-02",
+  },
+  {
+    title: "Ovidi · Metamorfosis, 2.833–875",
+    detail: "La trobada d’Europa amb el toro",
+    href: "https://topostext.org/work/141",
+    consultationDate: "2026-09-02",
   },
 ];
 
@@ -74,7 +114,7 @@ export default function TaurusPage() {
         <div>
           <div className="section-heading compact-heading"><div><p className="section-kicker">MAPA DE RECONEIXEMENT</p><h2>Del cap del toro fins a les banyes i les Plèiades</h2></div></div>
           <TaurusMap />
-          <p className="map-note stronger-note">Les estrelles, els cúmuls i M1 es projecten a partir de <strong>coordenades equatorials ICRS/J2000</strong>. Les línies són una ajuda visual i poden variar entre atles: la IAU defineix les constel·lacions com a regions del cel, no com aquests dibuixos. La figura mitològica és una capa interpretativa separada.</p>
+          <p className="map-note stronger-note">Les estrelles, els cúmuls i M1 es projecten a partir de <strong>coordenades equatorials en el sistema ICRS, referides a l’època J2000.0</strong>. Les línies són una ajuda visual i poden variar entre atles: la IAU defineix les constel·lacions com a regions del cel, no com aquests dibuixos. La figura mitològica és una capa interpretativa separada.</p>
         </div>
         <aside className="find-card">
           <p className="section-kicker">COM TROBAR-LA</p>
@@ -114,8 +154,8 @@ export default function TaurusPage() {
           <div>
             <p className="section-kicker">LA HISTÒRIA DEL TORO</p>
             <h2>Zeus, Europa i una figura més antiga que un sol relat</h2>
-            <p>En una de les tradicions gregues més conegudes, <strong>Europa</strong> és una princesa fenícia —les fonts discrepen sobre si el seu pare és Agenor o Fènix— que recull flors prop del mar amb altres joves. Zeus adopta la forma d’un toro blanc, bell i aparentment mansuet; Europa s’hi acosta, l’acarona i acaba pujant-li al llom. Aleshores el toro entra a l’aigua i la transporta fins a <strong>Creta</strong>.</p>
-            <p>A l’illa, Europa queda vinculada a la genealogia dels reis cretencs. <strong>Minos</strong> és presentat de manera consistent com a fill seu i de Zeus; altres tradicions hi afegeixen <strong>Radamant</strong> i <strong>Sarpèdon</strong>. Europa es casa després amb el rei Asterió, que acull els fills. La història va tenir moltes versions, i convé no convertir-ne cap en un relat únic i tancat.</p>
+            <p>En una de les tradicions grecollatines més conegudes, <strong>Europa</strong> és una princesa fenícia —les fonts discrepen sobre si el seu pare és Agenor o Fènix— que es troba prop del mar amb altres joves. Zeus adopta la forma d’un toro blanc, bell i aparentment mansuet; Europa s’hi acosta, l’acarona i acaba pujant-li al llom. Aleshores el toro entra a l’aigua i la transporta fins a <strong>Creta</strong>. Ovidi situa la trobada entre els ramats de la costa i en destaca la confiança gradual d’Europa en l’animal.</p>
+            <p>A l’illa, Europa queda vinculada a la genealogia dels reis cretencs. Una tradició la fa mare, amb Zeus, de <strong>Minos</strong>, <strong>Radamant</strong> i <strong>Sarpèdon</strong>; altres genealogies discrepen sobre alguns d’aquests parentius. Europa es casa després amb Asterió, rei de Creta, que acull els fills. La història va tenir moltes versions, i convé no convertir-ne cap en un relat únic i tancat.</p>
             <p>Higí recull la identificació de la constel·lació amb el toro que va portar Europa fins a Creta, però també n’esmenta una altra: Taure podria recordar <strong>Io</strong>, transformada en vedella. El mateix autor explica per què sovint només s’imagina la part anterior de l’animal: el toro queda ben definit al davant i es difumina al darrere; les <strong>Híades</strong> en dibuixen el rostre.</p>
             <p>Per tant, relacionar Taure amb Zeus i Europa és una tradició clàssica important, no una equivalència universal. La imatge del toro al cel és més antiga i més àmplia que aquest episodi grec, i altres cultures van llegir aquesta regió amb marcs simbòlics propis. Compartir una figura bovina no significa compartir necessàriament el mateix mite.</p>
 
@@ -124,12 +164,12 @@ export default function TaurusPage() {
                 <p className="section-kicker">LES PLÈIADES</p>
                 <h3>Les set germanes</h3>
                 <p>En la genealogia més estesa són set filles d’<strong>Atlas</strong> i <strong>Pleione</strong>: Maia, Electra, Taígete, Alcíone, Celeno, Estèrope i Mèrope. Una tradició explica que <strong>Orió</strong> persegueix Pleione i les filles durant anys fins que Zeus les converteix en estrelles. El moviment aparent del cel manté la imatge: Orió sembla seguir el cúmul cap a l’oest.</p>
-                <p>Altres relats expliquen la seva elevació al cel pel dolor davant el destí d’Atlas o de les Híades. Fins i tot la «setena estrella» poc visible rep explicacions diferents: segons la versió, és Mèrope o Electra qui s’apaga per vergonya o per dol.</p>
+                <p>Una altra genealogia antiga les vincula amb les Híades i explica el seu destí celeste a partir del dol per les germanes. Fins i tot la «setena estrella» poc visible rep explicacions diferents: segons la versió, és Mèrope o Electra qui s’apaga per vergonya o per dol.</p>
               </article>
               <article>
                 <p className="section-kicker">LES HÍADES</p>
-                <h3>Germanes de la pluja</h3>
-                <p>Les Híades també tenen genealogies, noms i nombres variables. En una versió són filles d’Atlas i germanes d’<strong>Hias</strong>: després de la mort d’Hias en una cacera, el seu plor persistent les porta al cel. Aquesta associació amb les llàgrimes encaixa amb el seu nom tradicional de «plujoses» i amb l’arribada de les pluges estacionals.</p>
+                <h3>El dol per Hias</h3>
+                <p>Les Híades també tenen genealogies, noms i nombres variables. Higí conserva una versió en què són filles d’Atlas i germanes d’<strong>Hias</strong>: després que ell mori en una cacera de lleons, les germanes s’entreguen a un dol tan intens que moren i queden associades a les estrelles.</p>
                 <p>Una altra tradició les converteix en nimfes que van tenir cura de <strong>Dionís</strong> i que són recompensades amb un lloc entre les estrelles. No són el mateix grup mític que les Plèiades, encara que els dos cúmuls comparteixin la regió celeste de Taure.</p>
               </article>
             </div>
@@ -148,6 +188,8 @@ export default function TaurusPage() {
       <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">
         <Link href="/constellacions/orio"><strong>← Orió</strong><span>Constel·lació anterior</span></Link>
       </nav>
+
+      <SourceNotes references={sources} />
     </main>
   );
 }

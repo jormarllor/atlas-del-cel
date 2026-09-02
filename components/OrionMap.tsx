@@ -75,7 +75,7 @@ export default function OrionMap() {
         <button className={showLines ? "active" : ""} aria-pressed={showLines} onClick={() => setShowLines(!showLines)}>Línies</button>
         <button className={showNames ? "active" : ""} aria-pressed={showNames} onClick={() => setShowNames(!showNames)}>Noms</button>
         <button className={showMyth ? "active" : ""} aria-pressed={showMyth} onClick={() => setShowMyth(!showMyth)}>Figura mitològica</button>
-        <span className="map-coordinate-badge">ICRS · J2000</span>
+        <span className="map-coordinate-badge">ICRS · època J2000.0</span>
       </div>
 
       <div className="star-map accurate-map" role="img" aria-label="Mapa d’Orió projectat a partir de coordenades equatorials de les estrelles principals">

@@ -89,7 +89,7 @@ export default function OrionRouteExplorer() {
 
       <div className="route-visual accurate-route" role="img" aria-label={`Mapa de la ruta real des del cinturó d’Orió fins a ${active.name}`}>
         <div className="route-grid" aria-hidden="true" />
-        <div className="route-axis" aria-hidden="true"><span>E</span><b>mapa celeste · ICRS/J2000</b><span>O</span></div>
+        <div className="route-axis" aria-hidden="true"><span>E</span><b>mapa celeste · ICRS · època J2000.0</b><span>O</span></div>
 
         <div className="route-point route-belt" style={{ left: `${beltPoint.x}%`, top: `${beltPoint.y}%` }}>
           <span /><b>Cinturó d’Orió</b>
