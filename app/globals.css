@@ -393,7 +393,7 @@ h3 { font-size: 1.25rem; }
 .m41-marker span { text-shadow:0 0 11px rgba(184,216,250,.68); }
 .canis-major-myth { z-index:2; pointer-events:none; }
 .canis-major-myth path { stroke:rgba(228,198,124,.39); stroke-width:.72; stroke-dasharray:3 2; }
-.canis-major-myth-eye { fill:none; stroke:rgba(228,198,124,.58); stroke-width:.68; }
+.canis-major-myth .canis-major-myth-detail { stroke:rgba(228,198,124,.3); stroke-width:.56; }
 .canis-major-myth-layout { display:grid; grid-template-columns:.58fr 1.42fr; gap:72px; align-items:start; }
 .canis-major-myth-figure { border-radius:42% 42% 34% 34%; }
 .canis-major-myth-figure span { font-size:7rem; text-shadow:0 0 35px rgba(228,198,124,.14); }

@@ -76,9 +76,35 @@ export default function CanisMajorMap() {
         <div className="sky-orientation" aria-hidden="true"><span>E</span><b>mirant cap al sud</b><span>O</span></div>
         {showMyth && (
           <svg className="myth-overlay detailed canis-major-myth" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path className="canis-major-myth-back" d={`M ${byId.mirzam.x} ${byId.mirzam.y} Q ${byId.sirius.x + 2} ${byId.sirius.y - 8} ${byId.sirius.x - 5} ${byId.sirius.y + 8} Q ${byId.wezen.x} ${byId.wezen.y - 15} ${byId.aludra.x} ${byId.aludra.y}`} />
-            <path className="canis-major-myth-body" d={`M ${byId.sirius.x - 5} ${byId.sirius.y + 8} Q ${byId.wezen.x + 19} ${byId.wezen.y + 7} ${byId.furud.x} ${byId.furud.y} M ${byId.wezen.x} ${byId.wezen.y} L ${byId.adhara.x} ${byId.adhara.y} M ${byId.wezen.x} ${byId.wezen.y} L ${byId.aludra.x} ${byId.aludra.y}`} />
-            <circle className="canis-major-myth-eye" cx={byId.sirius.x} cy={byId.sirius.y} r="1.8" />
+            <path
+              className="canis-major-myth-outline"
+              d={`M ${byId.sirius.x} ${byId.sirius.y}
+                Q ${byId.sirius.x + 12} ${byId.sirius.y + 6} ${byId.mirzam.x} ${byId.mirzam.y}
+                Q ${byId.mirzam.x - 2} ${byId.mirzam.y - 8} ${byId.sirius.x + 14} ${byId.sirius.y - 9}
+                L ${byId.sirius.x + 7} ${byId.sirius.y - 9}
+                L ${byId.sirius.x + 2} ${byId.sirius.y - 12}
+                L ${byId.sirius.x - 2} ${byId.sirius.y - 6}
+                Q ${byId.sirius.x - 5} ${byId.sirius.y + 20} ${byId.sirius.x - 7} ${byId.wezen.y - 20}
+                Q ${byId.wezen.x + 10} ${byId.wezen.y - 14} ${byId.wezen.x} ${byId.wezen.y}
+                Q ${byId.aludra.x + 10} ${byId.aludra.y - 18} ${byId.aludra.x} ${byId.aludra.y}`}
+            />
+            <path
+              className="canis-major-myth-outline"
+              d={`M ${byId.sirius.x} ${byId.sirius.y}
+                Q ${byId.sirius.x + 7} ${byId.sirius.y + 20} ${byId.sirius.x + 6} ${byId.wezen.y - 19}
+                Q ${byId.furud.x - 12} ${byId.wezen.y + 1} ${byId.furud.x} ${byId.furud.y}
+                Q ${byId.furud.x - 6} ${byId.furud.y + 1} ${byId.furud.x - 12} ${byId.furud.y - 1}
+                Q ${byId.wezen.x + 24} ${byId.wezen.y + 3} ${byId.wezen.x + 15} ${byId.wezen.y + 3}
+                Q ${byId.adhara.x + 7} ${byId.adhara.y - 5} ${byId.adhara.x} ${byId.adhara.y}
+                Q ${byId.adhara.x - 4} ${byId.adhara.y + 1} ${byId.adhara.x - 7} ${byId.adhara.y - 1}
+                Q ${byId.wezen.x - 1} ${byId.wezen.y + 7} ${byId.wezen.x} ${byId.wezen.y}`}
+            />
+            <path
+              className="canis-major-myth-detail"
+              d={`M ${byId.sirius.x + 4} ${byId.sirius.y - 8}
+                L ${byId.sirius.x + 13} ${byId.sirius.y - 4}
+                L ${byId.sirius.x + 5} ${byId.sirius.y + 6}`}
+            />
           </svg>
         )}
         {showLines && (

@@ -20,7 +20,7 @@ const objects = [
   },
   {
     name: "Adhara",
-    kind: "Estrella supergegant",
+    kind: "Estrella blava molt lluminosa",
     visibility: "Ull nu",
     text: "Ajuda a llegir la part baixa del cos del gos. Al cel sembla molt menys dominant que Sirius, però és una estrella físicament molt lluminosa i molt més llunyana.",
   },
@@ -41,7 +41,7 @@ const sources: SourceReference[] = [
   },
   {
     title: "SIMBAD · CDS",
-    detail: "Coordenades ICRS de Sirius, Mirzam, Wezen, Adhara, Aludra, Furud, M41 i NGC 2362",
+    detail: "Coordenades ICRS de Sirius, Mirzam, Wezen, Adhara, Aludra, Furud, M41 i NGC 2362, i classificació espectral d’Adhara",
     href: "https://simbad.cds.unistra.fr/simbad/",
     consultationDate: "2026-09-02",
   },
@@ -82,7 +82,7 @@ export default function CanisMajorPage() {
           <p className="lead">La constel·lació de Sirius: el gran gos que brilla sota Orió.</p>
         </div>
         <dl className="facts">
-          <div><dt>Millor època</dt><dd>Hivern</dd></div>
+          <div><dt>Millor època al vespre</dt><dd>Desembre – març</dd></div>
           <div><dt>Patró</dt><dd>Sirius i el traç principal del gos</dd></div>
           <div><dt>Estrella de referència</dt><dd>Sirius</dd></div>
           <div><dt>Observació</dt><dd>Ull nu · prismàtics · telescopi petit</dd></div>
