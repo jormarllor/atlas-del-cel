@@ -37,7 +37,7 @@ export default function TaurusArt() {
   return (
     <figure className="art-card taurus-art-card">
       <img
-        src="/images/taure-mitologic.webp"
+        src="/images/taure-mitologic.png"
         alt="Taure imaginat com un toro celeste; les estrelles principals segueixen la geometria real de la constel·lació"
       />
       <svg className="taurus-art-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
