@@ -20,7 +20,7 @@ export default function GeminiArt() {
   return (
     <figure className="art-card gemini-art-card">
       <img
-        src="/images/bessons-mitologics.png"
+        src="/images/bessons-mitologics.webp"
         alt="Bessons imaginats com dos germans celestes que caminen junts; dos traços estel·lars subtils recorren les figures"
       />
       <svg className="gemini-art-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
