@@ -240,6 +240,7 @@ h3 { font-size: 1.25rem; }
 .route-axis b { color:rgba(255,255,255,.28); font-weight:600; letter-spacing:.05em; }
 .route-target.warm span { background:#ffc38b; box-shadow:0 0 18px rgba(255,166,91,.62); }
 .route-target.cluster span { width:18px; height:18px; background:radial-gradient(circle at 35% 35%, #fff 0 10%, transparent 13%), radial-gradient(circle at 70% 35%, #e7f3ff 0 9%, transparent 12%), radial-gradient(circle at 50% 70%, #fff 0 10%, transparent 13%), #bfdcff; box-shadow:0 0 19px rgba(191,220,255,.48); }
+.route-target-bessons b { transform:translateX(26px); }
 .route-coordinate-note { color:#8291a2 !important; font-size:.78rem; margin-bottom:0 !important; }
 .route-continuation { display:inline-block; margin:2px 0 12px; font-size:.9rem; }
 .season-link:hover { color:var(--text); }
@@ -338,7 +339,7 @@ h3 { font-size: 1.25rem; }
 .methodology-entry h2 { font-size:clamp(2rem,3.8vw,3.25rem); margin-bottom:24px; }
 .methodology-entry p { color:#c4ced9; }
 .methodology-entry p:last-child { margin-bottom:0; }
-.methodology-pair { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:26px 0; }
+.methodology-pair { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:26px 0; }
 .methodology-pair p { border:1px solid var(--line); border-radius:18px; padding:18px 20px; margin:0; background:rgba(255,255,255,.025); }
 .methodology-pair strong,.methodology-pair span { display:block; }
 .methodology-pair strong { color:var(--text); font-family:Georgia,serif; font-size:1.4rem; font-weight:500; }
@@ -361,7 +362,7 @@ h3 { font-size: 1.25rem; }
 .classical-source-columns a { color:#cbd5df; }
 
 /* Home: compact editorial entry points, not a catalogue grid */
-.hero-available-links { display:flex; align-items:center; gap:10px; margin-top:18px; color:#d8e0e8; font-size:.9rem; }
+.hero-available-links { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:18px; color:#d8e0e8; font-size:.9rem; }
 .hero-available-links span { color:#9ba8b8; font-size:.7rem; text-transform:uppercase; letter-spacing:.12em; margin-right:3px; }
 .hero-available-links a { color:var(--gold); font-weight:750; }
 .hero-available-links i { color:#6e7d8e; font-style:normal; }
@@ -405,12 +406,54 @@ h3 { font-size: 1.25rem; }
 .canis-major-art-star.sirius { width:7px; height:7px; background:#fff8dd; box-shadow:0 0 7px rgba(222,240,255,.85),0 0 17px rgba(130,194,255,.45); }
 .route-target-static.sirius span { width:18px; height:18px; background:#f8fbff; box-shadow:0 0 20px rgba(199,229,255,.75); }
 
+/* Gemini page: two parallel stellar chains, one shared visual rhythm */
+.gemini-recognition { display:grid; grid-template-columns:.46fr 1.54fr; gap:58px; align-items:center; border-bottom:1px solid var(--line); }
+.gemini-heads-mark { min-height:300px; position:relative; display:grid; place-items:center; border:1px solid var(--line); border-radius:26px; overflow:hidden; background:radial-gradient(circle at 50% 43%, rgba(228,198,124,.11), transparent 54%), #050d17; }
+.gemini-heads-mark:before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,.7) 0 1px,transparent 1.2px); background-size:53px 53px; opacity:.12; transform:rotate(7deg) scale(1.12); }
+.gemini-heads-mark span { position:absolute; z-index:2; width:17px; height:17px; border-radius:50%; background:#edf5ff; box-shadow:0 0 17px 4px rgba(204,228,255,.48); }
+.gemini-heads-mark .castor-head { left:42%; top:38%; }
+.gemini-heads-mark .pollux-head { left:59%; top:46%; width:20px; height:20px; background:#ffd0a2; box-shadow:0 0 19px 5px rgba(255,174,99,.45); }
+.gemini-heads-mark i { position:absolute; z-index:1; left:42%; top:41%; width:18%; height:1px; transform:rotate(16deg); transform-origin:left; background:linear-gradient(90deg,rgba(228,198,124,.18),rgba(228,198,124,.6),rgba(228,198,124,.18)); }
+.gemini-heads-mark b { position:absolute; bottom:24px; color:rgba(228,198,124,.68); font-size:.68rem; letter-spacing:.27em; }
+.gemini-map .map-star.warm { background:#ffc18a; box-shadow:0 0 18px 4px rgba(255,166,91,.55); }
+.gemini-map .map-star.cool { background:#edf5ff; box-shadow:0 0 16px 3px rgba(197,224,255,.52); }
+.label-pollux { color:#ffd0a4; }
+.label-castor { left:11px; top:12px; }
+.label-alhena { top:auto; bottom:14px; left:auto; right:10px; text-align:right; }
+.label-wasat { left:auto; right:10px; text-align:right; }
+.label-mebsuta { top:auto; bottom:14px; }
+.label-mekbuda { top:auto; bottom:14px; left:auto; right:10px; text-align:right; }
+.label-tejat { top:auto; bottom:14px; left:auto; right:10px; text-align:right; }
+.label-propus { left:auto; right:10px; top:14px; text-align:right; }
+.m35-marker { display:block; width:0; height:0; transform:none; color:#c9ddf4; }
+.m35-marker span { position:absolute; left:0; top:0; transform:translate(-50%,-50%); text-shadow:0 0 11px rgba(184,216,250,.68); }
+.m35-marker b { position:absolute; right:13px; top:-8px; font-size:.68rem; text-align:right; }
+.gemini-myth { z-index:2; pointer-events:none; }
+.gemini-myth path,.gemini-myth circle { stroke:rgba(228,198,124,.39); stroke-width:.68; stroke-dasharray:3 2; fill:none; }
+.gemini-myth-layout { display:grid; grid-template-columns:.58fr 1.42fr; gap:72px; align-items:start; }
+.gemini-myth-figure { border-radius:40% 40% 30% 30%; }
+.gemini-myth-figure span { font-size:8rem; letter-spacing:.04em; text-shadow:0 0 35px rgba(228,198,124,.14); }
+.gemini-art-card { position:relative; }
+.gemini-art-overlay { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.gemini-art-overlay line { stroke:rgba(213,235,255,.2); stroke-width:.54px; vector-effect:non-scaling-stroke; }
+.gemini-art-points { position:absolute; inset:0; pointer-events:none; }
+.gemini-art-star { position:absolute; width:3px; height:3px; display:block; border-radius:50%; transform:translate(-50%,-50%); background:rgba(239,248,255,.68); box-shadow:0 0 5px rgba(179,218,255,.42); }
+.gemini-art-star.head { width:6px; height:6px; background:#f5f8ff; box-shadow:0 0 7px rgba(222,240,255,.72),0 0 14px rgba(130,194,255,.35); }
+.gemini-art-star.pollux { background:rgba(255,198,142,.9); box-shadow:0 0 7px rgba(255,193,133,.7),0 0 15px rgba(255,152,64,.28); }
+.gemini-route-visual .route-point b { text-shadow:0 1px 4px #02070d; }
+.gemini-route-visual .route-gemini-castor b { transform:translate(28px,-5px); }
+.gemini-route-visual .route-gemini-pollux b { transform:translate(40px,8px); }
+.gemini-route-visual .route-gemini-m35 b { transform:translate(30px,-42px); }
+.gemini-route-visual .route-gemini-propus b { transform:translate(-28px,9px); }
+
 @media (max-width: 900px) {
-  .taurus-recognition,.taurus-myth-layout,.canis-major-recognition,.canis-major-myth-layout { grid-template-columns:1fr; }
+  .taurus-recognition,.taurus-myth-layout,.canis-major-recognition,.canis-major-myth-layout,.gemini-recognition,.gemini-myth-layout { grid-template-columns:1fr; }
   .taurus-v-mark { min-height:220px; }
   .sirius-beacon { min-height:220px; }
+  .gemini-heads-mark { min-height:220px; }
   .methodology-source-group { grid-template-columns:1fr; gap:10px; }
   .classical-source-columns { grid-template-columns:repeat(2,1fr); }
+  .methodology-pair { grid-template-columns:repeat(2,1fr); }
 }
 
 @media (max-width: 600px) {
@@ -444,4 +487,7 @@ h3 { font-size: 1.25rem; }
   .methodology-current-sources { padding:70px 0; }
   .methodology-source-heading { display:block; }
   .methodology-source-list a { grid-template-columns:1fr; gap:4px; }
+  .gemini-route-visual .route-point b { font-size:.63rem; }
+  .gemini-route-visual .route-gemini-castor b { transform:translate(36px,-8px); }
+  .gemini-route-visual .route-gemini-pollux b { transform:translate(38px,12px); }
 }

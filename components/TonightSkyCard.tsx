@@ -17,7 +17,8 @@ type TonightSkyCardProps = {
   referenceName: string;
   coordinate: { raHours: number; decDeg: number };
   referenceDescription?: string;
-  objectArticle?: "el" | "la";
+  objectArticle?: "el" | "la" | "els" | "les";
+  isPlural?: boolean;
 };
 
 function toDatetimeLocal(date: Date) {
@@ -46,7 +47,7 @@ function formatObservationDate(date: Date) {
   }).format(date);
 }
 
-export default function TonightSkyCard({ name, referenceName, coordinate, referenceDescription, objectArticle = "la" }: TonightSkyCardProps) {
+export default function TonightSkyCard({ name, referenceName, coordinate, referenceDescription, objectArticle = "la", isPlural = false }: TonightSkyCardProps) {
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
   const [place, setPlace] = useState("");
@@ -183,15 +184,18 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
 
   const sunIsLowEnough = solarAltitude(time, latitude, longitude) <= DARK_SKY_SUN_ALTITUDE;
   const nextOpportunity = next ? `Propera bona oportunitat d’observació: ${formatObservationDate(next)}.` : "No hi ha cap bona oportunitat d’observació durant els propers mesos.";
-  const searchPrompt = objectArticle === "el" ? "Busca’l" : "Busca-la";
+  const searchPrompt = objectArticle === "el" ? "Busca’l" : objectArticle === "els" ? "Busca’ls" : objectArticle === "les" ? "Busca-les" : "Busca-la";
+  const observableLabel = isPlural ? `${name} són observables` : `${name} és observable`;
+  const lowLabel = isPlural ? `${name} són molt baixos` : `${name} és molt baix`;
+  const hiddenLabel = isPlural ? `${name} són sota l’horitzó` : `${name} és sota l’horitzó`;
 
   const status = position.altitude >= 12 && sunIsLowEnough
-    ? { label: `${name} és observable`, className: "visible", detail: `${searchPrompt} cap a ${compassDirection(position.azimuth)}, a uns ${formatDegrees(position.altitude)} sobre l’horitzó.` }
+    ? { label: observableLabel, className: "visible", detail: `${searchPrompt} cap a ${compassDirection(position.azimuth)}, a uns ${formatDegrees(position.altitude)} sobre l’horitzó.` }
     : !sunIsLowEnough
       ? { label: "El cel encara no és prou fosc", className: "low", detail: nextOpportunity }
     : position.altitude > 0
-      ? { label: `${name} és molt baix`, className: "low", detail: nextOpportunity }
-      : { label: `${name} és sota l’horitzó`, className: "hidden", detail: nextOpportunity };
+      ? { label: lowLabel, className: "low", detail: nextOpportunity }
+      : { label: hiddenLabel, className: "hidden", detail: nextOpportunity };
 
   return (
     <section className="tonight-card" aria-label={`Posició de ${name} per data, hora i ubicació`}>

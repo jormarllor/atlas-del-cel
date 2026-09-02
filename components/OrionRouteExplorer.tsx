@@ -55,12 +55,23 @@ const waypoints: Waypoint[] = [
     visibility: "Ull nu · prismàtics",
     tone: "cluster",
   },
+  {
+    id: "bessons",
+    name: "Bessons",
+    type: "Constel·lació · Gemini",
+    raHours: (7 + 34 / 60 + 35.87319 / 3600 + 7 + 45 / 60 + 18.94987 / 3600) / 2,
+    decDeg: (31 + 53 / 60 + 17.816 / 3600 + 28 + 1 / 60 + 34.316 / 3600) / 2,
+    route: "Travessa Orió des de Rigel, passa pel cinturó i continua per Betelgeuse. Si prolongues aquesta alineació, arribaràs a Càstor i Pòl·lux, els dos caps brillants dels Bessons.",
+    description: "Càstor i Pòl·lux formen una parella visual molt clara, però no estan lligats físicament: són a distàncies diferents i Càstor és, a més, un sistema estel·lar múltiple.",
+    visibility: "Ull nu",
+    tone: "white",
+  },
 ];
 
-const CENTER_RA_DEG = 5.25 * 15;
-const CENTER_DEC_DEG = 4;
-const SPAN_X_DEG = 52;
-const SPAN_Y_DEG = 44;
+const CENTER_RA_DEG = 5.5 * 15;
+const CENTER_DEC_DEG = 7;
+const SPAN_X_DEG = 72;
+const SPAN_Y_DEG = 54;
 
 function project(raHours: number, decDeg: number) {
   const raDeg = raHours * 15;
@@ -102,7 +113,7 @@ export default function OrionRouteExplorer() {
         {projected.map((point) => (
           <button
             key={point.id}
-            className={`route-point route-target ${point.tone} ${active.id === point.id ? "current" : ""}`}
+            className={`route-point route-target route-target-${point.id} ${point.tone} ${active.id === point.id ? "current" : ""}`}
             style={{ left: `${point.x}%`, top: `${point.y}%` }}
             onClick={() => setActive(point)}
             aria-label={`Mostra informació sobre ${point.name}`}
@@ -126,7 +137,10 @@ export default function OrionRouteExplorer() {
         {active.id === "sirius" && (
           <Link className="text-link route-continuation" href="/constellacions/ca-major">Continua explorant Ca Major →</Link>
         )}
-        <p className="route-coordinate-note">La posició dels quatre punts del mapa prové de coordenades celestes, no d’una composició gràfica manual.</p>
+        {active.id === "bessons" && (
+          <Link className="text-link route-continuation" href="/constellacions/bessons">Continua explorant Bessons →</Link>
+        )}
+        <p className="route-coordinate-note">La posició dels punts del mapa prové de coordenades celestes, no d’una composició gràfica manual.</p>
       </div>
     </div>
   );

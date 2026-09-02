@@ -32,6 +32,11 @@ const astronomySources = [
     detail: "Naturalesa binària de Sirius i identificació de Sirius B com a nana blanca.",
   },
   {
+    name: "NASA Science · Gemini Constellation",
+    href: "https://science.nasa.gov/solar-system/skywatching/night-sky-network/gemini-constellation/",
+    detail: "Ruta des d’Orió, naturalesa de Càstor i Pòl·lux i observació del cúmul M35.",
+  },
+  {
     name: "U.S. Naval Observatory · ICRS",
     href: "https://aa.usno.navy.mil/faq/ICRS_doc",
     detail: "Definició del sistema ICRS i relació amb l’equador i l’equinocci de J2000.0.",
@@ -59,6 +64,15 @@ const classicalSources = [
     sources: [
       { name: "Arat · Fenòmens, 319–352", href: "https://topostext.org/work/551" },
       { name: "Higí · Astronomica, 2.35", href: "https://topostext.org/work/207" },
+    ],
+  },
+  {
+    constellation: "Bessons",
+    sources: [
+      { name: "Píndar · Nemea 10, 55–90", href: "https://topostext.org/work/20" },
+      { name: "Higí · Astronomica, 2.22", href: "https://topostext.org/work/207" },
+      { name: "Himne homèric als Dioscurs", href: "https://topostext.org/work/370" },
+      { name: "Apol·loni de Rodes · Argonàutiques, 1.146–150", href: "https://topostext.org/work/126" },
     ],
   },
 ];
@@ -98,7 +112,7 @@ export default function SourcesAndMethodologyPage() {
             <p className="section-kicker">TRES CAPES, TRES FUNCIONS</p>
             <h2>Regió oficial, traç pedagògic i figura imaginada</h2>
             <p>
-              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure» o «a Ca Major» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
+              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major» o «a Bessons» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
             </p>
             <p>
               Les línies que uneixen estrelles als mapes són una <strong>ajuda visual</strong>. No hi ha una figura de línies oficial de la IAU i el traç pot variar entre atles. Les il·lustracions «imaginades» constitueixen encara una tercera capa: són interpretacions artístiques i mitològiques, separades del mapa científic.
@@ -118,6 +132,7 @@ export default function SourcesAndMethodologyPage() {
               <p><strong>Orió</strong><span>Alnilam, al centre del cinturó</span></p>
               <p><strong>Taure</strong><span>Aldebaran, l’ull visual del toro</span></p>
               <p><strong>Ca Major</strong><span>Sirius, l’estrella més brillant del cel nocturn</span></p>
+              <p><strong>Bessons</strong><span>Pòl·lux, l’estrella més brillant de la constel·lació</span></p>
             </div>
             <p>
               Per proposar una bona oportunitat, l’Atlas demana que la referència superi aproximadament els <strong>12° d’altura</strong> i que el Sol sigui a <strong>−12° o menys</strong>, el límit aproximat del final del crepuscle nàutic. La cerca avança en passos de trenta minuts i pot arribar fins a uns 180 dies, de manera que també cobreix constel·lacions fora de temporada.
@@ -146,6 +161,9 @@ export default function SourcesAndMethodologyPage() {
             <h2>Compartir cel no vol dir compartir espai</h2>
             <p>
               Una constel·lació és una projecció vista des de la Terra, no necessàriament una família física d’estrelles. Objectes que semblen veïns poden trobar-se a distàncies molt diferents. <strong>Aldebaran</strong>, per exemple, apareix visualment dins de la V de les <strong>Híades</strong>, però no pertany al cúmul: és molt més propera i només coincideix amb ell en la nostra línia de visió.
+            </p>
+            <p>
+              El mateix passa amb <strong>Càstor i Pòl·lux</strong>: semblen una parella al cel i donen nom als Bessons, però són a distàncies diferents i no formen cap sistema físic entre ells. La semblança del dibuix bidimensional no descriu automàticament el cel en tres dimensions.
             </p>
           </div>
         </article>
