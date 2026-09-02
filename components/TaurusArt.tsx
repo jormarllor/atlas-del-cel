@@ -2,43 +2,74 @@
 
 import {
   projectTaurus,
-  TAURUS_LINES,
   TAURUS_PLEIADES,
   TAURUS_STARS,
 } from "./TaurusMap";
 
+const ART_TRANSFORM = {
+  a: 0.9577454011,
+  b: 0.0224927963,
+  x: 3.499927049,
+  y: -7.796547696,
+};
+
+function placeOnArtwork(point: { raHours: number; decDeg: number }) {
+  const projected = projectTaurus(point);
+  return {
+    x: ART_TRANSFORM.a * projected.x - ART_TRANSFORM.b * projected.y + ART_TRANSFORM.x,
+    y: ART_TRANSFORM.b * projected.x + ART_TRANSFORM.a * projected.y + ART_TRANSFORM.y,
+  };
+}
+
 export default function TaurusArt() {
   const projected = [...TAURUS_STARS, ...TAURUS_PLEIADES].map((point) => ({
     ...point,
-    ...projectTaurus(point),
+    ...placeOnArtwork(point),
   }));
   const byId = Object.fromEntries(projected.map((point) => [point.id, point]));
+  const hyades = ["aldebaran", "theta", "gamma", "delta", "epsilon"];
+  const anchors = ["aldebaran", "elnath", "zeta"];
+  const hyadesHints = ["theta", "gamma", "delta", "epsilon"];
+  const pleiades = TAURUS_PLEIADES.map((point) => point.id);
+
+  const points = (ids: string[]) => ids.map((id) => `${byId[id].x},${byId[id].y}`).join(" ");
 
   return (
     <figure className="art-card taurus-art-card">
       <img
-        src="/images/taure-mitologic.png"
+        src="/images/taure-mitologic.webp"
         alt="Taure imaginat com un toro celeste; les estrelles principals segueixen la geometria real de la constel·lació"
       />
       <svg className="taurus-art-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <filter id="taurus-art-glow" x="-300%" y="-300%" width="700%" height="700%">
-            <feGaussianBlur stdDeviation="0.8" result="blur" />
-            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-          </filter>
-        </defs>
         <g className="taurus-art-lines">
-          {TAURUS_LINES.map(([a, b]) => (
-            <line key={`${a}-${b}`} x1={byId[a].x} y1={byId[a].y} x2={byId[b].x} y2={byId[b].y} />
-          ))}
-        </g>
-        <g className="taurus-art-points" filter="url(#taurus-art-glow)">
-          {projected.map((point) => {
-            const radius = Math.max(0.32, 0.9 - point.magnitude * 0.11);
-            return <circle key={point.id} className={point.kind ?? ""} cx={point.x} cy={point.y} r={radius} />;
-          })}
+          <polyline className="taurus-art-v" points={points(hyades)} />
+          <line className="taurus-art-horn" x1={byId.epsilon.x} y1={byId.epsilon.y} x2={byId.elnath.x} y2={byId.elnath.y} />
+          <line className="taurus-art-horn" x1={byId.gamma.x} y1={byId.gamma.y} x2={byId.zeta.x} y2={byId.zeta.y} />
         </g>
       </svg>
+      <div className="taurus-art-points" aria-hidden="true">
+        {anchors.map((id) => (
+          <span
+            key={id}
+            className={`taurus-art-star anchor ${id}`}
+            style={{ left: `${byId[id].x}%`, top: `${byId[id].y}%` }}
+          />
+        ))}
+        {hyadesHints.map((id) => (
+          <span
+            key={id}
+            className="taurus-art-star hyades-hint"
+            style={{ left: `${byId[id].x}%`, top: `${byId[id].y}%` }}
+          />
+        ))}
+        {pleiades.map((id) => (
+          <span
+            key={id}
+            className="taurus-art-star pleiades-hint"
+            style={{ left: `${byId[id].x}%`, top: `${byId[id].y}%` }}
+          />
+        ))}
+      </div>
     </figure>
   );
 }
