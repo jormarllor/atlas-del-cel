@@ -95,7 +95,7 @@ export default function CanisMajorPage() {
           name="Ca Major"
           referenceName="Sirius"
           coordinate={{ raHours: 6 + 45 / 60 + 8.91728 / 3600, decDeg: -(16 + 42 / 60 + 58.0171 / 3600) }}
-          objectArticle="la"
+          objectArticle="el"
           referenceDescription="La posició es calcula prenent Sirius, l’estrella més brillant del cel nocturn, com a referència de la constel·lació."
         />
       </div>
