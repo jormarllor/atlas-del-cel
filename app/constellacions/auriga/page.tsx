@@ -195,8 +195,9 @@ export default function AurigaPage() {
 
       <SourceNotes references={sources} />
 
-      <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">
+      <nav className="wrap constellation-pagination constellation-pagination-split" aria-label="Navegació entre constel·lacions">
         <Link href="/constellacions/bessons"><strong>← Bessons</strong><span>Torna als dos germans</span></Link>
+        <Link href="/constellacions/andromeda"><strong>Següent constel·lació → Andròmeda</strong><span>Obre el cel de tardor</span></Link>
       </nav>
     </main>
   );

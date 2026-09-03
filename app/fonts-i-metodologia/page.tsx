@@ -42,6 +42,11 @@ const astronomySources = [
     detail: "Arquitectura física, òrbites i distància del sistema múltiple Capella.",
   },
   {
+    name: "NASA Science · Messier 31",
+    href: "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/",
+    detail: "Distància, escala i observació visual de la galàxia d’Andròmeda.",
+  },
+  {
     name: "U.S. Naval Observatory · ICRS",
     href: "https://aa.usno.navy.mil/faq/ICRS_doc",
     detail: "Definició del sistema ICRS i relació amb l’equador i l’equinocci de J2000.0.",
@@ -87,6 +92,16 @@ const classicalSources = [
       { name: "Higí · Astronomica, 2.13", href: "https://topostext.org/work/207" },
     ],
   },
+  {
+    constellation: "Andròmeda",
+    sources: [
+      { name: "Biblioteca atribuïda a Apol·lodor, 2.4.3", href: "https://www.theoi.com/Text/Apollodorus2.html" },
+      { name: "Higí · Fabulae, 64", href: "https://topostext.org/work/206" },
+      { name: "Higí · Astronomica, 2.11", href: "https://topostext.org/work/207" },
+      { name: "Ovidi · Metamorfosis, 4.663–739", href: "https://www.theoi.com/Text/OvidMetamorphoses4.html" },
+      { name: "Arat · Fenòmens, 198–204", href: "https://topostext.org/work/551" },
+    ],
+  },
 ];
 
 export default function SourcesAndMethodologyPage() {
@@ -124,13 +139,16 @@ export default function SourcesAndMethodologyPage() {
             <p className="section-kicker">TRES CAPES, TRES FUNCIONS</p>
             <h2>Regió oficial, traç pedagògic i figura imaginada</h2>
             <p>
-              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major», «a Bessons» o «a Auriga» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
+              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major», «a Bessons», «a Auriga» o «a Andròmeda» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
             </p>
             <p>
               Les línies que uneixen estrelles als mapes són una <strong>ajuda visual</strong>. No hi ha una figura de línies oficial de la IAU i el traç pot variar entre atles. Les il·lustracions «imaginades» constitueixen encara una tercera capa: són interpretacions artístiques i mitològiques, separades del mapa científic.
             </p>
             <p>
               Un patró pedagògic pot travessar una frontera oficial. El pentàgon aparent que ajuda a reconèixer <strong>Auriga</strong>, per exemple, sovint es completa amb <strong>Elnath</strong>; l’estrella és una fita visual útil, però pertany oficialment a <strong>Taure</strong>. L’Atlas ho indica en lloc de convertir el dibuix orientatiu en una adscripció astronòmica falsa.
+            </p>
+            <p>
+              El cas d’<strong>Alpheratz</strong> mostra la situació complementària: és <strong>α Andromedae</strong>, però completa visualment un vèrtex del Gran Quadrat de Pegàs. El patró pot connectar dues regions; la pertinença oficial de l’estrella continua sent inequívoca.
             </p>
           </div>
         </article>
@@ -149,6 +167,7 @@ export default function SourcesAndMethodologyPage() {
               <p><strong>Ca Major</strong><span>Sirius, l’estrella més brillant del cel nocturn</span></p>
               <p><strong>Bessons</strong><span>Pòl·lux, l’estrella més brillant de la constel·lació</span></p>
               <p><strong>Auriga</strong><span>Capella, l’estrella més brillant de la constel·lació</span></p>
+              <p><strong>Andròmeda</strong><span>Mirach, al centre de la cadena i al camí de M31</span></p>
             </div>
             <p>
               Per proposar una bona oportunitat, l’Atlas demana que la referència superi aproximadament els <strong>12° d’altura</strong> i que el Sol sigui a <strong>−12° o menys</strong>, el límit aproximat del final del crepuscle nàutic. La cerca avança en passos de trenta minuts i pot arribar fins a uns 180 dies, de manera que també cobreix constel·lacions fora de temporada.

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const available = [
+const winterConstellations = [
   {
     name: "Orió",
     pattern: "Tres estrelles del cinturó",
@@ -33,6 +33,15 @@ const available = [
   },
 ];
 
+const autumnConstellations = [
+  {
+    name: "Andròmeda",
+    pattern: "Una cadena d’Alpheratz a Almach",
+    href: "/constellacions/andromeda",
+    number: "06",
+  },
+];
+
 export default function ConstellationsPage() {
   return (
     <main>
@@ -49,7 +58,7 @@ export default function ConstellationsPage() {
         </div>
 
         <div className="constellation-index-list">
-          {available.map((constellation) => (
+          {winterConstellations.map((constellation) => (
             <Link className="constellation-index-entry" href={constellation.href} key={constellation.name}>
               <span className="constellation-index-number">{constellation.number}</span>
               <div><h3>{constellation.name}</h3><p>Patró · {constellation.pattern}</p></div>
@@ -61,8 +70,31 @@ export default function ConstellationsPage() {
 
       </section>
 
-      <section className="wrap index-future-seasons" aria-label="Futures estacions de l’Atlas">
-        <span>Primavera</span><span>Estiu</span><span>Tardor</span>
+      <section className="wrap section constellation-season autumn-constellation-season" id="tardor">
+        <div className="constellation-season-heading">
+          <div><p className="section-kicker">ESTACIÓ 02</p><h2>Tardor</h2></div>
+          <p>Una cadena d’estrelles que obre el camí cap a una galàxia més enllà de la Via Làctia.</p>
+        </div>
+
+        <div className="constellation-index-list">
+          {autumnConstellations.map((constellation) => (
+            <Link className="constellation-index-entry" href={constellation.href} key={constellation.name}>
+              <span className="constellation-index-number">{constellation.number}</span>
+              <div><h3>{constellation.name}</h3><p>Patró · {constellation.pattern}</p></div>
+              <span className="constellation-index-level">Nivell fàcil</span>
+              <span className="constellation-index-arrow" aria-hidden="true">→</span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="constellations-coming autumn-coming">
+          <span>Properament</span>
+          <p>Pegàs · Cassiopea · Perseu</p>
+        </div>
+      </section>
+
+      <section className="wrap index-future-seasons" aria-label="Futurs blocs de l’Atlas">
+        <span>Primavera</span><span>Estiu</span><span>Circumpolars</span>
       </section>
     </main>
   );

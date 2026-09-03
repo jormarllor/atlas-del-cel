@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const seasons = [
-  { name: "Hivern", hint: "Orió, Taure, Ca Major, Bessons, Auriga", className: "winter", availableHref: "/constellacions" },
+  { name: "Hivern", hint: "Orió, Taure, Ca Major, Bessons, Auriga", className: "winter", availableHref: "/constellacions", availableLabel: "5 fitxes disponibles →" },
   { name: "Primavera", hint: "Lleó, Verge, Bover", className: "spring" },
   { name: "Estiu", hint: "Cigne, Lira, Àguila", className: "summer" },
-  { name: "Tardor", hint: "Pegàs, Andròmeda, Perseu", className: "autumn" },
+  { name: "Tardor", hint: "Andròmeda · després Pegàs i Perseu", className: "autumn", availableHref: "/constellacions/andromeda", availableLabel: "Andròmeda disponible →" },
 ];
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
             <Link className="button primary" href="/com-llegir-el-cel">1. Com llegir el cel</Link>
             <Link className="button ghost" href="/constellacions">Explora constel·lacions</Link>
           </div>
-          <p className="hero-available-links"><span>Disponibles ara</span><Link href="/constellacions/orio">Orió</Link><i>·</i><Link href="/constellacions/taure">Taure</Link><i>·</i><Link href="/constellacions/ca-major">Ca Major</Link><i>·</i><Link href="/constellacions/bessons">Bessons</Link><i>·</i><Link href="/constellacions/auriga">Auriga</Link></p>
+          <p className="hero-available-links"><span>Disponibles ara</span><Link href="/constellacions/orio">Orió</Link><i>·</i><Link href="/constellacions/taure">Taure</Link><i>·</i><Link href="/constellacions/ca-major">Ca Major</Link><i>·</i><Link href="/constellacions/bessons">Bessons</Link><i>·</i><Link href="/constellacions/auriga">Auriga</Link><i>·</i><Link href="/constellacions/andromeda">Andròmeda</Link></p>
         </div>
       </section>
 
@@ -55,7 +55,7 @@ export default function Home() {
               <h3>{season.name}</h3>
               <p>{season.hint}</p>
               {season.availableHref
-                ? <Link className="coming season-link" href={season.availableHref}>5 fitxes disponibles →</Link>
+                ? <Link className="coming season-link" href={season.availableHref}>{season.availableLabel}</Link>
                 : <span className="coming">Properament</span>}
             </article>
           ))}
@@ -82,6 +82,18 @@ export default function Home() {
           </Link>
           <Link href="/constellacions/auriga" className="winter-available-entry">
             <span>05</span><div><h3>Auriga</h3><p>Capella corona un gran pentàgon aparent i tres cúmuls oberts.</p></div><b>Explora Auriga →</b>
+          </Link>
+        </div>
+      </section>
+
+      <section className="wrap section autumn-available">
+        <div className="section-heading winter-available-heading">
+          <div><p className="section-kicker">S’OBRE EL CEL DE TARDOR</p><h2>Una cadena que porta fora de la Via Làctia</h2></div>
+          <Link className="text-link" href="/constellacions#tardor">Explora el bloc de tardor →</Link>
+        </div>
+        <div className="winter-available-list">
+          <Link href="/constellacions/andromeda" className="winter-available-entry autumn-available-entry">
+            <span>06</span><div><h3>Andròmeda</h3><p>Alpheratz, Mirach i Almach tracen el camí cap a M31.</p></div><b>Explora Andròmeda →</b>
           </Link>
         </div>
       </section>
