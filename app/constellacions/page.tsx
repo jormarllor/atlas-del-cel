@@ -40,6 +40,12 @@ const autumnConstellations = [
     href: "/constellacions/andromeda",
     number: "06",
   },
+  {
+    name: "Pegàs",
+    pattern: "Gran Quadrat i prolongació cap a Enif",
+    href: "/constellacions/pegas",
+    number: "07",
+  },
 ];
 
 export default function ConstellationsPage() {
@@ -73,7 +79,7 @@ export default function ConstellationsPage() {
       <section className="wrap section constellation-season autumn-constellation-season" id="tardor">
         <div className="constellation-season-heading">
           <div><p className="section-kicker">ESTACIÓ 02</p><h2>Tardor</h2></div>
-          <p>Una cadena d’estrelles que obre el camí cap a una galàxia més enllà de la Via Làctia.</p>
+          <p>Dos grans patrons connectats per Alpheratz: una cadena cap a M31 i el Gran Quadrat.</p>
         </div>
 
         <div className="constellation-index-list">
@@ -89,7 +95,7 @@ export default function ConstellationsPage() {
 
         <div className="constellations-coming autumn-coming">
           <span>Properament</span>
-          <p>Pegàs · Cassiopea · Perseu</p>
+          <p>Cassiopea · Perseu</p>
         </div>
       </section>
 

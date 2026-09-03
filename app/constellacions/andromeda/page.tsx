@@ -148,6 +148,7 @@ export default function AndromedaPage() {
             <li>Des de Mirach, desvia’t per <strong>μ</strong> i <strong>ν Andromedae</strong>.</li>
             <li>Busca <strong>M31</strong> al costat de ν: primer una taca difusa, no una espiral fotogràfica.</li>
           </ol>
+          <Link href="/constellacions/pegas" className="constellation-continuation">Continua explorant Pegàs →</Link>
         </aside>
       </section>
 
@@ -216,8 +217,9 @@ export default function AndromedaPage() {
 
       <SourceNotes references={sources} />
 
-      <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">
+      <nav className="wrap constellation-pagination constellation-pagination-split" aria-label="Navegació entre constel·lacions">
         <Link href="/constellacions/auriga"><strong>← Auriga</strong><span>Torna al polígon de Capella</span></Link>
+        <Link href="/constellacions/pegas"><strong>Següent constel·lació → Pegàs</strong><span>Continua amb el Gran Quadrat</span></Link>
       </nav>
     </main>
   );

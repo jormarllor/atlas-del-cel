@@ -47,6 +47,11 @@ const astronomySources = [
     detail: "Distància, escala i observació visual de la galàxia d’Andròmeda.",
   },
   {
+    name: "NASA Science · Messier 15",
+    href: "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-15/",
+    detail: "Naturalesa, antiguitat i observació del cúmul globular M15.",
+  },
+  {
     name: "U.S. Naval Observatory · ICRS",
     href: "https://aa.usno.navy.mil/faq/ICRS_doc",
     detail: "Definició del sistema ICRS i relació amb l’equador i l’equinocci de J2000.0.",
@@ -102,6 +107,15 @@ const classicalSources = [
       { name: "Arat · Fenòmens, 198–204", href: "https://topostext.org/work/551" },
     ],
   },
+  {
+    constellation: "Pegàs",
+    sources: [
+      { name: "Hesíode · Teogonia, 270–286", href: "https://www.theoi.com/Text/HesiodTheogony.html" },
+      { name: "Píndar · Olímpica 13, 63–95", href: "https://topostext.org/work/18" },
+      { name: "Biblioteca atribuïda a Apol·lodor, 2.3.2", href: "https://topostext.org/work/150" },
+      { name: "Higí · Astronomica, 2.18", href: "https://topostext.org/work/207" },
+    ],
+  },
 ];
 
 export default function SourcesAndMethodologyPage() {
@@ -139,7 +153,7 @@ export default function SourcesAndMethodologyPage() {
             <p className="section-kicker">TRES CAPES, TRES FUNCIONS</p>
             <h2>Regió oficial, traç pedagògic i figura imaginada</h2>
             <p>
-              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major», «a Bessons», «a Auriga» o «a Andròmeda» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
+              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major», «a Bessons», «a Auriga», «a Andròmeda» o «a Pegàs» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
             </p>
             <p>
               Les línies que uneixen estrelles als mapes són una <strong>ajuda visual</strong>. No hi ha una figura de línies oficial de la IAU i el traç pot variar entre atles. Les il·lustracions «imaginades» constitueixen encara una tercera capa: són interpretacions artístiques i mitològiques, separades del mapa científic.
@@ -168,6 +182,7 @@ export default function SourcesAndMethodologyPage() {
               <p><strong>Bessons</strong><span>Pòl·lux, l’estrella més brillant de la constel·lació</span></p>
               <p><strong>Auriga</strong><span>Capella, l’estrella més brillant de la constel·lació</span></p>
               <p><strong>Andròmeda</strong><span>Mirach, al centre de la cadena i al camí de M31</span></p>
+              <p><strong>Pegàs</strong><span>Markab, vèrtex del Gran Quadrat i inici de la branca cap a Enif</span></p>
             </div>
             <p>
               Per proposar una bona oportunitat, l’Atlas demana que la referència superi aproximadament els <strong>12° d’altura</strong> i que el Sol sigui a <strong>−12° o menys</strong>, el límit aproximat del final del crepuscle nàutic. La cerca avança en passos de trenta minuts i pot arribar fins a uns 180 dies, de manera que també cobreix constel·lacions fora de temporada.
