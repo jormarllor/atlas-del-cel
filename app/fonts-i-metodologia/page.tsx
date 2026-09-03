@@ -37,6 +37,11 @@ const astronomySources = [
     detail: "Ruta des d’Orió, naturalesa de Càstor i Pòl·lux i observació del cúmul M35.",
   },
   {
+    name: "Torres et al. · The Astrophysical Journal 807, 26",
+    href: "https://arxiv.org/abs/1505.07461",
+    detail: "Arquitectura física, òrbites i distància del sistema múltiple Capella.",
+  },
+  {
     name: "U.S. Naval Observatory · ICRS",
     href: "https://aa.usno.navy.mil/faq/ICRS_doc",
     detail: "Definició del sistema ICRS i relació amb l’equador i l’equinocci de J2000.0.",
@@ -73,6 +78,13 @@ const classicalSources = [
       { name: "Higí · Astronomica, 2.22", href: "https://topostext.org/work/207" },
       { name: "Himne homèric als Dioscurs", href: "https://topostext.org/work/370" },
       { name: "Apol·loni de Rodes · Argonàutiques, 1.146–150", href: "https://topostext.org/work/126" },
+    ],
+  },
+  {
+    constellation: "Auriga",
+    sources: [
+      { name: "Arat · Fenòmens, 156–166 i 880–891", href: "https://topostext.org/work/551" },
+      { name: "Higí · Astronomica, 2.13", href: "https://topostext.org/work/207" },
     ],
   },
 ];
@@ -112,10 +124,13 @@ export default function SourcesAndMethodologyPage() {
             <p className="section-kicker">TRES CAPES, TRES FUNCIONS</p>
             <h2>Regió oficial, traç pedagògic i figura imaginada</h2>
             <p>
-              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major» o «a Bessons» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
+              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major», «a Bessons» o «a Auriga» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
             </p>
             <p>
               Les línies que uneixen estrelles als mapes són una <strong>ajuda visual</strong>. No hi ha una figura de línies oficial de la IAU i el traç pot variar entre atles. Les il·lustracions «imaginades» constitueixen encara una tercera capa: són interpretacions artístiques i mitològiques, separades del mapa científic.
+            </p>
+            <p>
+              Un patró pedagògic pot travessar una frontera oficial. El pentàgon aparent que ajuda a reconèixer <strong>Auriga</strong>, per exemple, sovint es completa amb <strong>Elnath</strong>; l’estrella és una fita visual útil, però pertany oficialment a <strong>Taure</strong>. L’Atlas ho indica en lloc de convertir el dibuix orientatiu en una adscripció astronòmica falsa.
             </p>
           </div>
         </article>
@@ -133,6 +148,7 @@ export default function SourcesAndMethodologyPage() {
               <p><strong>Taure</strong><span>Aldebaran, l’ull visual del toro</span></p>
               <p><strong>Ca Major</strong><span>Sirius, l’estrella més brillant del cel nocturn</span></p>
               <p><strong>Bessons</strong><span>Pòl·lux, l’estrella més brillant de la constel·lació</span></p>
+              <p><strong>Auriga</strong><span>Capella, l’estrella més brillant de la constel·lació</span></p>
             </div>
             <p>
               Per proposar una bona oportunitat, l’Atlas demana que la referència superi aproximadament els <strong>12° d’altura</strong> i que el Sol sigui a <strong>−12° o menys</strong>, el límit aproximat del final del crepuscle nàutic. La cerca avança en passos de trenta minuts i pot arribar fins a uns 180 dies, de manera que també cobreix constel·lacions fora de temporada.

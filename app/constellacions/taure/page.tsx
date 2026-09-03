@@ -183,6 +183,7 @@ export default function TaurusPage() {
         <h2>D’Orió a les Plèiades, i de la V fins a la Nebulosa del Cranc.</h2>
         <p className="muted route-intro">Comença amb la ruta visible a ull nu i, quan vulguis un repte més exigent, continua cap a M1.</p>
         <TaurusRouteExplorer />
+        <p className="taurus-auriga-continuation"><Link className="text-link" href="/constellacions/auriga">Des d’Elnath, continua explorant Auriga →</Link></p>
       </section>
 
       <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">

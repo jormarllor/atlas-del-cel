@@ -317,6 +317,8 @@ h3 { font-size: 1.25rem; }
 .constellation-pagination a span { color:var(--muted); font-family:Inter,ui-sans-serif,system-ui,sans-serif; font-size:.72rem; text-transform:uppercase; letter-spacing:.11em; }
 .constellation-pagination-back { justify-content:flex-start; }
 .constellation-pagination-back a { align-items:flex-start; }
+.constellation-pagination-split { justify-content:space-between; }
+.constellation-pagination-split a:first-child { align-items:flex-start; }
 
 /* Sources and methodology: editorial notes, not an academic apparatus */
 .source-notes { padding-top:54px; padding-bottom:84px; border-top:1px solid var(--line); }
@@ -447,11 +449,64 @@ h3 { font-size: 1.25rem; }
 .gemini-route-visual .route-gemini-m35 b { transform:translate(30px,-42px); }
 .gemini-route-visual .route-gemini-propus b { transform:translate(-28px,9px); }
 
+/* Auriga page: a bright northern anchor, a borrowed visual vertex and three open clusters */
+.auriga-recognition { display:grid; grid-template-columns:.46fr 1.54fr; gap:58px; align-items:center; border-bottom:1px solid var(--line); }
+.auriga-hero .facts dd { min-width:0; max-width:62%; line-height:1.35; }
+.auriga-polygon-mark { min-height:300px; position:relative; border:1px solid var(--line); border-radius:26px; overflow:hidden; background:radial-gradient(circle at 49% 39%, rgba(228,198,124,.11), transparent 52%), #050d17; }
+.auriga-polygon-mark:before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,.7) 0 1px,transparent 1.2px); background-size:51px 51px; opacity:.12; transform:rotate(-6deg) scale(1.14); }
+.auriga-polygon-mark svg { position:absolute; inset:0; width:100%; height:100%; }
+.auriga-polygon-mark polyline { fill:none; stroke:rgba(228,198,124,.48); stroke-width:.55; vector-effect:non-scaling-stroke; }
+.auriga-polygon-mark span { position:absolute; z-index:2; width:10px; height:10px; border-radius:50%; transform:translate(-50%,-50%); background:#eef5ff; box-shadow:0 0 12px rgba(220,238,255,.48); }
+.auriga-polygon-mark .auriga-mark-capella { left:48%; top:15%; width:18px; height:18px; background:#ffd393; box-shadow:0 0 19px 5px rgba(255,190,104,.48); }
+.auriga-mark-menkalinan { left:20%; top:23%; }
+.auriga-mark-mahasim { left:22%; top:60%; }
+.auriga-mark-elnath { left:52%; top:85%; outline:1px solid rgba(228,198,124,.58); outline-offset:4px; }
+.auriga-mark-hassaleh { left:78%; top:64%; }
+.auriga-polygon-mark b { position:absolute; left:0; right:0; bottom:23px; text-align:center; color:rgba(228,198,124,.66); font-size:.66rem; letter-spacing:.23em; }
+.auriga-map .map-star.warm { background:#ffd28e; box-shadow:0 0 20px 5px rgba(255,194,112,.58),0 0 38px 10px rgba(255,181,80,.17); }
+.auriga-map .map-star.neighbor { background:#eef5ff; outline:1px solid rgba(228,198,124,.65); outline-offset:5px; box-shadow:0 0 13px rgba(211,231,255,.48); }
+.auriga-lines .neighbor-segment { stroke:rgba(228,198,124,.3); stroke-dasharray:1.1 1; }
+.label-capella { color:#ffe0a8; left:auto; right:12px; text-align:right; }
+.label-menkalinan { left:12px; top:12px; }
+.label-mahasim { top:auto; bottom:14px; left:11px; }
+.label-almaaz { top:12px; left:11px; }
+.label-hassaleh { left:auto; right:11px; top:auto; bottom:14px; text-align:right; }
+.label-elnath { top:auto; bottom:17px; left:12px; color:#e7cf93; }
+.deep-sky-marker { position:absolute; z-index:5; width:0; height:0; color:#c9ddf4; }
+.deep-sky-marker span { position:absolute; left:0; top:0; transform:translate(-50%,-50%); font-size:1.05rem; text-shadow:0 0 11px rgba(184,216,250,.68); }
+.deep-sky-marker b { position:absolute; white-space:nowrap; font-size:.66rem; color:#c9d8e8; text-shadow:0 1px 4px #02070d; }
+.marker-m38 b { left:13px; top:-22px; }
+.marker-m36 b { left:14px; top:4px; }
+.marker-m37 b { right:13px; top:8px; text-align:right; }
+.auriga-myth { z-index:2; pointer-events:none; }
+.auriga-myth path { fill:none; stroke:rgba(228,198,124,.23); stroke-width:.48; }
+.auriga-myth .auriga-goat { stroke:rgba(228,198,124,.3); stroke-width:.54; }
+.auriga-myth-layout { display:grid; grid-template-columns:.58fr 1.42fr; gap:72px; align-items:start; }
+.auriga-myth-figure { border-radius:38% 38% 26% 26%; }
+.auriga-myth-figure span { font-size:7rem; text-shadow:0 0 35px rgba(228,198,124,.14); }
+.auriga-art-card { position:relative; }
+.auriga-art-overlay { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.auriga-art-overlay line { stroke:rgba(213,235,255,.18); stroke-width:.52px; vector-effect:non-scaling-stroke; }
+.auriga-art-points { position:absolute; inset:0; pointer-events:none; }
+.auriga-art-star { position:absolute; width:3px; height:3px; display:block; border-radius:50%; transform:translate(-50%,-50%); background:rgba(239,248,255,.66); box-shadow:0 0 5px rgba(179,218,255,.4); }
+.auriga-art-star.capella { width:7px; height:7px; background:rgba(255,207,139,.92); box-shadow:0 0 7px rgba(255,211,151,.72),0 0 15px rgba(255,169,70,.3); }
+.auriga-art-star.elnath { opacity:.58; }
+.route-target-static.neighbor span { outline:1px solid rgba(228,198,124,.64); outline-offset:4px; }
+.auriga-route-visual .route-point b { text-shadow:0 1px 4px #02070d; }
+.auriga-route-visual .route-auriga-capella b { transform:translate(32px,2px); }
+.auriga-route-visual .route-auriga-elnath b { transform:translate(42px,7px); }
+.auriga-route-visual .route-auriga-aldebaran b { transform:translate(38px,-2px); }
+.auriga-route-visual .route-auriga-m38 b { transform:translate(-25px,7px); }
+.auriga-route-visual .route-auriga-m36 b { transform:translate(31px,2px); }
+.auriga-route-visual .route-auriga-m37 b { transform:translate(26px,-4px); }
+.taurus-auriga-continuation { margin:18px 0 0; text-align:right; }
+
 @media (max-width: 900px) {
-  .taurus-recognition,.taurus-myth-layout,.canis-major-recognition,.canis-major-myth-layout,.gemini-recognition,.gemini-myth-layout { grid-template-columns:1fr; }
+  .taurus-recognition,.taurus-myth-layout,.canis-major-recognition,.canis-major-myth-layout,.gemini-recognition,.gemini-myth-layout,.auriga-recognition,.auriga-myth-layout { grid-template-columns:1fr; }
   .taurus-v-mark { min-height:220px; }
   .sirius-beacon { min-height:220px; }
   .gemini-heads-mark { min-height:220px; }
+  .auriga-polygon-mark { min-height:220px; }
   .methodology-source-group { grid-template-columns:1fr; gap:10px; }
   .classical-source-columns { grid-template-columns:repeat(2,1fr); }
   .methodology-pair { grid-template-columns:repeat(2,1fr); }
@@ -491,4 +546,9 @@ h3 { font-size: 1.25rem; }
   .gemini-route-visual .route-point b { font-size:.63rem; }
   .gemini-route-visual .route-gemini-castor b { transform:translate(36px,-8px); }
   .gemini-route-visual .route-gemini-pollux b { transform:translate(38px,12px); }
+  .auriga-map .deep-sky-marker b { font-size:.58rem; }
+  .auriga-route-visual .route-point b { font-size:.62rem; }
+  .constellation-pagination-split { gap:28px; }
+  .constellation-pagination-split a { font-size:1.25rem; }
+  .taurus-auriga-continuation { text-align:left; }
 }

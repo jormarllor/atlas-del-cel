@@ -191,8 +191,9 @@ export default function GeminiPage() {
 
       <SourceNotes references={sources} />
 
-      <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">
+      <nav className="wrap constellation-pagination constellation-pagination-split" aria-label="Navegació entre constel·lacions">
         <Link href="/constellacions/ca-major"><strong>← Ca Major</strong><span>Torna al gran gos</span></Link>
+        <Link href="/constellacions/auriga"><span>Següent constel·lació</span><strong>Auriga →</strong></Link>
       </nav>
     </main>
   );

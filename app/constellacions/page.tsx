@@ -25,6 +25,12 @@ const available = [
     href: "/constellacions/bessons",
     number: "04",
   },
+  {
+    name: "Auriga",
+    pattern: "Capella i un gran pentàgon aparent",
+    href: "/constellacions/auriga",
+    number: "05",
+  },
 ];
 
 export default function ConstellationsPage() {
@@ -39,7 +45,7 @@ export default function ConstellationsPage() {
       <section className="wrap section constellation-season">
         <div className="constellation-season-heading">
           <div><p className="section-kicker">ESTACIÓ 01</p><h2>Hivern</h2></div>
-          <p>Quatre patrons fàcils per començar i unes rutes celestes que els connecten.</p>
+          <p>Cinc patrons fàcils per començar i unes rutes celestes que els connecten.</p>
         </div>
 
         <div className="constellation-index-list">
@@ -53,10 +59,6 @@ export default function ConstellationsPage() {
           ))}
         </div>
 
-        <div className="constellations-coming" aria-label="Properes constel·lacions d’hivern">
-          <span>Properament</span>
-          <p>Auriga</p>
-        </div>
       </section>
 
       <section className="wrap index-future-seasons" aria-label="Futures estacions de l’Atlas">
