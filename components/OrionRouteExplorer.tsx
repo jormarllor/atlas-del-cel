@@ -28,7 +28,7 @@ const waypoints: Waypoint[] = [
     type: "Estrella · Ca Major",
     raHours: 6 + 45 / 60 + 8.91728 / 3600,
     decDeg: -(16 + 42 / 60 + 58.0171 / 3600),
-    route: "Prolonga la direcció del cinturó cap al sud-est del mapa, en el sentit Alnitak → Alnilam → Mintaka invertit visualment segons l’orientació del cel. La referència final és inconfusible: Sirius brilla molt més que les estrelles del voltant.",
+    route: "Prolonga la línia del cinturó cap al sud-est del mapa, en el sentit Mintaka → Alnilam → Alnitak. Sirius queda més lluny en aquesta mateixa direcció general i brilla molt més que les estrelles del voltant.",
     description: "Sirius és l’estrella més brillant del cel nocturn i pertany a la constel·lació del Ca Major.",
     visibility: "Ull nu",
     tone: "white",

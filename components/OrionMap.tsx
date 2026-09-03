@@ -51,6 +51,7 @@ function starDiameter(magnitude: number) {
 }
 
 export default function OrionMap() {
+  const [showStars, setShowStars] = useState(true);
   const [showLines, setShowLines] = useState(true);
   const [showNames, setShowNames] = useState(true);
   const [showMyth, setShowMyth] = useState(false);
@@ -72,13 +73,14 @@ export default function OrionMap() {
   return (
     <div className="map-shell">
       <div className="map-toolbar" aria-label="Controls del mapa">
+        <button className={showStars ? "active" : ""} aria-pressed={showStars} onClick={() => setShowStars(!showStars)}>Estrelles</button>
         <button className={showLines ? "active" : ""} aria-pressed={showLines} onClick={() => setShowLines(!showLines)}>Línies</button>
         <button className={showNames ? "active" : ""} aria-pressed={showNames} onClick={() => setShowNames(!showNames)}>Noms</button>
         <button className={showMyth ? "active" : ""} aria-pressed={showMyth} onClick={() => setShowMyth(!showMyth)}>Figura mitològica</button>
         <span className="map-coordinate-badge">ICRS · època J2000.0</span>
       </div>
 
-      <div className="star-map accurate-map" role="img" aria-label="Mapa d’Orió projectat a partir de coordenades equatorials de les estrelles principals">
+      <div className="star-map accurate-map" role="img" aria-label="Mapa d’Orió projectat a partir de coordenades equatorials ICRS referides a l’època J2000.0">
         <div className="star-dust" aria-hidden="true" />
         <div className="sky-orientation" aria-hidden="true"><span>E</span><b>mirant cap al sud</b><span>O</span></div>
 
@@ -100,7 +102,7 @@ export default function OrionMap() {
           </svg>
         )}
 
-        {projectedStars.map((star) => {
+        {showStars && projectedStars.map((star) => {
           const d = starDiameter(star.magnitude);
           return (
             <div

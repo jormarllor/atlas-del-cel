@@ -46,8 +46,8 @@ export default function TaurusRouteExplorer() {
   return (
     <div className="route-explorer">
       <div className="route-selector" role="tablist" aria-label="Rutes d’observació de Taure">
-        <button className={active === "principal" ? "active" : ""} onClick={() => setActive("principal")}>Ruta principal</button>
-        <button className={active === "advanced" ? "active" : ""} onClick={() => setActive("advanced")}>Ruta avançada · M1</button>
+        <button role="tab" aria-selected={active === "principal"} className={active === "principal" ? "active" : ""} onClick={() => setActive("principal")}>Ruta principal</button>
+        <button role="tab" aria-selected={active === "advanced"} className={active === "advanced" ? "active" : ""} onClick={() => setActive("advanced")}>Ruta avançada · M1</button>
       </div>
       <div className="route-visual accurate-route" role="img" aria-label={route.title}>
         <div className="route-grid" aria-hidden="true" />

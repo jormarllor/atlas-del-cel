@@ -68,7 +68,7 @@ export default function AurigaRouteExplorer() {
           <div className="route-pill-group"><span>{route.visibility}</span></div>
         </div>
         <p>{route.text}</p>
-        <p className="route-coordinate-note">La geometria es projecta amb coordenades ICRS referides a J2000.0. Elnath s’utilitza com a pont visual, no com una estrella d’Auriga.</p>
+        <p className="route-coordinate-note">La geometria es projecta amb coordenades en el sistema ICRS, referides a l’època J2000.0. Elnath s’utilitza com a pont visual, no com una estrella d’Auriga.</p>
       </div>
     </div>
   );

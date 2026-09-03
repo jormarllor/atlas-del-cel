@@ -78,7 +78,7 @@ export default function OrionPage() {
           </p>
         </div>
         <dl className="facts">
-          <div><dt>Millor època</dt><dd>Desembre – març</dd></div>
+          <div><dt>Millor època al vespre</dt><dd>Desembre – març</dd></div>
           <div><dt>On mirar</dt><dd>Sud-est al vespre · sud més tard</dd></div>
           <div><dt>Referència</dt><dd>3 estrelles en línia</dd></div>
           <div><dt>Observació</dt><dd>Ull nu · prismàtics</dd></div>
@@ -210,11 +210,11 @@ export default function OrionPage() {
         <OrionRouteExplorer />
       </section>
 
+      <SourceNotes references={sources} />
+
       <nav className="wrap constellation-pagination" aria-label="Navegació entre constel·lacions">
         <Link href="/constellacions/taure"><span>Següent constel·lació</span><strong>Taure →</strong></Link>
       </nav>
-
-      <SourceNotes references={sources} />
     </main>
   );
 }

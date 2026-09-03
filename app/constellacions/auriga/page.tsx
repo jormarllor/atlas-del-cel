@@ -28,7 +28,7 @@ const objects = [
     name: "M38",
     kind: "Cúmul obert",
     visibility: "Prismàtics · telescopi petit",
-    text: "És més ample i irregular. Les seves estrelles dibuixen agrupacions i buits que alguns observadors descriuen com una creu o una forma de mar de fons: una textura clarament diferent de M36 i M37.",
+    text: "És més ample i irregular. Les seves estrelles dibuixen agrupacions i buits que recorden una creu o una figura oberta: una textura clarament diferent de M36 i M37.",
   },
 ];
 
@@ -118,7 +118,7 @@ export default function AurigaPage() {
         <div>
           <div className="section-heading compact-heading"><div><p className="section-kicker">MAPA DE RECONEIXEMENT</p><h2>Capella, el polígon i tres illes d’estrelles</h2></div></div>
           <AurigaMap />
-          <p className="map-note stronger-note">Les estrelles i els cúmuls es projecten a partir de <strong>coordenades equatorials ICRS referides a J2000.0</strong>. Elnath es mostra com a estrella veïna de Taure perquè participa en el patró visual. Les línies són una ajuda que pot variar entre atles: la IAU defineix regions del cel, no aquests dibuixos. La figura mitològica és una capa interpretativa separada.</p>
+          <p className="map-note stronger-note">Les estrelles i els cúmuls es projecten a partir de <strong>coordenades equatorials en el sistema ICRS, referides a l’època J2000.0</strong>. Elnath es mostra com a estrella veïna de Taure perquè participa en el patró visual. Les línies són una ajuda que pot variar entre atles: la IAU defineix regions del cel, no aquests dibuixos. La figura mitològica és una capa interpretativa separada.</p>
         </div>
         <aside className="find-card">
           <p className="section-kicker">LLEGEIX EL PATRÓ</p>

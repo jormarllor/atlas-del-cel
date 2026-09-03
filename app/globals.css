@@ -208,6 +208,7 @@ h3 { font-size: 1.25rem; }
 .manual-coordinate-fields { display:grid; grid-template-columns:1fr 1fr auto; gap:10px; align-items:end; }
 .manual-coordinate-fields label span { display:block; color:var(--muted); font-size:.75rem; margin-bottom:5px; }
 .manual-coordinate-fields input { width:100%; background:#07111f; color:var(--text); border:1px solid rgba(255,255,255,.16); border-radius:12px; padding:10px 11px; }
+.coordinate-sign-hint { grid-column:1 / -1; color:#8391a2; font-size:.75rem; margin:0; }
 .location-error { color:#f0b7aa; font-size:.82rem; margin:10px 0 0; }
 .location-clear { cursor:pointer; border:0; background:transparent; color:#98a6b7; padding:9px 4px; font-size:.78rem; text-decoration:underline; text-underline-offset:3px; }
 .location-clear:hover { color:var(--text); }
@@ -266,9 +267,9 @@ h3 { font-size: 1.25rem; }
 .m1-marker span { position:absolute; left:0; top:0; transform:translate(-50%,-50%); }
 .m1-marker b { position:absolute; left:14px; top:-28px; font-size:.68rem; }
 .taurus-myth { z-index:2; pointer-events:none; }
-.taurus-myth path { stroke:rgba(228,198,124,.42); stroke-width:.8; stroke-dasharray:3 2; }
-.taurus-myth .taurus-myth-horn { stroke-width:1; }
-.taurus-myth-eye { fill:none; stroke:rgba(228,198,124,.58); stroke-width:.75; }
+.taurus-myth path { stroke:rgba(228,198,124,.27); stroke-width:.56; }
+.taurus-myth .taurus-myth-horn { stroke-width:.64; }
+.taurus-myth-eye { fill:none; stroke:rgba(228,198,124,.34); stroke-width:.55; }
 .taurus-myth-layout { display:grid; grid-template-columns:.58fr 1.42fr; gap:72px; align-items:start; }
 .myth-stories-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:34px 0 24px; }
 .myth-stories-grid article { border:1px solid rgba(255,255,255,.14); border-radius:20px; padding:24px; background:rgba(255,255,255,.035); }
@@ -395,8 +396,8 @@ h3 { font-size: 1.25rem; }
 .m41-marker { color:#c9ddf4; }
 .m41-marker span { text-shadow:0 0 11px rgba(184,216,250,.68); }
 .canis-major-myth { z-index:2; pointer-events:none; }
-.canis-major-myth path { stroke:rgba(228,198,124,.39); stroke-width:.72; stroke-dasharray:3 2; }
-.canis-major-myth .canis-major-myth-detail { stroke:rgba(228,198,124,.3); stroke-width:.56; }
+.canis-major-myth path { stroke:rgba(228,198,124,.26); stroke-width:.56; }
+.canis-major-myth .canis-major-myth-detail { stroke:rgba(228,198,124,.2); stroke-width:.46; }
 .canis-major-myth-layout { display:grid; grid-template-columns:.58fr 1.42fr; gap:72px; align-items:start; }
 .canis-major-myth-figure { border-radius:42% 42% 34% 34%; }
 .canis-major-myth-figure span { font-size:7rem; text-shadow:0 0 35px rgba(228,198,124,.14); }

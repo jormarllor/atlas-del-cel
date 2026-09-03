@@ -11,7 +11,7 @@ export type TaurusPoint = {
   kind?: "warm" | "cluster";
 };
 
-// ICRS/J2000 positions from SIMBAD and NASA's Messier catalogue.
+// ICRS positions at epoch J2000.0 from SIMBAD and NASA's Messier catalogue.
 export const TAURUS_STARS: TaurusPoint[] = [
   { id: "aldebaran", name: "Aldebaran", raHours: 4 + 35 / 60 + 55.24 / 3600, decDeg: 16 + 30 / 60 + 33.5 / 3600, magnitude: 0.87, kind: "warm" },
   { id: "gamma", name: "γ Tauri", raHours: 4 + 19 / 60 + 47.604 / 3600, decDeg: 15 + 37 / 60 + 39.51 / 3600, magnitude: 3.65 },

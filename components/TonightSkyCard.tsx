@@ -170,9 +170,10 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
         {manualOpen && (
           <div className="manual-location-panel">
             <div className="manual-coordinate-fields">
-              <label><span>Latitud</span><input aria-label="Latitud" type="number" min="-90" max="90" step="0.0001" value={manualLatitude} onChange={(event) => setManualLatitude(event.target.value)} /></label>
-              <label><span>Longitud</span><input aria-label="Longitud" type="number" min="-180" max="180" step="0.0001" value={manualLongitude} onChange={(event) => setManualLongitude(event.target.value)} /></label>
+              <label><span>Latitud (N/S)</span><input aria-label="Latitud nord o sud" placeholder="Ex. 41.3333" type="number" min="-90" max="90" step="0.0001" value={manualLatitude} onChange={(event) => setManualLatitude(event.target.value)} /></label>
+              <label><span>Longitud (E/O)</span><input aria-label="Longitud est o oest" placeholder="Ex. 1.1775" type="number" min="-180" max="180" step="0.0001" value={manualLongitude} onChange={(event) => setManualLongitude(event.target.value)} /></label>
               <button className="editor-reset" onClick={saveManualLocation}>Desa les coordenades</button>
+              <p className="coordinate-sign-hint">Valors positius: N i E · valors negatius: S i O.</p>
             </div>
             {locationError && <p className="location-error" role="alert">{locationError}</p>}
           </div>
@@ -186,7 +187,8 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
   const nextOpportunity = next ? `Propera bona oportunitat d’observació: ${formatObservationDate(next)}.` : "No hi ha cap bona oportunitat d’observació durant els propers mesos.";
   const searchPrompt = objectArticle === "el" ? "Busca’l" : objectArticle === "els" ? "Busca’ls" : objectArticle === "les" ? "Busca-les" : "Busca-la";
   const observableLabel = isPlural ? `${name} són observables` : `${name} és observable`;
-  const lowLabel = isPlural ? `${name} són molt baixos` : `${name} és molt baix`;
+  const lowAdjective = objectArticle === "la" ? "baixa" : objectArticle === "les" ? "baixes" : objectArticle === "els" ? "baixos" : "baix";
+  const lowLabel = isPlural ? `${name} són molt ${lowAdjective}` : `${name} és molt ${lowAdjective}`;
   const hiddenLabel = isPlural ? `${name} són sota l’horitzó` : `${name} és sota l’horitzó`;
 
   const status = position.altitude >= 12 && sunIsLowEnough
@@ -203,7 +205,7 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
         <div>
           <p className="section-kicker">AQUESTA NIT · CÀLCUL ASTRONÒMIC</p>
           <h2>{status.label}</h2>
-          <p className="tonight-place">{place} · {latitude.toFixed(4)}, {longitude.toFixed(4)} · {formatObservationDate(time)}</p>
+          <p className="tonight-place">{place} · Lat. {latitude.toFixed(4)} · Lon. {longitude.toFixed(4)} · {formatObservationDate(time)}</p>
         </div>
         <span className={`visibility-chip ${status.className}`}><i />{status.label}</span>
       </div>
@@ -235,9 +237,10 @@ export default function TonightSkyCard({ name, referenceName, coordinate, refere
               onChange={(event) => event.target.value && setTime(new Date(event.target.value))}
             />
           </label>
-          <label><span>Latitud</span><input aria-label="Latitud" type="number" min="-90" max="90" step="0.0001" value={manualLatitude} onChange={(event) => setManualLatitude(event.target.value)} /></label>
-          <label><span>Longitud</span><input aria-label="Longitud" type="number" min="-180" max="180" step="0.0001" value={manualLongitude} onChange={(event) => setManualLongitude(event.target.value)} /></label>
+          <label><span>Latitud (N/S)</span><input aria-label="Latitud nord o sud" placeholder="Ex. 41.3333" type="number" min="-90" max="90" step="0.0001" value={manualLatitude} onChange={(event) => setManualLatitude(event.target.value)} /></label>
+          <label><span>Longitud (E/O)</span><input aria-label="Longitud est o oest" placeholder="Ex. 1.1775" type="number" min="-180" max="180" step="0.0001" value={manualLongitude} onChange={(event) => setManualLongitude(event.target.value)} /></label>
           <button className="editor-reset" onClick={saveManualLocation}>Desa la ubicació</button>
+          <p className="coordinate-sign-hint">Valors positius: N i E · valors negatius: S i O.</p>
         </div>
       )}
 

@@ -82,7 +82,7 @@ export default function TaurusPage() {
           <p className="lead">Una V d’estrelles, un ull taronja i un dels cúmuls més famosos del cel.</p>
         </div>
         <dl className="facts">
-          <div><dt>Millor època</dt><dd>Tardor i hivern</dd></div>
+          <div><dt>Millor època al vespre</dt><dd>Novembre – març</dd></div>
           <div><dt>Patró</dt><dd>V de les Híades</dd></div>
           <div><dt>Estrella de referència</dt><dd>Aldebaran</dd></div>
           <div><dt>Observació</dt><dd>Ull nu · prismàtics · telescopi</dd></div>
@@ -186,11 +186,12 @@ export default function TaurusPage() {
         <p className="taurus-auriga-continuation"><Link className="text-link" href="/constellacions/auriga">Des d’Elnath, continua explorant Auriga →</Link></p>
       </section>
 
-      <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">
-        <Link href="/constellacions/orio"><strong>← Orió</strong><span>Constel·lació anterior</span></Link>
-      </nav>
-
       <SourceNotes references={sources} />
+
+      <nav className="wrap constellation-pagination constellation-pagination-split" aria-label="Navegació entre constel·lacions">
+        <Link href="/constellacions/orio"><strong>← Orió</strong><span>Constel·lació anterior</span></Link>
+        <Link href="/constellacions/ca-major"><span>Següent constel·lació</span><strong>Ca Major →</strong></Link>
+      </nav>
     </main>
   );
 }

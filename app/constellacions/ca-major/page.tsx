@@ -95,7 +95,7 @@ export default function CanisMajorPage() {
           name="Ca Major"
           referenceName="Sirius"
           coordinate={{ raHours: 6 + 45 / 60 + 8.91728 / 3600, decDeg: -(16 + 42 / 60 + 58.0171 / 3600) }}
-          objectArticle="el"
+          objectArticle="la"
           referenceDescription="La posició es calcula prenent Sirius, l’estrella més brillant del cel nocturn, com a referència de la constel·lació."
         />
       </div>
@@ -180,11 +180,12 @@ export default function CanisMajorPage() {
         <CanisMajorRouteExplorer />
       </section>
 
-      <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">
-        <Link href="/constellacions/orio"><strong>← Orió</strong><span>Torna al caçador</span></Link>
-      </nav>
-
       <SourceNotes references={sources} />
+
+      <nav className="wrap constellation-pagination constellation-pagination-split" aria-label="Navegació entre constel·lacions">
+        <Link href="/constellacions/taure"><strong>← Taure</strong><span>Constel·lació anterior</span></Link>
+        <Link href="/constellacions/bessons"><span>Següent constel·lació</span><strong>Bessons →</strong></Link>
+      </nav>
     </main>
   );
 }
