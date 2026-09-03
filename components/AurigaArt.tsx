@@ -4,6 +4,7 @@ import { AURIGA_LINES, AURIGA_STARS, projectAuriga } from "./AurigaMap";
 
 // One global similarity transform: rotation + uniform scale + translation.
 const ART_TRANSFORM = { a: 0.55, b: 0, x: 10, y: 15 };
+const ART_LINES = AURIGA_LINES.filter(([a, b]) => a !== "elnath" && b !== "elnath");
 
 function placeOnArtwork(point: { raHours: number; decDeg: number }) {
   const projected = projectAuriga(point);
@@ -21,18 +22,18 @@ export default function AurigaArt() {
     <figure className="art-card auriga-art-card">
       <img
         src="/images/auriga-mitologic.webp"
-        alt="Auriga imaginat com un cotxer serè que sosté una cabra i dues cabretes sota el cel d’hivern; un traç estel·lar subtil recorre la figura"
+        alt="Auriga imaginat com una figura celeste i translúcida que sosté una cabra i dues cabretes entre les estrelles"
       />
       <svg className="auriga-art-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        {AURIGA_LINES.map(([a, b]) => (
+        {ART_LINES.map(([a, b]) => (
           <line key={`${a}-${b}`} x1={byId[a].x} y1={byId[a].y} x2={byId[b].x} y2={byId[b].y} />
         ))}
       </svg>
       <div className="auriga-art-points" aria-hidden="true">
-        {projected.filter(point => point.id !== "almaaz").map(point => (
+        {projected.filter(point => point.id !== "almaaz" && point.id !== "elnath").map(point => (
           <span
             key={point.id}
-            className={`auriga-art-star ${point.id === "capella" ? "capella" : ""} ${point.id === "elnath" ? "elnath" : ""}`}
+            className={`auriga-art-star ${point.id === "capella" ? "capella" : ""}`}
             style={{ left: `${point.x}%`, top: `${point.y}%` }}
           />
         ))}
