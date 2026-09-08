@@ -203,7 +203,7 @@ export default function AndromedaPage() {
             </div>
 
             <p className="myth-conclusion">La cadena d’estrelles permet trobar Andròmeda; els textos antics expliquen de maneres diferents per què aquella figura va quedar al cel. La futura xarxa de tardor continuarà aquest relat sense fingir que totes les versions encaixen perfectament.</p>
-            <div className="myth-next-story" aria-label="Continuació mitològica prevista"><strong>La història continua a Cassiopea i Perseu</strong><span>Properament</span></div>
+            <div className="myth-next-story" aria-label="Continuació mitològica"><Link href="/constellacions/cassiopea"><strong>Continua a Cassiopea →</strong></Link><Link href="/constellacions/perseu">Continua a Perseu →</Link></div>
           </div>
         </div>
       </section>

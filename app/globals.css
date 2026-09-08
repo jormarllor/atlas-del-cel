@@ -658,8 +658,65 @@ h3 { font-size: 1.25rem; }
 .cassiopeia-route-visual .route-cassiopeia-m52 b { transform:translate(18px,-2px); color:#d7e7f7; }
 .cassiopeia-route-visual .route-cassiopeia-ngc457 b { transform:translate(-74px,12px); color:#d7e7f7; }
 
+/* Perseus */
+.perseus-recognition { display:grid; grid-template-columns:.46fr 1.54fr; gap:58px; align-items:center; border-bottom:1px solid var(--line); }
+.perseus-hero .facts dd { min-width:0; max-width:62%; line-height:1.35; }
+.perseus-branch-mark { min-height:300px; position:relative; border:1px solid var(--line); border-radius:26px; overflow:hidden; background:radial-gradient(circle at 49% 43%,rgba(105,130,169,.16),transparent 53%),#050d17; }
+.perseus-branch-mark:before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,.72) 0 1px,transparent 1.2px); background-size:51px 51px; opacity:.13; transform:rotate(-6deg) scale(1.12); }
+.perseus-branch-mark svg { position:absolute; inset:0; width:100%; height:100%; }
+.perseus-branch-mark polyline,.perseus-branch-mark line { fill:none; stroke:rgba(228,198,124,.52); stroke-width:.58; vector-effect:non-scaling-stroke; }
+.perseus-branch-mark path { fill:none; stroke:rgba(196,219,244,.22); stroke-width:.42; vector-effect:non-scaling-stroke; }
+.perseus-branch-mark span { position:absolute; z-index:2; width:8px; height:8px; border-radius:50%; transform:translate(-50%,-50%); background:#eef5ff; box-shadow:0 0 12px rgba(220,238,255,.46); }
+.perseus-branch-mark .perseus-mark-gamma { left:24%; top:18%; }
+.perseus-branch-mark .perseus-mark-mirfak { left:45%; top:31%; width:12px; height:12px; background:#ffe1a9; box-shadow:0 0 16px 3px rgba(255,199,118,.38); }
+.perseus-branch-mark .perseus-mark-delta { left:61%; top:43%; }
+.perseus-branch-mark .perseus-mark-epsilon { left:68%; top:62%; }
+.perseus-branch-mark .perseus-mark-atik { left:65%; top:83%; }
+.perseus-branch-mark .perseus-mark-algol { left:32%; top:62%; width:10px; height:10px; }
+.perseus-branch-mark b { position:absolute; left:0; right:0; bottom:22px; text-align:center; color:rgba(228,198,124,.66); font-size:.64rem; letter-spacing:.17em; }
+.perseus-map .map-star.warm { background:#ffe0a5; box-shadow:0 0 16px 4px rgba(255,201,121,.42); }
+.perseus-map .map-star.cool { background:#edf5ff; box-shadow:0 0 15px 3px rgba(196,222,255,.42); }
+.label-perseus-gamma { left:12px; top:12px; }
+.label-perseus-mirfak { left:12px; top:12px; color:#ffe1ab; }
+.label-perseus-delta { left:12px; top:12px; }
+.label-perseus-epsilon { left:auto; right:12px; top:12px; text-align:right; }
+.label-perseus-menkib { left:auto; right:12px; top:auto; bottom:12px; text-align:right; }
+.label-perseus-atik { left:auto; right:12px; top:auto; bottom:12px; text-align:right; }
+.label-perseus-algol { left:auto; right:12px; top:12px; text-align:right; }
+.perseus-cluster-marker { position:absolute; z-index:5; width:0; height:0; }
+.perseus-cluster-marker span { position:absolute; left:0; top:0; width:15px; height:15px; transform:translate(-50%,-50%); border:1px solid rgba(192,218,247,.74); border-radius:50%; background:radial-gradient(circle,rgba(226,238,252,.62),rgba(147,183,223,.16) 55%,transparent 74%); box-shadow:0 0 16px rgba(135,178,224,.3); }
+.perseus-cluster-marker b { position:absolute; left:14px; top:-23px; white-space:nowrap; color:#d4e3f3; font-size:.64rem; text-shadow:0 1px 4px #02070d; }
+.perseus-cluster-marker.cluster-ngc869 b { left:auto; right:14px; top:-25px; text-align:right; }
+.perseus-cluster-marker.cluster-ngc884 b { left:14px; top:12px; }
+.perseus-cluster-marker.cluster-m34 b { left:14px; top:-23px; }
+.perseus-double-cluster-label { position:absolute; left:19.5%; top:5.5%; transform:translateX(-50%); z-index:5; color:rgba(228,198,124,.72); font-size:.58rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; white-space:nowrap; }
+.perseus-myth { z-index:2; pointer-events:none; }
+.perseus-myth path { fill:none; stroke:rgba(228,198,124,.19); stroke-width:.39; }
+.perseus-myth .perseus-gorgon { stroke:rgba(228,198,124,.15); stroke-width:.32; }
+.perseus-myth .perseus-sword-arm { stroke:rgba(228,198,124,.17); stroke-width:.34; }
+.perseus-myth-layout { display:grid; grid-template-columns:.58fr 1.42fr; gap:72px; align-items:start; }
+.perseus-myth-figure { border-radius:46% 46% 32% 32%; }
+.perseus-myth-figure span { font-size:7rem; text-shadow:0 0 35px rgba(228,198,124,.14); }
+.algol-history-note { margin-top:18px; border:1px solid var(--line); border-radius:20px; padding:24px; background:rgba(255,255,255,.025); }
+.algol-history-note h3 { font-family:Georgia,serif; font-size:1.7rem; font-weight:500; margin-bottom:8px; }
+.algol-history-note p:last-child { color:#c7d1dd; margin-bottom:0; }
+.perseus-art-card { position:relative; }
+.perseus-art-overlay { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.perseus-art-overlay line { stroke:rgba(213,235,255,.17); stroke-width:.48px; vector-effect:non-scaling-stroke; }
+.perseus-art-points { position:absolute; inset:0; pointer-events:none; }
+.perseus-art-star { position:absolute; width:3px; height:3px; display:block; border-radius:50%; transform:translate(-50%,-50%); background:rgba(239,248,255,.61); box-shadow:0 0 5px rgba(179,218,255,.37); }
+.perseus-art-star.mirfak { width:6px; height:6px; background:rgba(255,224,169,.86); box-shadow:0 0 8px rgba(255,208,133,.5),0 0 14px rgba(255,183,89,.16); }
+.perseus-art-star.algol { width:5px; height:5px; background:rgba(227,239,255,.76); box-shadow:0 0 8px rgba(178,213,255,.44); }
+.perseus-route-visual .route-point b { text-shadow:0 1px 4px #02070d; }
+.perseus-route-visual .route-perseus-gammaCas b { transform:translate(17px,3px); }
+.perseus-route-visual .route-perseus-ruchbah b { transform:translate(18px,2px); }
+.perseus-route-visual .route-perseus-doubleCluster b { transform:translate(18px,-25px); color:#d7e7f7; }
+.perseus-route-visual .route-perseus-mirfak b { transform:translate(-66px,-24px); color:#ffe1ab; }
+.perseus-route-visual .route-perseus-algol b { transform:translate(-54px,4px); }
+.perseus-route-visual .route-perseus-m34 b { transform:translate(-48px,-24px); color:#d7e7f7; }
+
 @media (max-width: 900px) {
-  .taurus-recognition,.taurus-myth-layout,.canis-major-recognition,.canis-major-myth-layout,.gemini-recognition,.gemini-myth-layout,.auriga-recognition,.auriga-myth-layout,.andromeda-recognition,.andromeda-myth-layout,.pegasus-recognition,.pegasus-myth-layout,.cassiopeia-recognition,.cassiopeia-myth-layout { grid-template-columns:1fr; }
+  .taurus-recognition,.taurus-myth-layout,.canis-major-recognition,.canis-major-myth-layout,.gemini-recognition,.gemini-myth-layout,.auriga-recognition,.auriga-myth-layout,.andromeda-recognition,.andromeda-myth-layout,.pegasus-recognition,.pegasus-myth-layout,.cassiopeia-recognition,.cassiopeia-myth-layout,.perseus-recognition,.perseus-myth-layout { grid-template-columns:1fr; }
   .taurus-v-mark { min-height:220px; }
   .sirius-beacon { min-height:220px; }
   .gemini-heads-mark { min-height:220px; }
@@ -667,6 +724,7 @@ h3 { font-size: 1.25rem; }
   .andromeda-chain-mark { min-height:220px; }
   .pegasus-square-mark { min-height:220px; }
   .cassiopeia-w-mark { min-height:220px; }
+  .perseus-branch-mark { min-height:220px; }
   .methodology-source-group { grid-template-columns:1fr; gap:10px; }
   .classical-source-columns { grid-template-columns:repeat(2,1fr); }
   .methodology-pair { grid-template-columns:repeat(2,1fr); }
@@ -738,6 +796,16 @@ h3 { font-size: 1.25rem; }
   .cassiopeia-route-visual .route-cassiopeia-segin b { transform:translate(-50px,3px); }
   .cassiopeia-route-visual .route-cassiopeia-m52 b { transform:translate(14px,-2px); }
   .cassiopeia-route-visual .route-cassiopeia-ngc457 b { transform:translate(-66px,11px); }
+  .perseus-map .star-label { font-size:.56rem; }
+  .perseus-cluster-marker b { font-size:.52rem; }
+  .perseus-double-cluster-label { font-size:.48rem; }
+  .perseus-route-visual .route-point b { font-size:.56rem; }
+  .perseus-route-visual .route-perseus-gammaCas b { transform:translate(13px,2px); }
+  .perseus-route-visual .route-perseus-ruchbah b { transform:translate(13px,2px); }
+  .perseus-route-visual .route-perseus-doubleCluster b { transform:translate(13px,-23px); }
+  .perseus-route-visual .route-perseus-mirfak b { transform:translate(-57px,-23px); }
+  .perseus-route-visual .route-perseus-algol b { transform:translate(-48px,3px); }
+  .perseus-route-visual .route-perseus-m34 b { transform:translate(-43px,-22px); }
   .constellation-pagination-split { gap:28px; }
   .constellation-pagination-split a { font-size:1.25rem; }
   .taurus-auriga-continuation { text-align:left; }

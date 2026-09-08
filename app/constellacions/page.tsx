@@ -53,6 +53,12 @@ const autumnConstellations = [
     number: "08",
     level: "Circumpolar · favorable a la tardor",
   },
+  {
+    name: "Perseu",
+    pattern: "Figura ramificada des de Mirfak",
+    href: "/constellacions/perseu",
+    number: "09",
+  },
 ];
 
 export default function ConstellationsPage() {
@@ -86,7 +92,7 @@ export default function ConstellationsPage() {
       <section className="wrap section constellation-season autumn-constellation-season" id="tardor">
         <div className="constellation-season-heading">
           <div><p className="section-kicker">ESTACIÓ 02</p><h2>Tardor</h2></div>
-          <p>Dos patrons de tardor connectats per Alpheratz i una W circumpolar que gira al voltant del nord.</p>
+          <p>Quatre figures que connecten patrons, cúmuls i una mateixa família de relats al cel de tardor.</p>
         </div>
 
         <div className="constellation-index-list">
@@ -102,7 +108,7 @@ export default function ConstellationsPage() {
 
         <div className="constellations-coming autumn-coming">
           <span>Properament</span>
-          <p>Perseu · Cefeu</p>
+          <p>Cefeu</p>
         </div>
       </section>
 

@@ -169,7 +169,7 @@ export default function CassiopeiaPage() {
           <div>
             <p className="section-kicker">LA REINA, LA CADIRA I EL GIR DEL CEL</p>
             <h2>Una supèrbia narrada de més d’una manera</h2>
-            <p>Cassiopea és la reina d’Etiòpia, esposa de <strong>Cefeu</strong> i mare d’<strong>Andròmeda</strong>. El nucli del relat és una comparació ofensiva amb les <strong>Nereides</strong>, però les fonts no coincideixen en qui és presentada com a més bella. Aquesta diferència és petita en aparença i decisiva per no convertir variants antigues en una sola història moderna.</p>
+            <p>Cassiopea és la reina de l’Etiòpia mítica de la tradició grega, esposa de <strong>Cefeu</strong> i mare d’<strong>Andròmeda</strong>. El nucli del relat és una comparació ofensiva amb les <strong>Nereides</strong>, però les fonts no coincideixen en qui és presentada com a més bella. Aquesta diferència és petita en aparença i decisiva per no convertir variants antigues en una sola història moderna.</p>
 
             <div className="myth-stories-grid cassiopeia-myth-stories">
               <article>
@@ -195,7 +195,7 @@ export default function CassiopeiaPage() {
             </div>
 
             <p className="myth-conclusion">La W és circumpolar per geometria celeste; que aquest gir sigui llegit com un càstig és una interpretació conservada en una tradició concreta, no una definició astronòmica ni una versió universal del mite.</p>
-            <div className="myth-next-story" aria-label="Continuació mitològica"><Link href="/constellacions/andromeda"><strong>Continua la història a Andròmeda →</strong></Link><span>Perseu · properament</span></div>
+            <div className="myth-next-story" aria-label="Continuació mitològica"><Link href="/constellacions/andromeda"><strong>Continua la història a Andròmeda →</strong></Link><Link href="/constellacions/perseu">Continua a Perseu →</Link></div>
           </div>
         </div>
       </section>
@@ -209,8 +209,9 @@ export default function CassiopeiaPage() {
 
       <SourceNotes references={sources} />
 
-      <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">
+      <nav className="wrap constellation-pagination" aria-label="Navegació entre constel·lacions">
         <Link href="/constellacions/pegas"><strong>← Pegàs</strong><span>Torna al Gran Quadrat</span></Link>
+        <Link href="/constellacions/perseu"><strong>Perseu →</strong><span>Continua cap a Mirfak i el Doble Cúmul</span></Link>
       </nav>
     </main>
   );
