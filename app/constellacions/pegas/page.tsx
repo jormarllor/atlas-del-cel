@@ -211,8 +211,9 @@ export default function PegasusPage() {
 
       <SourceNotes references={sources} />
 
-      <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">
+      <nav className="wrap constellation-pagination" aria-label="Navegació entre constel·lacions">
         <Link href="/constellacions/andromeda"><strong>← Andròmeda</strong><span>Torna a la cadena i M31</span></Link>
+        <Link href="/constellacions/cassiopea"><strong>Cassiopea →</strong><span>Continua cap a la W circumpolar</span></Link>
       </nav>
     </main>
   );

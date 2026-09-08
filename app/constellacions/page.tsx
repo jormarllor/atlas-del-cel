@@ -46,6 +46,13 @@ const autumnConstellations = [
     href: "/constellacions/pegas",
     number: "07",
   },
+  {
+    name: "Cassiopea",
+    pattern: "Cinc estrelles en W o M",
+    href: "/constellacions/cassiopea",
+    number: "08",
+    level: "Circumpolar · favorable a la tardor",
+  },
 ];
 
 export default function ConstellationsPage() {
@@ -79,7 +86,7 @@ export default function ConstellationsPage() {
       <section className="wrap section constellation-season autumn-constellation-season" id="tardor">
         <div className="constellation-season-heading">
           <div><p className="section-kicker">ESTACIÓ 02</p><h2>Tardor</h2></div>
-          <p>Dos grans patrons connectats per Alpheratz: una cadena cap a M31 i el Gran Quadrat.</p>
+          <p>Dos patrons de tardor connectats per Alpheratz i una W circumpolar que gira al voltant del nord.</p>
         </div>
 
         <div className="constellation-index-list">
@@ -87,7 +94,7 @@ export default function ConstellationsPage() {
             <Link className="constellation-index-entry" href={constellation.href} key={constellation.name}>
               <span className="constellation-index-number">{constellation.number}</span>
               <div><h3>{constellation.name}</h3><p>Patró · {constellation.pattern}</p></div>
-              <span className="constellation-index-level">Nivell fàcil</span>
+              <span className="constellation-index-level">{"level" in constellation ? constellation.level : "Nivell fàcil"}</span>
               <span className="constellation-index-arrow" aria-hidden="true">→</span>
             </Link>
           ))}
@@ -95,7 +102,7 @@ export default function ConstellationsPage() {
 
         <div className="constellations-coming autumn-coming">
           <span>Properament</span>
-          <p>Cassiopea · Perseu</p>
+          <p>Perseu · Cefeu</p>
         </div>
       </section>
 

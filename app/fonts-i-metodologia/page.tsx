@@ -52,6 +52,11 @@ const astronomySources = [
     detail: "Naturalesa, antiguitat i observació del cúmul globular M15.",
   },
   {
+    name: "NSF NOIRLab · Cassiopeia",
+    href: "https://noirlab.edu/public/education/constellations/cassiopeia/",
+    detail: "Circumpolaritat boreal, posició estacional i cúmuls oberts de Cassiopea.",
+  },
+  {
     name: "U.S. Naval Observatory · ICRS",
     href: "https://aa.usno.navy.mil/faq/ICRS_doc",
     detail: "Definició del sistema ICRS i relació amb l’equador i l’equinocci de J2000.0.",
@@ -116,6 +121,15 @@ const classicalSources = [
       { name: "Higí · Astronomica, 2.18", href: "https://topostext.org/work/207" },
     ],
   },
+  {
+    constellation: "Cassiopea",
+    sources: [
+      { name: "Arat · Fenòmens, 188–196", href: "https://topostext.org/work/551" },
+      { name: "Biblioteca atribuïda a Apol·lodor, 2.4.3", href: "https://www.theoi.com/Text/Apollodorus2.html" },
+      { name: "Higí · Fabulae, 64", href: "https://topostext.org/work/206" },
+      { name: "Higí · Astronomica, 2.10", href: "https://topostext.org/work/207" },
+    ],
+  },
 ];
 
 export default function SourcesAndMethodologyPage() {
@@ -153,7 +167,7 @@ export default function SourcesAndMethodologyPage() {
             <p className="section-kicker">TRES CAPES, TRES FUNCIONS</p>
             <h2>Regió oficial, traç pedagògic i figura imaginada</h2>
             <p>
-              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major», «a Bessons», «a Auriga», «a Andròmeda» o «a Pegàs» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
+              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major», «a Bessons», «a Auriga», «a Andròmeda», «a Pegàs» o «a Cassiopea» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
             </p>
             <p>
               Les línies que uneixen estrelles als mapes són una <strong>ajuda visual</strong>. No hi ha una figura de línies oficial de la IAU i el traç pot variar entre atles. Les il·lustracions «imaginades» constitueixen encara una tercera capa: són interpretacions artístiques i mitològiques, separades del mapa científic.
@@ -183,6 +197,7 @@ export default function SourcesAndMethodologyPage() {
               <p><strong>Auriga</strong><span>Capella, l’estrella més brillant de la constel·lació</span></p>
               <p><strong>Andròmeda</strong><span>Mirach, al centre de la cadena i al camí de M31</span></p>
               <p><strong>Pegàs</strong><span>Markab, vèrtex del Gran Quadrat i inici de la branca cap a Enif</span></p>
+              <p><strong>Cassiopea</strong><span>Schedar, estrella càlida i prominent d’un angle de la W</span></p>
             </div>
             <p>
               Per proposar una bona oportunitat, l’Atlas demana que la referència superi aproximadament els <strong>12° d’altura</strong> i que el Sol sigui a <strong>−12° o menys</strong>, el límit aproximat del final del crepuscle nàutic. La cerca avança en passos de trenta minuts i pot arribar fins a uns 180 dies, de manera que també cobreix constel·lacions fora de temporada.
@@ -192,6 +207,20 @@ export default function SourcesAndMethodologyPage() {
 
         <article className="methodology-entry">
           <span className="methodology-number">04</span>
+          <div>
+            <p className="section-kicker">CIRCUMPOLARITAT</p>
+            <h2>Visible tot l’any no vol dir sempre alta</h2>
+            <p>
+              Una estrella és <strong>circumpolar</strong> quan, des d’una latitud determinada, el seu cercle aparent al voltant del pol celeste no arriba a travessar l’horitzó. La condició depèn de la latitud: una figura circumpolar des de Catalunya pot no ser-ho des d’un indret més meridional.
+            </p>
+            <p>
+              Les cinc estrelles de la W principal de <strong>Cassiopea</strong> són circumpolars a uns 41° N. Això permet veure el patró durant tot l’any, però no el manté sempre en una posició còmoda: a la culminació inferior pot passar molt baix sobre l’horitzó nord. «Millor època al vespre» continua indicant quan queda especialment alta i útil, no els únics mesos en què existeix o és visible.
+            </p>
+          </div>
+        </article>
+
+        <article className="methodology-entry">
+          <span className="methodology-number">05</span>
           <div>
             <p className="section-kicker">LÍMITS DEL CÀLCUL</p>
             <h2>Una orientació visual, no una efemèride de precisió</h2>
@@ -205,7 +234,7 @@ export default function SourcesAndMethodologyPage() {
         </article>
 
         <article className="methodology-entry">
-          <span className="methodology-number">05</span>
+          <span className="methodology-number">06</span>
           <div>
             <p className="section-kicker">PROFUNDITAT I PERSPECTIVA</p>
             <h2>Compartir cel no vol dir compartir espai</h2>
@@ -219,7 +248,7 @@ export default function SourcesAndMethodologyPage() {
         </article>
 
         <article className="methodology-entry">
-          <span className="methodology-number">06</span>
+          <span className="methodology-number">07</span>
           <div>
             <p className="section-kicker">MITOLOGIA</p>
             <h2>Relats transmesos, no un cànon únic</h2>
