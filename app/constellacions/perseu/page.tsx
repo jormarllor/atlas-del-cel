@@ -16,7 +16,7 @@ const objects = [
     name: "Algol",
     kind: "Sistema estel·lar eclipsant",
     visibility: "Ull nu · seguiment durant hores",
-    text: "La parella interior està alineada de manera que els seus components s’eclipsen vistos des de la Terra. Aproximadament cada 2,87 dies, el component més fred i feble passa davant del principal calent i la brillantor conjunta baixa prou perquè un observador atent ho pugui seguir a ull nu.",
+    text: "Algol és un sistema triple. En la parella interior, els dos components estan alineats de manera que s’eclipsen vistos des de la Terra. Aproximadament cada 2,87 dies, el component més fred i feble passa davant del principal calent i la brillantor conjunta baixa prou perquè un observador atent ho pugui seguir a ull nu.",
   },
   {
     name: "Doble Cúmul · NGC 869 i NGC 884",
@@ -95,7 +95,7 @@ export default function PerseusPage() {
       <section className="page-hero wrap constellation-hero perseus-hero">
         <div>
           <Link href="/constellacions" className="back-link">← Constel·lacions</Link>
-          <p className="eyebrow">TARDOR I INICI D’HIVERN · NIVELL FÀCIL</p>
+          <p className="eyebrow">TARDOR I HIVERN · NIVELL FÀCIL</p>
           <h1>Perseu</h1>
           <p className="lead">L’heroi entre Cassiopea i Andròmeda, amb Algol i el Doble Cúmul com a grans sorpreses.</p>
         </div>
@@ -201,7 +201,7 @@ export default function PerseusPage() {
             <div className="algol-history-note">
               <p className="section-kicker">ALGOL I EL CAP DE MEDUSA</p>
               <h3>Una posició antiga, un nom medieval</h3>
-              <p><strong>Ptolemeu</strong> ja catalogava β Persei com l’estrella brillant del cap de la Gorgona. El nom <strong>Algol</strong>, però, procedeix de l’àrab medieval <em>raʾs al-ghūl</em>, «cap del ghul». L’associació figurativa és antiga; no hi ha base per deduir-ne que els grecs coneguessin el mecanisme dels seus eclipsis.</p>
+              <p><strong>Ptolemeu</strong> ja catalogava l’estrella que avui identifiquem com β Persei a la zona del cap de la Gorgona. El nom <strong>Algol</strong>, però, procedeix de l’àrab medieval <em>raʾs al-ghūl</em>, «cap del ghul». L’associació figurativa és antiga; no hi ha base per deduir-ne que els grecs coneguessin el mecanisme dels seus eclipsis.</p>
             </div>
 
             <p className="myth-conclusion">El mapa mostra una regió astronòmica moderna; la figura de l’heroi i el cap de Medusa pertanyen a una història textual que ha canviat amb les llengües i els segles.</p>
