@@ -194,7 +194,7 @@ export default function PerseusPage() {
               <article>
                 <p className="section-kicker">HIGÍ · ASTRONOMICA</p>
                 <h3>L’heroi convertit en figura celeste</h3>
-                <p><strong>Higí</strong> conserva el catasterisme de Perseu i descriu els atributs amb què la figura és reconeguda al cel. La constel·lació fixa així un instant de la llegenda, mentre les altres fitxes —Andròmeda, Cassiopea i, més endavant, Cefeu— en conserven altres punts de vista.</p>
+                <p><strong>Higí</strong> conserva el catasterisme de Perseu i descriu els atributs amb què la figura és reconeguda al cel. La constel·lació fixa així un instant de la llegenda, mentre les altres fitxes —Andròmeda, Cassiopea i Cefeu— en conserven altres punts de vista.</p>
               </article>
             </div>
 
@@ -205,7 +205,7 @@ export default function PerseusPage() {
             </div>
 
             <p className="myth-conclusion">El mapa mostra una regió astronòmica moderna; la figura de l’heroi i el cap de Medusa pertanyen a una història textual que ha canviat amb les llengües i els segles.</p>
-            <div className="myth-next-story" aria-label="Connexions mitològiques"><Link href="/constellacions/andromeda"><strong>Continua a Andròmeda →</strong></Link><Link href="/constellacions/cassiopea">Torna a Cassiopea →</Link><span>Cefeu · properament</span></div>
+            <div className="myth-next-story" aria-label="Connexions mitològiques"><Link href="/constellacions/andromeda"><strong>Continua a Andròmeda →</strong></Link><Link href="/constellacions/cassiopea">Torna a Cassiopea →</Link><Link href="/constellacions/cefeu">Continua a Cefeu →</Link></div>
           </div>
         </div>
       </section>
@@ -219,8 +219,9 @@ export default function PerseusPage() {
 
       <SourceNotes references={sources} />
 
-      <nav className="wrap constellation-pagination constellation-pagination-back" aria-label="Navegació entre constel·lacions">
+      <nav className="wrap constellation-pagination" aria-label="Navegació entre constel·lacions">
         <Link href="/constellacions/cassiopea"><strong>← Cassiopea</strong><span>Torna a la W circumpolar</span></Link>
+        <Link href="/constellacions/cefeu"><strong>Cefeu →</strong><span>Continua cap a la casa circumpolar</span></Link>
       </nav>
     </main>
   );

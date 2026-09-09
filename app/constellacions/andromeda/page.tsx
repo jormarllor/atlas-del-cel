@@ -177,7 +177,7 @@ export default function AndromedaPage() {
           <div>
             <p className="section-kicker">UNA PRINCESA, DIVERSES VEUS ANTIGUES</p>
             <h2>Una mateixa figura celeste no produeix un relat únic</h2>
-            <p><strong>Andròmeda</strong> és filla de <strong>Cefeu</strong> i <strong>Cassiopea</strong>. La seva exposició al monstre marí i el rescat de <strong>Perseu</strong> articulen el nucli compartit de la història, però les fonts discrepen en punts importants. L’Atlas les manté separades en lloc de convertir-les en una sola novel·la moderna.</p>
+            <p><strong>Andròmeda</strong> és filla de <Link href="/constellacions/cefeu"><strong>Cefeu</strong></Link> i <strong>Cassiopea</strong>. La seva exposició al monstre marí i el rescat de <strong>Perseu</strong> articulen el nucli compartit de la història, però les fonts discrepen en punts importants. L’Atlas les manté separades en lloc de convertir-les en una sola novel·la moderna.</p>
 
             <div className="myth-stories-grid andromeda-myth-stories">
               <article>

@@ -4,7 +4,7 @@ const seasons = [
   { name: "Hivern", hint: "Orió, Taure, Ca Major, Bessons, Auriga", className: "winter", availableHref: "/constellacions", availableLabel: "5 fitxes disponibles →" },
   { name: "Primavera", hint: "Lleó, Verge, Bover", className: "spring" },
   { name: "Estiu", hint: "Cigne, Lira, Àguila", className: "summer" },
-  { name: "Tardor", hint: "Andròmeda, Pegàs, Cassiopea i Perseu", className: "autumn", availableHref: "/constellacions#tardor", availableLabel: "4 fitxes disponibles →" },
+  { name: "Tardor", hint: "Andròmeda, Pegàs, Cassiopea, Perseu i Cefeu", className: "autumn", availableHref: "/constellacions#tardor", availableLabel: "5 fitxes disponibles →" },
 ];
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
             <Link className="button primary" href="/com-llegir-el-cel">1. Com llegir el cel</Link>
             <Link className="button ghost" href="/constellacions">Explora constel·lacions</Link>
           </div>
-          <p className="hero-available-links"><span>Disponibles ara</span><Link href="/constellacions/orio">Orió</Link><i>·</i><Link href="/constellacions/taure">Taure</Link><i>·</i><Link href="/constellacions/ca-major">Ca Major</Link><i>·</i><Link href="/constellacions/bessons">Bessons</Link><i>·</i><Link href="/constellacions/auriga">Auriga</Link><i>·</i><Link href="/constellacions/andromeda">Andròmeda</Link><i>·</i><Link href="/constellacions/pegas">Pegàs</Link><i>·</i><Link href="/constellacions/cassiopea">Cassiopea</Link><i>·</i><Link href="/constellacions/perseu">Perseu</Link></p>
+          <p className="hero-available-links"><span>Disponibles ara</span><Link href="/constellacions/orio">Orió</Link><i>·</i><Link href="/constellacions/taure">Taure</Link><i>·</i><Link href="/constellacions/ca-major">Ca Major</Link><i>·</i><Link href="/constellacions/bessons">Bessons</Link><i>·</i><Link href="/constellacions/auriga">Auriga</Link><i>·</i><Link href="/constellacions/andromeda">Andròmeda</Link><i>·</i><Link href="/constellacions/pegas">Pegàs</Link><i>·</i><Link href="/constellacions/cassiopea">Cassiopea</Link><i>·</i><Link href="/constellacions/perseu">Perseu</Link><i>·</i><Link href="/constellacions/cefeu">Cefeu</Link></p>
         </div>
       </section>
 
@@ -88,7 +88,7 @@ export default function Home() {
 
       <section className="wrap section autumn-available">
         <div className="section-heading winter-available-heading">
-          <div><p className="section-kicker">S’OBRE EL CEL DE TARDOR</p><h2>Quatre portes connectades entre patrons, cúmuls i mites</h2></div>
+          <div><p className="section-kicker">S’OBRE EL CEL DE TARDOR</p><h2>Cinc portes connectades entre patrons, cúmuls i mites</h2></div>
           <Link className="text-link" href="/constellacions#tardor">Explora el bloc de tardor →</Link>
         </div>
         <div className="winter-available-list">
@@ -103,6 +103,9 @@ export default function Home() {
           </Link>
           <Link href="/constellacions/perseu" className="winter-available-entry autumn-available-entry">
             <span>09</span><div><h3>Perseu</h3><p>Mirfak ordena una figura ramificada entre Algol i el Doble Cúmul.</p></div><b>Explora Perseu →</b>
+          </Link>
+          <Link href="/constellacions/cefeu" className="winter-available-entry autumn-available-entry">
+            <span>10</span><div><h3>Cefeu</h3><p>Una casa circumpolar guarda δ Cephei i la clau de les distàncies còsmiques.</p></div><b>Explora Cefeu →</b>
           </Link>
         </div>
       </section>

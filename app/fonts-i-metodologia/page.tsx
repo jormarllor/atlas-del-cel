@@ -67,6 +67,21 @@ const astronomySources = [
     detail: "Context observacional de Mirfak, Algol, M34 i el Doble Cúmul.",
   },
   {
+    name: "AAVSO · Delta Cephei",
+    href: "https://www.aavso.org/vsots_delcep",
+    detail: "Pulsació, període i paper de δ Cephei com a prototip de les cefeides clàssiques.",
+  },
+  {
+    name: "Leavitt i Pickering · HCO Circular 173 (1912)",
+    href: "https://ui.adsabs.harvard.edu/abs/1912HarCi.173....1L/abstract",
+    detail: "Relació observada entre el període i la brillantor de variables als Núvols de Magalhães.",
+  },
+  {
+    name: "Harvard Plate Stacks · Henrietta Swan Leavitt",
+    href: "https://platestacks.cfa.harvard.edu/henrietta-swan-leavitt/variable-stars",
+    detail: "Context històric de la relació període–lluminositat i de la seva calibració posterior.",
+  },
+  {
     name: "U.S. Naval Observatory · ICRS",
     href: "https://aa.usno.navy.mil/faq/ICRS_doc",
     detail: "Definició del sistema ICRS i relació amb l’equador i l’equinocci de J2000.0.",
@@ -148,6 +163,14 @@ const classicalSources = [
       { name: "Higí · Astronomica, 2.12", href: "https://topostext.org/work/207" },
     ],
   },
+  {
+    constellation: "Cefeu",
+    sources: [
+      { name: "Biblioteca atribuïda a Apol·lodor, 2.4.3", href: "https://www.theoi.com/Text/Apollodorus2.html" },
+      { name: "Higí · Astronomica, 2.9", href: "https://topostext.org/work/207" },
+      { name: "Arat · Fenòmens, 179–187", href: "https://topostext.org/work/551" },
+    ],
+  },
 ];
 
 export default function SourcesAndMethodologyPage() {
@@ -185,7 +208,7 @@ export default function SourcesAndMethodologyPage() {
             <p className="section-kicker">TRES CAPES, TRES FUNCIONS</p>
             <h2>Regió oficial, traç pedagògic i figura imaginada</h2>
             <p>
-              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major», «a Bessons», «a Auriga», «a Andròmeda», «a Pegàs», «a Cassiopea» o «a Perseu» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
+              La IAU reconeix <strong>88 constel·lacions</strong> que cobreixen tot el cel i en defineix oficialment els límits. En astronomia, dir que un objecte és «a Orió», «a Taure», «a Ca Major», «a Bessons», «a Auriga», «a Andròmeda», «a Pegàs», «a Cassiopea», «a Perseu» o «a Cefeu» significa que queda dins d’una d’aquestes regions, no que pertanyi a un dibuix d’estrelles.
             </p>
             <p>
               Les línies que uneixen estrelles als mapes són una <strong>ajuda visual</strong>. No hi ha una figura de línies oficial de la IAU i el traç pot variar entre atles. Les il·lustracions «imaginades» constitueixen encara una tercera capa: són interpretacions artístiques i mitològiques, separades del mapa científic.
@@ -217,6 +240,7 @@ export default function SourcesAndMethodologyPage() {
               <p><strong>Pegàs</strong><span>Markab, vèrtex del Gran Quadrat i inici de la branca cap a Enif</span></p>
               <p><strong>Cassiopea</strong><span>Schedar, estrella càlida i prominent d’un angle de la W</span></p>
               <p><strong>Perseu</strong><span>Mirfak, l’estrella més brillant i una àncora central del traç</span></p>
+              <p><strong>Cefeu</strong><span>Alderamin, l’estrella més brillant i una cantonada de la casa</span></p>
             </div>
             <p>
               Per proposar una bona oportunitat, l’Atlas demana que la referència superi aproximadament els <strong>12° d’altura</strong> i que el Sol sigui a <strong>−12° o menys</strong>, el límit aproximat del final del crepuscle nàutic. La cerca avança en passos de trenta minuts i pot arribar fins a uns 180 dies, de manera que també cobreix constel·lacions fora de temporada.
@@ -233,13 +257,27 @@ export default function SourcesAndMethodologyPage() {
               Una estrella és <strong>circumpolar</strong> quan, des d’una latitud determinada, el seu cercle aparent al voltant del pol celeste no arriba a travessar l’horitzó. La condició depèn de la latitud: una figura circumpolar des de Catalunya pot no ser-ho des d’un indret més meridional.
             </p>
             <p>
-              Les cinc estrelles de la W principal de <strong>Cassiopea</strong> són circumpolars a uns 41° N. Això permet veure el patró durant tot l’any, però no el manté sempre en una posició còmoda: a la culminació inferior pot passar molt baix sobre l’horitzó nord. «Millor època al vespre» continua indicant quan queda especialment alta i útil, no els únics mesos en què existeix o és visible.
+              Les cinc estrelles de la W principal de <strong>Cassiopea</strong> i les cinc de la casa principal de <strong>Cefeu</strong> són circumpolars a uns 41° N. Això permet veure aquests patrons durant tot l’any, però no els manté sempre en una posició còmoda: a la culminació inferior algunes estrelles poden passar molt baixes sobre l’horitzó nord. «Millor època al vespre» continua indicant quan queden especialment altes i útils, no els únics mesos en què existeixen o són visibles.
             </p>
           </div>
         </article>
 
         <article className="methodology-entry">
           <span className="methodology-number">05</span>
+          <div>
+            <p className="section-kicker">ESTRELLES VARIABLES</p>
+            <h2>Una mateixa paraula, causes físiques diferents</h2>
+            <p>
+              «Variable» descriu un <strong>canvi de brillantor observada</strong>, no una única causa. A <strong>Algol</strong>, a Perseu, la llum baixa periòdicament perquè els components de la parella interior s’eclipsen des de la nostra línia de visió. A <strong>δ Cephei</strong>, a Cefeu, la mateixa estrella pulsa: canvien el radi i la temperatura de les seves capes externes.
+            </p>
+            <p>
+              Henrietta Swan Leavitt va establir, treballant amb variables dels Núvols de Magalhães, que les cefeides de període més llarg eren també més lluminoses. La relació es va calibrar després i va convertir aquesta família en una eina fonamental per inferir distàncies astronòmiques. L’Atlas separa la descoberta de la relació, la seva calibració i les aplicacions posteriors.
+            </p>
+          </div>
+        </article>
+
+        <article className="methodology-entry">
+          <span className="methodology-number">06</span>
           <div>
             <p className="section-kicker">LÍMITS DEL CÀLCUL</p>
             <h2>Una orientació visual, no una efemèride de precisió</h2>
@@ -253,7 +291,7 @@ export default function SourcesAndMethodologyPage() {
         </article>
 
         <article className="methodology-entry">
-          <span className="methodology-number">06</span>
+          <span className="methodology-number">07</span>
           <div>
             <p className="section-kicker">PROFUNDITAT I PERSPECTIVA</p>
             <h2>Compartir cel no vol dir compartir espai</h2>
@@ -267,7 +305,7 @@ export default function SourcesAndMethodologyPage() {
         </article>
 
         <article className="methodology-entry">
-          <span className="methodology-number">07</span>
+          <span className="methodology-number">08</span>
           <div>
             <p className="section-kicker">MITOLOGIA</p>
             <h2>Relats transmesos, no un cànon únic</h2>

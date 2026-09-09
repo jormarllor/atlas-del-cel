@@ -715,8 +715,61 @@ h3 { font-size: 1.25rem; }
 .perseus-route-visual .route-perseus-algol b { transform:translate(-54px,4px); }
 .perseus-route-visual .route-perseus-m34 b { transform:translate(-48px,-24px); color:#d7e7f7; }
 
+/* Cepheus */
+.cepheus-recognition { display:grid; grid-template-columns:.46fr 1.54fr; gap:58px; align-items:center; border-bottom:1px solid var(--line); }
+.cepheus-hero .facts dd { min-width:0; max-width:62%; line-height:1.35; }
+.cepheus-house-mark { min-height:300px; position:relative; border:1px solid var(--line); border-radius:26px; overflow:hidden; background:radial-gradient(circle at 49% 44%,rgba(105,130,169,.15),transparent 53%),#050d17; }
+.cepheus-house-mark:before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle,rgba(255,255,255,.72) 0 1px,transparent 1.2px); background-size:51px 51px; opacity:.13; transform:rotate(-6deg) scale(1.12); }
+.cepheus-house-mark svg { position:absolute; inset:0; width:100%; height:100%; }
+.cepheus-house-mark polygon { fill:none; stroke:rgba(228,198,124,.52); stroke-width:.58; vector-effect:non-scaling-stroke; }
+.cepheus-house-mark path { fill:none; stroke:rgba(196,219,244,.22); stroke-width:.42; vector-effect:non-scaling-stroke; }
+.cepheus-house-mark span { position:absolute; z-index:2; width:8px; height:8px; border-radius:50%; transform:translate(-50%,-50%); background:#eef5ff; box-shadow:0 0 12px rgba(220,238,255,.46); }
+.cepheus-house-mark .cepheus-mark-alderamin { left:22%; top:67%; width:12px; height:12px; box-shadow:0 0 16px 3px rgba(196,222,255,.4); }
+.cepheus-house-mark .cepheus-mark-alfirk { left:25%; top:31%; }
+.cepheus-house-mark .cepheus-mark-errai { left:72%; top:14%; background:#ffc58d; }
+.cepheus-house-mark .cepheus-mark-iota { left:66%; top:55%; background:#ffc58d; }
+.cepheus-house-mark .cepheus-mark-zeta { left:43%; top:81%; background:#ffc58d; }
+.cepheus-house-mark b { position:absolute; left:0; right:0; bottom:22px; text-align:center; color:rgba(228,198,124,.66); font-size:.64rem; letter-spacing:.17em; }
+.cepheus-map .map-star.warm { background:#ffc58d; box-shadow:0 0 15px 3px rgba(255,166,91,.4); }
+.cepheus-map .map-star.cool { background:#edf5ff; box-shadow:0 0 15px 3px rgba(196,222,255,.43); }
+.cepheus-map .map-star.feature { background:#eaf3ff; border:1px solid rgba(228,198,124,.72); box-shadow:0 0 14px 3px rgba(196,222,255,.34); }
+.label-cepheus-alderamin { left:12px; top:12px; color:#e8f2ff; }
+.label-cepheus-alfirk { left:12px; top:12px; }
+.label-cepheus-errai { left:auto; right:12px; top:12px; text-align:right; color:#ffd1a2; }
+.label-cepheus-iota { left:auto; right:12px; top:12px; text-align:right; }
+.label-cepheus-zeta { left:auto; right:12px; top:auto; bottom:15px; text-align:right; }
+.label-cepheus-delta { left:auto; right:12px; top:12px; text-align:right; color:#e4d6aa; }
+.label-cepheus-mu { left:12px; top:12px; color:#ffd1a2; }
+.cepheus-cluster-marker { position:absolute; z-index:5; width:0; height:0; }
+.cepheus-cluster-marker span { position:absolute; left:0; top:0; width:15px; height:15px; transform:translate(-50%,-50%); border:1px solid rgba(192,218,247,.74); border-radius:50%; background:radial-gradient(circle,rgba(226,238,252,.62),rgba(147,183,223,.16) 55%,transparent 74%); box-shadow:0 0 16px rgba(135,178,224,.3); }
+.cepheus-cluster-marker b { position:absolute; left:14px; top:12px; white-space:nowrap; color:#d4e3f3; font-size:.62rem; text-shadow:0 1px 4px #02070d; }
+.cepheus-myth { z-index:2; pointer-events:none; }
+.cepheus-myth path { fill:none; stroke:rgba(228,198,124,.18); stroke-width:.38; }
+.cepheus-myth .cepheus-sceptre { stroke:rgba(228,198,124,.14); stroke-width:.31; }
+.cepheus-myth-layout { display:grid; grid-template-columns:.58fr 1.42fr; gap:72px; align-items:start; }
+.cepheus-myth-figure { border-radius:44% 44% 30% 30%; }
+.cepheus-myth-figure span { font-size:7rem; text-shadow:0 0 35px rgba(228,198,124,.14); }
+.variable-contrast-note { margin-top:18px; border:1px solid var(--line); border-radius:20px; padding:24px; background:rgba(255,255,255,.025); }
+.variable-contrast-note p:last-child { color:#c7d1dd; margin-bottom:0; }
+.cepheus-art-card { position:relative; }
+.cepheus-art-overlay { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.cepheus-art-overlay line { stroke:rgba(213,235,255,.16); stroke-width:.46px; vector-effect:non-scaling-stroke; }
+.cepheus-art-points { position:absolute; inset:0; pointer-events:none; }
+.cepheus-art-star { position:absolute; width:3px; height:3px; display:block; border-radius:50%; transform:translate(-50%,-50%); background:rgba(239,248,255,.59); box-shadow:0 0 5px rgba(179,218,255,.35); }
+.cepheus-art-star.alderamin { width:6px; height:6px; background:rgba(232,243,255,.84); box-shadow:0 0 8px rgba(187,220,255,.5),0 0 14px rgba(160,201,246,.16); }
+.cepheus-route-visual .route-point b { text-shadow:0 1px 4px #02070d; }
+.cepheus-route-visual .route-cepheus-schedar b { transform:translate(18px,2px); }
+.cepheus-route-visual .route-cepheus-caph b { transform:translate(18px,-24px); }
+.cepheus-route-visual .route-cepheus-alderamin b { transform:translate(18px,3px); color:#e8f2ff; }
+.cepheus-route-visual .route-cepheus-alfirk b { transform:translate(17px,2px); }
+.cepheus-route-visual .route-cepheus-errai b { transform:translate(-57px,3px); }
+.cepheus-route-visual .route-cepheus-iota b { transform:translate(-62px,-24px); }
+.cepheus-route-visual .route-cepheus-zeta b { transform:translate(-62px,3px); }
+.cepheus-route-visual .route-cepheus-delta b { transform:translate(18px,-24px); }
+.cepheus-route-visual .route-cepheus-mu b { transform:translate(-68px,-24px); color:#ffd1a2; }
+
 @media (max-width: 900px) {
-  .taurus-recognition,.taurus-myth-layout,.canis-major-recognition,.canis-major-myth-layout,.gemini-recognition,.gemini-myth-layout,.auriga-recognition,.auriga-myth-layout,.andromeda-recognition,.andromeda-myth-layout,.pegasus-recognition,.pegasus-myth-layout,.cassiopeia-recognition,.cassiopeia-myth-layout,.perseus-recognition,.perseus-myth-layout { grid-template-columns:1fr; }
+  .taurus-recognition,.taurus-myth-layout,.canis-major-recognition,.canis-major-myth-layout,.gemini-recognition,.gemini-myth-layout,.auriga-recognition,.auriga-myth-layout,.andromeda-recognition,.andromeda-myth-layout,.pegasus-recognition,.pegasus-myth-layout,.cassiopeia-recognition,.cassiopeia-myth-layout,.perseus-recognition,.perseus-myth-layout,.cepheus-recognition,.cepheus-myth-layout { grid-template-columns:1fr; }
   .taurus-v-mark { min-height:220px; }
   .sirius-beacon { min-height:220px; }
   .gemini-heads-mark { min-height:220px; }
@@ -725,6 +778,7 @@ h3 { font-size: 1.25rem; }
   .pegasus-square-mark { min-height:220px; }
   .cassiopeia-w-mark { min-height:220px; }
   .perseus-branch-mark { min-height:220px; }
+  .cepheus-house-mark { min-height:220px; }
   .methodology-source-group { grid-template-columns:1fr; gap:10px; }
   .classical-source-columns { grid-template-columns:repeat(2,1fr); }
   .methodology-pair { grid-template-columns:repeat(2,1fr); }
@@ -806,6 +860,18 @@ h3 { font-size: 1.25rem; }
   .perseus-route-visual .route-perseus-mirfak b { transform:translate(-57px,-23px); }
   .perseus-route-visual .route-perseus-algol b { transform:translate(-48px,3px); }
   .perseus-route-visual .route-perseus-m34 b { transform:translate(-43px,-22px); }
+  .cepheus-map .star-label { font-size:.55rem; }
+  .cepheus-cluster-marker b { font-size:.51rem; }
+  .cepheus-route-visual .route-point b { font-size:.55rem; }
+  .cepheus-route-visual .route-cepheus-schedar b { transform:translate(13px,2px); }
+  .cepheus-route-visual .route-cepheus-caph b { transform:translate(13px,-22px); }
+  .cepheus-route-visual .route-cepheus-alderamin b { transform:translate(13px,3px); }
+  .cepheus-route-visual .route-cepheus-alfirk b { transform:translate(13px,2px); }
+  .cepheus-route-visual .route-cepheus-errai b { transform:translate(-50px,3px); }
+  .cepheus-route-visual .route-cepheus-iota b { transform:translate(-55px,-22px); }
+  .cepheus-route-visual .route-cepheus-zeta b { transform:translate(-55px,3px); }
+  .cepheus-route-visual .route-cepheus-delta b { transform:translate(13px,-22px); }
+  .cepheus-route-visual .route-cepheus-mu b { transform:translate(-60px,-22px); }
   .constellation-pagination-split { gap:28px; }
   .constellation-pagination-split a { font-size:1.25rem; }
   .taurus-auriga-continuation { text-align:left; }

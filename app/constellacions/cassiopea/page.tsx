@@ -169,7 +169,7 @@ export default function CassiopeiaPage() {
           <div>
             <p className="section-kicker">LA REINA, LA CADIRA I EL GIR DEL CEL</p>
             <h2>Una supèrbia narrada de més d’una manera</h2>
-            <p>Cassiopea és la reina de l’Etiòpia mítica de la tradició grega, esposa de <strong>Cefeu</strong> i mare d’<strong>Andròmeda</strong>. El nucli del relat és una comparació ofensiva amb les <strong>Nereides</strong>, però les fonts no coincideixen en qui és presentada com a més bella. Aquesta diferència és petita en aparença i decisiva per no convertir variants antigues en una sola història moderna.</p>
+            <p>Cassiopea és la reina de l’Etiòpia mítica de la tradició grega, esposa de <Link href="/constellacions/cefeu"><strong>Cefeu</strong></Link> i mare d’<strong>Andròmeda</strong>. El nucli del relat és una comparació ofensiva amb les <strong>Nereides</strong>, però les fonts no coincideixen en qui és presentada com a més bella. Aquesta diferència és petita en aparença i decisiva per no convertir variants antigues en una sola història moderna.</p>
 
             <div className="myth-stories-grid cassiopeia-myth-stories">
               <article>

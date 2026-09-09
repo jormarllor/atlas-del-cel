@@ -59,6 +59,13 @@ const autumnConstellations = [
     href: "/constellacions/perseu",
     number: "09",
   },
+  {
+    name: "Cefeu",
+    pattern: "Casa irregular al voltant del nord",
+    href: "/constellacions/cefeu",
+    number: "10",
+    level: "Circumpolar · nivell intermedi",
+  },
 ];
 
 export default function ConstellationsPage() {
@@ -92,7 +99,7 @@ export default function ConstellationsPage() {
       <section className="wrap section constellation-season autumn-constellation-season" id="tardor">
         <div className="constellation-season-heading">
           <div><p className="section-kicker">ESTACIÓ 02</p><h2>Tardor</h2></div>
-          <p>Quatre figures que connecten patrons, cúmuls i una mateixa família de relats al cel de tardor.</p>
+          <p>Cinc figures que connecten patrons, cúmuls i una mateixa família de relats al cel de tardor.</p>
         </div>
 
         <div className="constellation-index-list">
@@ -106,10 +113,6 @@ export default function ConstellationsPage() {
           ))}
         </div>
 
-        <div className="constellations-coming autumn-coming">
-          <span>Properament</span>
-          <p>Cefeu</p>
-        </div>
       </section>
 
       <section className="wrap index-future-seasons" aria-label="Futurs blocs de l’Atlas">
