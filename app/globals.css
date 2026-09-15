@@ -768,6 +768,100 @@ h3 { font-size: 1.25rem; }
 .cepheus-route-visual .route-cepheus-delta b { transform:translate(18px,-24px); }
 .cepheus-route-visual .route-cepheus-mu b { transform:translate(-68px,-24px); color:#ffd1a2; }
 
+/* Óssa Major: the Carro leads; the wider bear and mythology stay secondary. */
+.ursa-major-hero .facts dd { max-width:62%; min-width:0; line-height:1.35; }
+.ursa-hero-distinction { color:var(--muted); max-width:650px; margin:24px 0 0; font-size:.9rem; }
+.ursa-hero-distinction strong { color:var(--text); }
+.ursa-recognition { display:grid; grid-template-columns:.65fr 1.35fr; gap:58px; align-items:center; border-bottom:1px solid var(--line); }
+.ursa-dipper-mark { position:relative; min-height:250px; border:1px solid var(--line); border-radius:26px; background:radial-gradient(circle at 56% 44%,rgba(81,119,166,.17),transparent 65%),#050d17; overflow:hidden; }
+.ursa-dipper-mark svg { display:block; width:100%; height:auto; margin:20px 0; }
+.ursa-dipper-mark line { stroke:rgba(228,198,124,.45); stroke-width:1; }
+.ursa-dipper-mark circle { fill:#eaf4ff; filter:drop-shadow(0 0 4px rgba(196,224,255,.65)); }
+.ursa-dipper-mark b { position:absolute; left:15px; right:15px; bottom:20px; text-align:center; color:rgba(228,198,124,.7); font-size:.64rem; letter-spacing:.17em; }
+.ursa-major-map.accurate-map { aspect-ratio:1000 / 900; min-height:0; }
+.ursa-map-geometry,.ursa-route-geometry { position:absolute; inset:0; width:100%; height:100%; }
+.ursa-carro-lines line { stroke:rgba(228,198,124,.55); stroke-width:1.2px; vector-effect:non-scaling-stroke; }
+.ursa-secondary-lines line { stroke:rgba(181,205,230,.23); stroke-width:.75px; vector-effect:non-scaling-stroke; }
+.ursa-bear-figure { fill:none; stroke:rgba(228,198,124,.16); stroke-width:.8px; stroke-linecap:round; }
+.ursa-bear-figure path { vector-effect:non-scaling-stroke; }
+.ursa-svg-star { fill:#edf5ff; filter:drop-shadow(0 0 5px rgba(192,221,255,.52)); }
+.ursa-svg-star.bear,.ursa-svg-star.companion { fill:#d0dfef; opacity:.7; }
+.ursa-svg-star.alioth { fill:#f5f9ff; filter:drop-shadow(0 0 8px rgba(199,229,255,.7)); }
+.ursa-svg-star.dubhe { fill:#ffd4a9; }
+.ursa-galaxy { fill:rgba(196,221,249,.2); stroke:rgba(202,224,249,.68); stroke-width:.65px; vector-effect:non-scaling-stroke; }
+.ursa-galaxy.m101 { fill:rgba(196,221,249,.08); stroke:rgba(202,224,249,.42); }
+.ursa-map-label { position:absolute; z-index:5; color:#dbe7f4; font-size:.68rem; font-weight:700; text-shadow:0 1px 5px #000; transform:translate(12px,8px); white-space:nowrap; pointer-events:none; }
+.ursa-map-label.bear { color:#99b0c7; font-size:.6rem; }
+.ursa-map-label.galaxy { color:#d3c291; font-size:.62rem; }
+.label-ursa-dubhe { transform:translate(-52px,-29px); color:#ffd4a9; }
+.label-ursa-merak { transform:translate(-52px,8px); }
+.label-ursa-phecda { transform:translate(12px,12px); }
+.label-ursa-megrez { transform:translate(-17px,-31px); }
+.label-ursa-alioth { transform:translate(-19px,11px); }
+.label-ursa-mizar { transform:translate(-25px,-29px); }
+.label-ursa-alkaid { transform:translate(-15px,10px); }
+.label-ursa-tania-b,.label-ursa-alula-b { transform:translate(12px,-29px); }
+.label-ursa-tania-a,.label-ursa-alula-a { transform:translate(12px,9px); }
+.label-ursa-m81 { transform:translate(14px,-26px); }
+.label-ursa-m101 { transform:translate(12px,-22px); }
+.ursa-north-note { margin-top:30px; padding-left:20px; border-left:1px solid rgba(228,198,124,.5); color:var(--muted); font-size:.9rem; }
+.ursa-art-card { position:relative; }
+.ursa-art-card img { display:block; width:100%; height:auto; }
+.ursa-art-overlay { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.ursa-art-overlay line { vector-effect:non-scaling-stroke; stroke-width:.5px; stroke:rgba(211,233,255,.19); }
+.ursa-art-star { fill:rgba(233,246,255,.58); filter:drop-shadow(0 0 4px rgba(192,224,255,.4)); }
+.ursa-art-star.bear { fill:rgba(233,246,255,.23); }
+.ursa-art-star.alioth { fill:rgba(241,249,255,.82); filter:drop-shadow(0 0 6px rgba(192,224,255,.55)); }
+.ursa-myth-layout { display:grid; grid-template-columns:.58fr 1.42fr; gap:72px; align-items:start; }
+.ursa-myth-figure span { font-size:7rem; }
+.ursa-route-visual.accurate-route { aspect-ratio:1000 / 700; min-height:0; }
+.ursa-route-lines line { stroke:rgba(228,198,124,.56); stroke-width:1.2px; vector-effect:non-scaling-stroke; }
+.ursa-route-target { position:absolute; z-index:6; transform:translate(-50%,-50%); width:32px; height:32px; padding:0; border:0; border-radius:50%; background:transparent; color:#dce8f4; cursor:pointer; }
+.ursa-route-target span { display:block; width:23px; height:23px; margin:auto; border:1px solid transparent; border-radius:50%; }
+.ursa-route-target.selected span { border-color:rgba(228,198,124,.65); }
+.ursa-route-target b { position:absolute; left:16px; top:16px; width:max-content; max-width:160px; text-align:left; font-size:.7rem; white-space:nowrap; font-weight:600; transform:translate(16px,3px); text-shadow:0 1px 5px #000; }
+.ursa-route-target:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+.ursa-route-carro .target-ursa-dubhe b,.ursa-route-carro .target-ursa-merak b { transform:translate(-84px,4px); }
+.ursa-route-carro .target-ursa-megrez b,.ursa-route-carro .target-ursa-mizar b { transform:translate(-26px,-29px); }
+.ursa-route-carro .target-ursa-alioth b { transform:translate(-18px,13px); }
+.ursa-route-galaxies .target-ursa-m81 b { transform:translate(-76px,8px); }
+.ursa-route-galaxies .target-ursa-m82 b { transform:translate(14px,-29px); }
+.ursa-selected-note { border-top:1px solid var(--line); padding-top:18px; color:#c2d1e2; }
+.ursa-pagination > div { text-align:right; color:var(--muted); }
+.ursa-pagination > div strong { display:block; font-family:Georgia,serif; font-size:1.45rem; font-weight:500; }
+.ursa-pagination > div span { display:block; font-size:.8rem; margin-top:8px; }
+
+@media (max-width: 900px) {
+  .ursa-recognition,.ursa-myth-layout { grid-template-columns:1fr; gap:32px; }
+  .ursa-dipper-mark { max-width:550px; min-height:220px; }
+}
+@media (max-width: 600px) {
+  .ursa-major-map .ursa-map-label { font-size:.56rem; }
+  .ursa-major-map .ursa-map-label.bear,.ursa-major-map .ursa-map-label.galaxy { font-size:.5rem; }
+  .ursa-major-map .sky-orientation { font-size:.55rem; left:13px; right:13px; bottom:12px; }
+  .ursa-major-map .label-ursa-dubhe { transform:translate(-38px,-23px); }
+  .ursa-major-map .label-ursa-merak { transform:translate(-40px,7px); }
+  .ursa-major-map .label-ursa-megrez { transform:translate(-12px,-31px); }
+  .ursa-major-map .label-ursa-alioth { transform:translate(-16px,15px); }
+  .ursa-major-map .label-ursa-mizar { transform:translate(-17px,-21px); }
+  .ursa-major-map .label-ursa-alkaid { transform:translate(-24px,10px); }
+  .ursa-major-map .label-ursa-m101 { transform:translate(-12px,-23px); }
+  .ursa-major-map .label-ursa-phecda { transform:translate(-8px,11px); }
+  .ursa-major-map .label-ursa-tania-b,.ursa-major-map .label-ursa-alula-b { transform:translate(9px,-21px); }
+  .ursa-major-map .label-ursa-tania-a,.ursa-major-map .label-ursa-alula-a { transform:translate(9px,7px); }
+  .ursa-route-target b { font-size:.55rem; }
+  .ursa-route-visual .route-axis { font-size:.53rem; }
+  .ursa-route-carro .target-ursa-dubhe b,.ursa-route-carro .target-ursa-merak b { transform:translate(-62px,4px); }
+  .ursa-route-carro .target-ursa-mizar b { transform:translate(-20px,-26px); }
+  .ursa-route-carro .target-ursa-megrez b { transform:translate(-23px,-42px); }
+  .ursa-route-carro .target-ursa-alioth b { transform:translate(-24px,16px); }
+  .ursa-route-carro .target-ursa-alkaid b { transform:translate(-10px,4px); }
+  .ursa-route-galaxies .target-ursa-m81 b { transform:translate(-59px,8px); }
+  .ursa-route-galaxies .target-ursa-m82 b { transform:translate(12px,-23px); }
+  .ursa-route-north .target-ursa-polaris b { white-space:normal; max-width:100px; }
+  .ursa-pagination > div { text-align:left; }
+}
+
 @media (max-width: 900px) {
   .taurus-recognition,.taurus-myth-layout,.canis-major-recognition,.canis-major-myth-layout,.gemini-recognition,.gemini-myth-layout,.auriga-recognition,.auriga-myth-layout,.andromeda-recognition,.andromeda-myth-layout,.pegasus-recognition,.pegasus-myth-layout,.cassiopeia-recognition,.cassiopeia-myth-layout,.perseus-recognition,.perseus-myth-layout,.cepheus-recognition,.cepheus-myth-layout { grid-template-columns:1fr; }
   .taurus-v-mark { min-height:220px; }

@@ -171,6 +171,15 @@ const classicalSources = [
       { name: "Arat · Fenòmens, 179–187", href: "https://topostext.org/work/551" },
     ],
   },
+  {
+    constellation: "Óssa Major",
+    sources: [
+      { name: "Homer · Ilíada, 18.483–489", href: "https://classics.mit.edu/Homer/iliad.18.xviii.html" },
+      { name: "Arat · Fenòmens, 27–44", href: "https://topostext.org/work/551" },
+      { name: "Higí · Astronomica, 2.1, 2.2 i 2.4", href: "https://topostext.org/work/207" },
+      { name: "Ovidi · Metamorfosis, 2.401–530", href: "https://topostext.org/work/141" },
+    ],
+  },
 ];
 
 export default function SourcesAndMethodologyPage() {
@@ -219,6 +228,9 @@ export default function SourcesAndMethodologyPage() {
             <p>
               El cas d’<strong>Alpheratz</strong> mostra la situació complementària: és <strong>α Andromedae</strong>, però completa visualment un vèrtex del Gran Quadrat de Pegàs. El patró pot connectar dues regions; la pertinença oficial de l’estrella continua sent inequívoca.
             </p>
+            <p>
+              Un <strong>asterisme</strong> és un patró recognoscible d’estrelles que no equival necessàriament a una constel·lació oficial. <strong>El Carro</strong> és un asterisme de set estrelles dins de l’<strong>Óssa Major</strong>; no és tota la constel·lació.
+            </p>
           </div>
         </article>
 
@@ -241,6 +253,7 @@ export default function SourcesAndMethodologyPage() {
               <p><strong>Cassiopea</strong><span>Schedar, estrella càlida i prominent d’un angle de la W</span></p>
               <p><strong>Perseu</strong><span>Mirfak, l’estrella més brillant i una àncora central del traç</span></p>
               <p><strong>Cefeu</strong><span>Alderamin, l’estrella més brillant i una cantonada de la casa</span></p>
+              <p><strong>Óssa Major</strong><span>Alioth, una llum brillant al centre del mànec del Carro</span></p>
             </div>
             <p>
               Per proposar una bona oportunitat, l’Atlas demana que la referència superi aproximadament els <strong>12° d’altura</strong> i que el Sol sigui a <strong>−12° o menys</strong>, el límit aproximat del final del crepuscle nàutic. La cerca avança en passos de trenta minuts i pot arribar fins a uns 180 dies, de manera que també cobreix constel·lacions fora de temporada.
@@ -258,6 +271,9 @@ export default function SourcesAndMethodologyPage() {
             </p>
             <p>
               Les cinc estrelles de la W principal de <strong>Cassiopea</strong> i les cinc de la casa principal de <strong>Cefeu</strong> són circumpolars a uns 41° N. Això permet veure aquests patrons durant tot l’any, però no els manté sempre en una posició còmoda: a la culminació inferior algunes estrelles poden passar molt baixes sobre l’horitzó nord. «Millor època al vespre» continua indicant quan queden especialment altes i útils, no els únics mesos en què existeixen o són visibles.
+            </p>
+            <p>
+              No extrapolem aquesta propietat a una regió sencera. A l’<strong>Óssa Major</strong>, bona part del Carro és circumpolar a Catalunya, però <strong>Alkaid</strong> és al límit i pot pondre’s geomètricament al sud del país. Altres estrelles de la constel·lació baixen molt més al sud: l’Óssa Major completa no és circumpolar des d’aquestes latituds.
             </p>
           </div>
         </article>

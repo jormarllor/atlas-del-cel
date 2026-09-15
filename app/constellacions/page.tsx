@@ -115,8 +115,23 @@ export default function ConstellationsPage() {
 
       </section>
 
+      <section className="wrap section constellation-season" id="primavera">
+        <div className="constellation-season-heading">
+          <div><p className="section-kicker">ESTACIÓ 03</p><h2>Primavera</h2></div>
+          <p>Un nou sector del cel: el Carro com a porta d’entrada, el nord com a guia i les galàxies com a continuació.</p>
+        </div>
+        <div className="constellation-index-list">
+          <Link className="constellation-index-entry" href="/constellacions/ossa-major">
+            <span className="constellation-index-number">11</span>
+            <div><h3>Óssa Major</h3><p>Patró · El Carro, només una part de la constel·lació</p></div>
+            <span className="constellation-index-level">Nivell fàcil · Carro gairebé circumpolar</span>
+            <span className="constellation-index-arrow" aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
+
       <section className="wrap index-future-seasons" aria-label="Futurs blocs de l’Atlas">
-        <span>Primavera</span><span>Estiu</span><span>Circumpolars</span>
+        <span>Estiu</span><span>Circumpolars</span>
       </section>
     </main>
   );

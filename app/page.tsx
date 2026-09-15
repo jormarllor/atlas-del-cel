@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const seasons = [
   { name: "Hivern", hint: "Orió, Taure, Ca Major, Bessons, Auriga", className: "winter", availableHref: "/constellacions", availableLabel: "5 fitxes disponibles →" },
-  { name: "Primavera", hint: "Lleó, Verge, Bover", className: "spring" },
+  { name: "Primavera", hint: "Óssa Major · el Carro i el camí cap al nord", className: "spring", availableHref: "/constellacions#primavera", availableLabel: "Primera fitxa disponible →" },
   { name: "Estiu", hint: "Cigne, Lira, Àguila", className: "summer" },
   { name: "Tardor", hint: "Andròmeda, Pegàs, Cassiopea, Perseu i Cefeu", className: "autumn", availableHref: "/constellacions#tardor", availableLabel: "5 fitxes disponibles →" },
 ];
@@ -60,6 +60,16 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="wrap section ursa-home-feature">
+        <div className="section-heading winter-available-heading">
+          <div><p className="section-kicker">S’OBRE EL CEL DE PRIMAVERA</p><h2>El Carro és només el començament</h2></div>
+          <Link className="text-link" href="/constellacions#primavera">Explora el nou sector →</Link>
+        </div>
+        <Link href="/constellacions/ossa-major" className="winter-available-entry">
+          <span>11</span><div><h3>Óssa Major</h3><p>Distingeix l’asterisme de la constel·lació, troba Polaris i descobreix Mizar i Alcor.</p></div><b>Explora l’Óssa Major →</b>
+        </Link>
       </section>
 
       <section className="wrap section winter-available">
